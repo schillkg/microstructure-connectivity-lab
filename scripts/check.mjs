@@ -14,7 +14,7 @@ for(const file of html){
   for(const m of text.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)){
     try{JSON.parse(m[1]);}catch{errors.push(`${file}: invalid structured metadata`);}
   }
-  for(const m of text.matchAll(/(?:href|src|data-source)="([^"]+)"/g)){
+  for(const m of text.matchAll(/(?:href|src|data-source|data-centroids)="([^"]+)"/g)){
     const ref=decode(m[1]);
     if(/^(?:https?:|mailto:|tel:|data:|#)/.test(ref))continue;
     const pathname=decodeURIComponent(ref.split(/[?#]/)[0]);
@@ -64,6 +64,15 @@ const indices=binary(glass.brain.indices);
 if(indices.length!==glass.brain.triangleCount*6)errors.push('Brain surface triangle count mismatch');
 for(let i=0;i<indices.length;i+=2)if(indices.readUInt16LE(i)>=glass.brain.vertexCount){errors.push('Brain surface index out of range');break;}
 if(fs.readFileSync('dist/publications/index.html','utf8').includes('Selected work led by Kurt Schilling'))errors.push('Removed publication note has returned');
+const centroids=JSON.parse(fs.readFileSync('dist/assets/tract-centroids.json','utf8'));
+if(centroids.bundles.length!==5)errors.push('Expected one centroid for each of the five native reconstructions');
+for(const b of centroids.bundles){
+  if(!['af','cst','cc'].includes(b.group)||b.points.length<2||b.points.some(p=>p.length!==3||p.some(v=>!Number.isFinite(v)||Math.abs(v)>1.1)))errors.push(`${b.id}: invalid centroid geometry`);
+}
+for(const route of ['index.html','tractography/index.html']){
+  const page=fs.readFileSync('dist/'+route,'utf8');
+  if(page.includes('10,000 streamlines')||page.includes('A different view.'))errors.push(`${route}: removed display text returned`);
+}
 for(const file of files)if(fs.statSync(file).size>25*1024*1024)errors.push(`${file}: unexpectedly large website asset (>25 MiB)`);
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
 console.log(`Verified ${html.length} HTML pages, all local links/assets, and asset sizes. ${info.papers} publication records; base ${info.base||'/'}.`);
