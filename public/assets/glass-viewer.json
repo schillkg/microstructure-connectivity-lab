@@ -19,7 +19,7 @@
     {
       "id": "af",
       "name": "Arcuate fasciculus",
-      "color": "#edb360",
+      "color": "#f3b64f",
       "streamlineCount": 4000,
       "pointOffset": 0,
       "pointCount": 139027,
@@ -29,7 +29,7 @@
     {
       "id": "cst",
       "name": "Corticospinal tract",
-      "color": "#76dde6",
+      "color": "#49aaff",
       "streamlineCount": 4000,
       "pointOffset": 139027,
       "pointCount": 139361,
@@ -39,7 +39,7 @@
     {
       "id": "cc",
       "name": "Corpus callosum \u00b7 CC_4",
-      "color": "#db7fcf",
+      "color": "#ff4f99",
       "streamlineCount": 2000,
       "pointOffset": 278388,
       "pointCount": 63489,
