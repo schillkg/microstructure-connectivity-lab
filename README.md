@@ -1,6 +1,6 @@
 # Microstructure & Connectivity Lab
 
-A static lab website built for GitHub Pages. The review version includes 53 selected first- or last-author works (50 published works and 3 preprints), individual paper summaries, scholarly metadata, software and data links, and an interactive streamline viewer. The existing Google Site and domain remain separate during review.
+A static lab website built for GitHub Pages. The review version includes 64 selected first- or last-author works (60 published works and 4 preprints), individual paper summaries and illustrations, scholarly metadata, grouped software and data links, four news stories, and an interactive streamline viewer. The existing Google Site and domain remain separate during review.
 
 ## Local preview
 
@@ -20,7 +20,7 @@ Example request to Codex:
 
 > Add this paper using its DOI, accepted manuscript, and figure. Draft the research question, methods, findings, and limitations for review. Link the code and dataset. Build and check the site, then publish the approved changes.
 
-Publication `type` can be `Article`, `Review`, `Consensus`, `Book chapter`, `Commentary`, or `Preprint`. Mark preprints explicitly; replace the existing record when a journal version appears to avoid duplicates. Use verified `datePublished` values when known; a year is sufficient otherwise. Complete author names belong in `authorList` in publication order. Never infer a missing publication date.
+Publication `type` can be `Article`, `Review`, `Consensus`, `Book chapter`, `Commentary`, `Conference paper`, or `Preprint`. Mark preprints explicitly; replace the existing record when a journal version appears to avoid duplicates. Use verified `datePublished` values when known; a year is sufficient otherwise. Complete author names belong in `authorList` in publication order. Never infer a missing publication date.
 
 Optional fields include `pdf`, `publisher`, `code`, `dataset`, `resources`, `image`, `imageAlt`, `caption`, `description`, `findings`, `limitations`, `licenseUrl`, and `correction`. Existing records are examples. Do not include private local file paths in public records.
 
@@ -40,17 +40,19 @@ The review site uses `noindex,follow` to avoid indexing unfinished text. Set `in
 
 These measures make the research easier to parse; they do not guarantee indexing, citation, or prominence in an AI answer. Google states that no special AI markup or new AI text file is required: [Google AI search guidance](https://developers.google.com/search/docs/appearance/ai-features). Scholar inclusion is also subject to its own rules: [Scholar inclusion guidelines](https://scholar.google.com/intl/en/scholar/inclusion.html).
 
-## PDF link analytics
+## Free site analytics
 
-Tracking is disabled (`analytics: null`). `paper_download_click` hooks are implemented with stable paper slugs for normal and middle-button link clicks. No event is sent without a configured analytics provider.
+Tracking is currently disabled (`analytics: null`). GoatCounter is the recommended free service for visits, page views, approximate unique visits, referring sites, and paper/resource click counts. Its hosted service is free for reasonable public usage; no paid plan is required for a normal lab site. See [GoatCounter](https://www.goatcounter.com/).
 
-If Plausible is chosen, create the site in its dashboard and copy its current unique `https://plausible.io/js/pa-....js` URL into `content/site.json`:
+Create a free account, then put its actual site code in `content/site.json`:
 
 ```json
-"analytics": {"provider": "plausible", "scriptUrl": "https://plausible.io/js/pa-YOUR_ACTUAL_SITE_ID.js"}
+"analytics": {"provider": "goatcounter", "siteCode": "YOUR-ACTUAL-CODE"}
 ```
 
-Create a matching `paper_download_click` event goal. The generator installs the standard initialization snippet. Check the live dashboard before treating tracking as active. Count this metric as **PDF link clicks**, not confirmed downloads or readers. Direct downloads bypassing this site are not counted; blockers can undercount and repeated clicks can overcount. See [Plausible custom events](https://plausible.io/docs/custom-event-goals).
+The generator installs its official script. Page views and human-readable event titles appear in the dashboard. PDF links, article links, resource links, figures, news, navigation, and viewer-mode controls have tracking hooks. No event is sent without a configured provider. Verify a real visit and click in the dashboard before treating analytics as active. Do not add a second generic click tracker for the same actions.
+
+PDF-link clicks are not confirmed completed downloads or readers. Direct publisher/repository downloads bypassing this site are not counted, and blockers can undercount. Unique visitors are estimates; the dashboard does not identify individuals. See [the analytics guide](docs/analytics.md).
 
 ## GitHub Pages
 
@@ -66,6 +68,10 @@ Visit http://127.0.0.1:4322/microstructure-connectivity-lab/. Both local servers
 
 Custom-domain migration is separate; see [the domain plan](docs/decision-and-migration.md). Do not change DNS until the temporary site has been reviewed. Set the custom domain in Pages, verify ownership, update the required web DNS records, preserve mail records, and enable HTTPS. GitHub supplies the deployment path automatically.
 
+## Style previews
+
+`/designs/` compares Journal, Atlas, and Gallery treatments of the same resources page. These are separate review pages; the main site retains its current design. They are excluded from the sitemap and analytics.
+
 ## Source files
 
 | Content | File |
@@ -73,13 +79,16 @@ Custom-domain migration is separate; see [the domain plan](docs/decision-and-mig
 | Publication records | `content/publications/*.json` |
 | Research areas | `content/research.json` |
 | People | `content/team.json` |
-| Resources | `content/resources.json` |
+| Software, datasets, lectures | `content/resources.json` |
+| News stories | `content/news.json` |
 | Contact, indexing, analytics | `content/site.json` |
 | Styling | `public/style.css` |
 | Shared layout and page generation | `scripts/build.mjs` |
 | Interactive pathway viewer | `public/viewer.js` |
 
-`dist/` is generated output. Edit the source, not this folder. The homepage includes a rotatable glass-brain viewer, with an optional larger view at `/tractography/`. It contains all 10,000 streamlines and all 341,877 original vertices from the five available reconstructions: left/right arcuate, left/right corticospinal, and callosal segment CC_4. These are three pathway groups, not a whole-brain connectome. Geometry is normalized together for display; only the matching brain-mask surface is smoothed and simplified. WebGL2 renders the tubes, with a static image fallback where unavailable. The Nature figure is attributed under CC BY 4.0. Other scientific assets retain their original rights; this repository does not impose a new license on them.
+`dist/` is generated output. Edit the source, not this folder. The homepage includes a rotatable glass-brain viewer, with an expanded explorer at `/tractography/`. The explorer offers five mean tract trajectories, independent pathway visibility and colors, local-orientation coloring, surface opacity, tube width, lighting, zoom, camera presets, optional rotation, and PNG export. It contains all 10,000 streamlines and all 341,877 original vertices from the five available reconstructions: left/right arcuate, left/right corticospinal, and callosal segment CC_4. These are three pathway groups, not a whole-brain connectome. Geometry is normalized together for display; only the matching brain-mask surface is smoothed and simplified. WebGL2 renders the tubes, with a static image fallback where unavailable. Matching FreeSurfer surfaces and parcellations are not yet available; the brain-mask shell must not be described as a cortical atlas. The Nature figure is attributed under CC BY 4.0. Other scientific assets retain their original rights; this repository does not impose a new license on them.
+
+Every record has a direct article link and a representative image: 62 scientific figures and two clearly labeled previews for text-only articles. Fifty-seven records link to public PMC full text. Twenty-one PDF links come from authoritative publisher/repository pages; automated download checks can encounter bot challenges, so the full-text page is retained as an alternative. Attribution and license information are recorded in `docs/publication-figures.json`.
 
 ## Checks and editorial review
 
@@ -88,4 +97,4 @@ npm run build
 npm run check
 ```
 
-Checks cover generated HTML, local links/assets, anchors, repository prefixes, JSON-LD, publication exports, PDF citation links, accidental private paths, and complete streamline/brain geometry. Browser checks additionally cover desktop/mobile layouts, search/filter combinations, and viewer controls. Automated checks do not replace review of scientific summaries or verification of external download permissions. The supplied PDFs and publisher metadata informed this selection; the Google Scholar page could not be fully retrieved.
+Checks cover generated HTML, local links/assets, anchors, repository prefixes, JSON-LD, publication exports, PDF citation links, accidental private paths, and complete streamline/brain geometry. Browser checks additionally cover desktop/mobile layouts, search/filter combinations, and viewer controls. Automated checks do not replace review of scientific summaries or verification of external download permissions. The supplied PDFs, old site, publisher metadata, Europe PMC, and author records informed this selection; the Google Scholar page could not be fully retrieved, so the bibliography is not claimed exhaustive.
