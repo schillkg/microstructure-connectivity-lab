@@ -35,5 +35,18 @@
   "publicationStatus": "Published",
   "pdf": "",
   "metadataSource": "https://api.crossref.org/works/10.1007/s00429-026-03107-7",
-  "datePublished": "2026-03-30"
+  "datePublished": "2026-03-30",
+  "image": "/assets/papers/preprocessing-improves-tractography.webp",
+  "imageAlt": "Effects of individual diffusion MRI preprocessing steps on fiber orientations and tractography.",
+  "caption": "Kurt G. Schilling et al. (2026), Figure 1. Effects of individual diffusion MRI preprocessing steps on fiber orientations and tractography.",
+  "figureSource": "https://link.springer.com/10.1007/s00429-026-03107-7",
+  "imageKind": "article-figure",
+  "figureLicense": "http://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13033464/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13033464/"
+    }
+  ]
 }

@@ -1,0 +1,52 @@
+{
+  "slug": "sex-related-tract-variability",
+  "title": "Sex-related Variability of White-Matter Tracts is Robust to Tractography Methodology",
+  "year": 2026,
+  "authors": "Matthew Amandola, Bastien Herlin, Michael E. Kim, Simon Vandekar, Ivy Uszynski, Bennett Landman, Cyril Poupon, Kurt G. Schilling",
+  "authorList": [
+    "Matthew Amandola",
+    "Bastien Herlin",
+    "Michael E. Kim",
+    "Simon Vandekar",
+    "Ivy Uszynski",
+    "Bennett Landman",
+    "Cyril Poupon",
+    "Kurt G. Schilling"
+  ],
+  "kurtPosition": "last",
+  "journal": "Research Square",
+  "type": "Preprint",
+  "doi": "https://doi.org/10.21203/rs.3.rs-9439593/v1",
+  "publisher": "https://www.researchsquare.com/article/rs-9439593/v1",
+  "summary": "This preprint compares sex-related white matter findings from two different tractography pipelines. Microstructural results were highly consistent, while volumetric effects showed more disagreement and depended more on reconstruction sensitivity.",
+  "description": "Two pipelines differing in modeling, reconstruction, and analysis were applied to the same datasets. Only one of 343 microstructural comparisons disagreed significantly, whereas volumetric effects showed substantially more disagreement. The preprint supports the reproducibility of many microstructural sex effects while highlighting greater methodological sensitivity in tract volumes.",
+  "findings": [
+    "Microstructural sex effects were largely consistent across the two pipelines.",
+    "Volumetric findings were more sensitive to reconstruction methodology."
+  ],
+  "topics": [
+    "Tractography",
+    "Microstructure"
+  ],
+  "source": "https://www.researchsquare.com/article/rs-9439593/v1",
+  "summarySource": "https://www.researchsquare.com/article/rs-9439593/v1",
+  "publicationStatus": "Preprint",
+  "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13131903/pdf/nihpp-rs9439593v1.pdf",
+  "metadataSource": "https://api.crossref.org/works/10.21203/rs.3.rs-9439593/v1",
+  "datePublished": "2026-04-22",
+  "image": "/assets/papers/sex-related-tract-variability.webp",
+  "imageAlt": "Comparison of whole-brain tractogram and bundle-specific workflows used to test the robustness of sex-related tract differences.",
+  "caption": "Matthew Amandola et al. (2026), Figure 1. Comparison of whole-brain tractogram and bundle-specific workflows used to test the robustness of sex-related tract differences.",
+  "figureSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13131903/",
+  "imageKind": "article-figure",
+  "figureLicense": "https://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13131903/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13131903/"
+    }
+  ],
+  "pdfAccess": "public",
+  "pdfVerification": "official-link-only"
+}

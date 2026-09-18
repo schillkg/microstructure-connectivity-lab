@@ -34,5 +34,17 @@
   "source": "https://doi.org/10.1007/s12021-017-9334-0",
   "summarySource": "https://doi.org/10.1007/s12021-017-9334-0",
   "pdf": "",
-  "publicationStatus": "Published"
+  "publicationStatus": "Published",
+  "image": "/assets/papers/validate29-squirrel-monkey-atlas.webp",
+  "imageAlt": "Surface renderings of cortical and white matter labels in the VALiDATe29 squirrel monkey atlas.",
+  "caption": "Kurt G. Schilling et al. (2017), Figure 3. Surface renderings of cortical and white matter labels in the VALiDATe29 squirrel monkey atlas.",
+  "figureSource": "https://doi.org/10.1007/s12021-017-9334-0",
+  "imageKind": "article-figure",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5671902/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5671902/"
+    }
+  ]
 }

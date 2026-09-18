@@ -1,0 +1,42 @@
+{
+  "slug": "tractography-validation-anatomical",
+  "title": "Tractography validation Part 2: The use of anatomical model systems and measures for validation",
+  "year": 2025,
+  "authors": "Tim B. Dyrby, Silvio Sarubbo, Francois Rheault, Els Fieremans, Adam W. Anderson, Marco Palombo, Peter Neher, Kathleen S. Rockland, Kurt G. Schilling",
+  "authorList": [
+    "Tim B. Dyrby",
+    "Silvio Sarubbo",
+    "Francois Rheault",
+    "Els Fieremans",
+    "Adam W. Anderson",
+    "Marco Palombo",
+    "Peter Neher",
+    "Kathleen S. Rockland",
+    "Kurt G. Schilling"
+  ],
+  "kurtPosition": "last",
+  "journal": "Handbook of Diffusion MR Tractography",
+  "type": "Book chapter",
+  "doi": "https://doi.org/10.1016/b978-0-12-818894-1.00020-3",
+  "publisher": "https://linkinghub.elsevier.com/retrieve/pii/B9780128188941000203",
+  "summary": "The second tractography-validation chapter reviews anatomical reference systems, empirical validation when ground truth is unavailable, and ways to quantify agreement. It connects validation in real tissue with the practical interpretation of reconstructed pathways.",
+  "description": "This chapter covers validation using anatomical model systems and measurements from real tissue, complementing the simulations and phantoms discussed in Part 1. It explains empirical strategies for situations without a definitive ground truth and reviews measures used to quantify validation across anatomical scales.",
+  "findings": [
+    "Anatomical model systems connect tractography validation with real tissue.",
+    "Validation measures and empirical tests must match the anatomical question."
+  ],
+  "topics": [
+    "Tractography",
+    "Reviews & Consensus"
+  ],
+  "source": "https://linkinghub.elsevier.com/retrieve/pii/B9780128188941000203",
+  "summarySource": "https://orbit.dtu.dk/en/publications/tractography-validation-part-2-the-use-of-anatomical-model-system/",
+  "publicationStatus": "Published",
+  "pdf": "",
+  "metadataSource": "https://api.crossref.org/works/10.1016/b978-0-12-818894-1.00020-3",
+  "image": "/assets/papers/tractography-validation-anatomical.webp",
+  "imageAlt": "Microdissection and ex vivo diffusion tractography compared for association pathways in the same monkey brain.",
+  "caption": "Dyrby et al. (2025), Figure 4; modified from Sarubbo et al. (2019), Figure 2. Microdissection and ex vivo diffusion tractography compared for association pathways in the same monkey brain.",
+  "figureSource": "https://linkinghub.elsevier.com/retrieve/pii/B9780128188941000203",
+  "imageKind": "article-figure"
+}

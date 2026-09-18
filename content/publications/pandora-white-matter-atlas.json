@@ -43,5 +43,17 @@
   "source": "https://doi.org/10.1007/s12021-020-09497-1",
   "summarySource": "https://doi.org/10.1007/s12021-020-09497-1",
   "pdf": "",
-  "publicationStatus": "Published"
+  "publicationStatus": "Published",
+  "image": "/assets/papers/pandora-white-matter-atlas.webp",
+  "imageAlt": "Example white matter pathways represented in Pandora volumetric and surface atlases.",
+  "caption": "Colin B. Hansen et al. (2021), Figure 3. Example white matter pathways represented in Pandora volumetric and surface atlases.",
+  "figureSource": "https://doi.org/10.1007/s12021-020-09497-1",
+  "imageKind": "article-figure",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8124084/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8124084/"
+    }
+  ]
 }

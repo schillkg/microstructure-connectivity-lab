@@ -33,5 +33,10 @@
   "publicationStatus": "Published",
   "pdf": "",
   "metadataSource": "https://api.crossref.org/works/10.1007/s00429-025-02945-1",
-  "datePublished": "2025-05-31"
+  "datePublished": "2025-05-31",
+  "image": "/assets/papers/animal-models-human-tractography.webp",
+  "imageAlt": "Title and author block of the commentary Animal models are useful in studying human neuroanatomy with tractography.",
+  "caption": "Roebroeck et al. (2025), article title page. Article preview; this commentary contains no figures.",
+  "figureSource": "https://link.springer.com/10.1007/s00429-025-02945-1",
+  "imageKind": "article-preview"
 }

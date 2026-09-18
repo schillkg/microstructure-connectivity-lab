@@ -65,5 +65,17 @@
   "source": "https://doi.org/10.1016/j.neuroimage.2018.10.029",
   "summarySource": "https://doi.org/10.1016/j.neuroimage.2018.10.029",
   "pdf": "",
-  "publicationStatus": "Published"
+  "publicationStatus": "Published",
+  "image": "/assets/papers/modern-tractography-accuracy-limits.webp",
+  "imageAlt": "Tractography submissions reconstructed the same validation pathways with markedly different spatial extents.",
+  "caption": "Kurt G. Schilling et al. (2019), Figure 2. Tractography submissions reconstructed the same validation pathways with markedly different spatial extents.",
+  "figureSource": "https://doi.org/10.1016/j.neuroimage.2018.10.029",
+  "imageKind": "article-figure",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6551229/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6551229/"
+    }
+  ]
 }

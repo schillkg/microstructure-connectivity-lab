@@ -34,5 +34,11 @@
   "pdf": "",
   "metadataSource": "https://api.crossref.org/works/10.1016/j.mri.2026.110694",
   "publicationNote": "Available online 17 April 2026, as printed in supplied published PDF; September 2026 issue.",
-  "datePublished": "2026-04-17"
+  "datePublished": "2026-04-17",
+  "image": "/assets/papers/7t-four-way-phase-encoding.webp",
+  "imageAlt": "High-resolution diffusion images and tractography from the four-direction phase-encoding acquisition.",
+  "caption": "Kurt G. Schilling et al. (2026), Figure 7. High-resolution diffusion images and tractography from the four-direction phase-encoding acquisition.",
+  "figureSource": "https://linkinghub.elsevier.com/retrieve/pii/S0730725X26000871",
+  "imageKind": "article-figure",
+  "figureLicense": "http://creativecommons.org/licenses/by/4.0/"
 }

@@ -30,9 +30,11 @@
   "publicationStatus": "Published",
   "metadataSource": "https://api.crossref.org/works/10.1007/s00429-025-02966-w",
   "datePublished": "2025-06-14",
-  "image": "/assets/paper-5.png",
-  "imageAlt": "Research figure accompanying Short association fiber tractography: key insights and surprising facts",
-  "caption": "Figure from the lab’s publication highlight.",
+  "image": "/assets/papers/short-association-insights.webp",
+  "imageAlt": "Short association fibers reconstructed in superficial white matter using high-resolution diffusion MRI.",
+  "caption": "Kurt Schilling et al. (2025), Figure 1. Short association fibers reconstructed in superficial white matter using high-resolution diffusion MRI.",
   "featured": false,
-  "order": 6
+  "order": 6,
+  "figureSource": "https://link.springer.com/10.1007/s00429-025-02966-w",
+  "imageKind": "article-figure"
 }

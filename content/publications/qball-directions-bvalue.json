@@ -14,7 +14,7 @@
   ],
   "kurtPosition": "first",
   "journal": "Proceedings of SPIE: Medical Imaging 2017, Image Processing",
-  "type": "Article",
+  "type": "Conference paper",
   "doi": "https://doi.org/10.1117/12.2254545",
   "publisher": "https://doi.org/10.1117/12.2254545",
   "summary": "This full conference paper uses eleven repeated diffusion acquisitions to examine q-ball measurement precision. It shows that directional sampling and the spherical harmonic model can bias tissue and orientation metrics, helping explain why acquisition choices must be evaluated together with the reconstruction method.",
@@ -31,5 +31,17 @@
   "source": "https://doi.org/10.1117/12.2254545",
   "summarySource": "https://doi.org/10.1117/12.2254545",
   "pdf": "",
-  "publicationStatus": "Published"
+  "publicationStatus": "Published",
+  "image": "/assets/papers/qball-directions-bvalue.webp",
+  "imageAlt": "Q-ball diffusion orientation estimates across diffusion weightings and gradient-direction counts.",
+  "caption": "Kurt G. Schilling et al. (2017), Figure 1. Q-ball diffusion orientation estimates across diffusion weightings and gradient-direction counts.",
+  "figureSource": "https://doi.org/10.1117/12.2254545",
+  "imageKind": "article-figure",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5571896/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5571896/"
+    }
+  ]
 }

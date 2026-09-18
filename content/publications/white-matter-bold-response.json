@@ -1,0 +1,51 @@
+{
+  "slug": "white-matter-bold-response",
+  "title": "Anomalous and heterogeneous characteristics of the BOLD hemodynamic response function in white matter",
+  "year": 2022,
+  "authors": "Kurt G Schilling, Muwei Li, Francois Rheault, Zhaohua Ding, Adam W Anderson, Hakmook Kang, Bennett A Landman, John C Gore",
+  "authorList": [
+    "Kurt G Schilling",
+    "Muwei Li",
+    "Francois Rheault",
+    "Zhaohua Ding",
+    "Adam W Anderson",
+    "Hakmook Kang",
+    "Bennett A Landman",
+    "John C Gore"
+  ],
+  "kurtPosition": "first",
+  "journal": "Cerebral Cortex Communications",
+  "type": "Article",
+  "doi": "https://doi.org/10.1093/texcom/tgac035",
+  "publisher": "https://academic.oup.com/cercorcomms/article/doi/10.1093/texcom/tgac035/6671419",
+  "summary": "White matter has a different BOLD hemodynamic response from gray matter, and the response varies within and between pathways. These differences also relate to diffusion MRI measures of tissue microstructure.",
+  "description": "Using resting-state fMRI, this study characterizes the shape and spatial variation of the white matter hemodynamic response. Features including the initial signal dip relate to tissue microstructure and differ from those in gray matter. The findings show why a single gray-matter response model may be inadequate for analyzing white matter BOLD signals.",
+  "findings": [
+    "Response shapes differed between white and gray matter.",
+    "White matter responses varied along pathways and were associated with microstructural features."
+  ],
+  "topics": [
+    "Functional Connectivity",
+    "Microstructure"
+  ],
+  "source": "https://pubmed.ncbi.nlm.nih.gov/36196360/",
+  "summarySource": "https://pubmed.ncbi.nlm.nih.gov/36196360/",
+  "publicationStatus": "Published",
+  "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9519945/pdf/tgac035.pdf",
+  "metadataSource": "https://api.crossref.org/works/10.1093/texcom/tgac035",
+  "image": "/assets/papers/white-matter-bold-response.webp",
+  "imageAlt": "Hemodynamic response functions vary across and along white matter pathways.",
+  "caption": "Kurt G Schilling et al. (2022), Figure 6. Hemodynamic response functions vary across and along white matter pathways.",
+  "figureSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9519945/",
+  "imageKind": "article-figure",
+  "figureLicense": "https://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9519945/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9519945/"
+    }
+  ],
+  "pdfAccess": "public",
+  "pdfVerification": "official-link-only"
+}

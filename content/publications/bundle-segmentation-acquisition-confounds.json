@@ -33,5 +33,18 @@
   "source": "https://doi.org/10.1016/j.neuroimage.2021.118451",
   "summarySource": "https://doi.org/10.1016/j.neuroimage.2021.118451",
   "pdf": "",
-  "publicationStatus": "Published"
+  "publicationStatus": "Published",
+  "image": "/assets/papers/bundle-segmentation-acquisition-confounds.webp",
+  "imageAlt": "Arcuate fasciculus reconstructions vary across scanners, acquisitions, diffusion weighting, and segmentation workflows.",
+  "caption": "Kurt G. Schilling et al. (2021), Figure 2. Arcuate fasciculus reconstructions vary across scanners, acquisitions, diffusion weighting, and segmentation workflows.",
+  "figureSource": "https://doi.org/10.1016/j.neuroimage.2021.118451",
+  "imageKind": "article-figure",
+  "figureLicense": "http://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9933001/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9933001/"
+    }
+  ]
 }

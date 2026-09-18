@@ -42,5 +42,17 @@
   "source": "https://doi.org/10.1007/s00429-022-02503-z",
   "summarySource": "https://doi.org/10.1007/s00429-022-02503-z",
   "pdf": "",
-  "publicationStatus": "Published"
+  "publicationStatus": "Published",
+  "image": "/assets/papers/aging-white-matter-shape.webp",
+  "imageAlt": "White matter pathways colored by age associations with microstructural and shape measurements.",
+  "caption": "Kurt G. Schilling et al. (2022), Figure 3. White matter pathways colored by age associations with microstructural and shape measurements.",
+  "figureSource": "https://doi.org/10.1007/s00429-022-02503-z",
+  "imageKind": "article-figure",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9648053/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9648053/"
+    }
+  ]
 }

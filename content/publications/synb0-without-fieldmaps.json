@@ -38,5 +38,17 @@
   "source": "https://doi.org/10.1371/journal.pone.0236418",
   "summarySource": "https://doi.org/10.1371/journal.pone.0236418",
   "pdf": "",
-  "publicationStatus": "Published"
+  "publicationStatus": "Published",
+  "image": "/assets/papers/synb0-without-fieldmaps.webp",
+  "imageAlt": "Deep learning synthesizes an undistorted b0 image from a distorted b0 and an anatomical T1 image.",
+  "caption": "Kurt G. Schilling et al. (2020), Figure 1. Deep learning synthesizes an undistorted b0 image from a distorted b0 and an anatomical T1 image.",
+  "figureSource": "https://doi.org/10.1371/journal.pone.0236418",
+  "imageKind": "article-figure",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7394453/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7394453/"
+    }
+  ]
 }

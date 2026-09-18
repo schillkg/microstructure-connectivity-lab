@@ -1,0 +1,50 @@
+{
+  "slug": "spherical-mean-sampling",
+  "title": "Minimal number of sampling directions for robust measures of the spherical mean diffusion weighted signal: Effects of sampling directions, b-value, signal-to-noise ratio, hardware, and fitting strategy",
+  "year": 2022,
+  "authors": "Kurt G. Schilling, Marco Palombo, Kristin P. O'Grady, Anna J.E. Combes, Adam W. Anderson, Bennett A. Landman, Seth A. Smith",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Marco Palombo",
+    "Kristin P. O'Grady",
+    "Anna J.E. Combes",
+    "Adam W. Anderson",
+    "Bennett A. Landman",
+    "Seth A. Smith"
+  ],
+  "kurtPosition": "first",
+  "journal": "Magnetic Resonance Imaging",
+  "type": "Article",
+  "doi": "https://doi.org/10.1016/j.mri.2022.07.015",
+  "publisher": "https://linkinghub.elsevier.com/retrieve/pii/S0730725X22001333",
+  "summary": "Simulations and brain and spinal cord measurements establish how many diffusion directions are needed to estimate the spherical mean signal reliably. A lookup table links sampling requirements to diffusion weighting, signal-to-noise ratio, and fitting choices.",
+  "description": "Spherical-mean diffusion models can support efficient microstructural imaging, but their accuracy depends on directional sampling. This work varies the number of directions, b-value, noise level, hardware, and fitting strategy in simulations, then checks those predictions with brain and spinal cord data. The resulting guidance helps balance acquisition time against measurement precision.",
+  "findings": [
+    "Directional sampling requirements depend on b-value, noise, and fitting strategy.",
+    "Empirical brain and spinal cord measurements agreed with the simulations."
+  ],
+  "topics": [
+    "Microstructure",
+    "Image Processing",
+    "Spinal Cord"
+  ],
+  "source": "https://pubmed.ncbi.nlm.nih.gov/35931321/",
+  "summarySource": "https://pubmed.ncbi.nlm.nih.gov/35931321/",
+  "publicationStatus": "Published",
+  "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9904413/pdf/nihms-1864537.pdf",
+  "metadataSource": "https://api.crossref.org/works/10.1016/j.mri.2022.07.015",
+  "image": "/assets/papers/spherical-mean-sampling.webp",
+  "imageAlt": "Brain spherical-mean diffusion signals estimated from full and reduced acquisition schemes.",
+  "caption": "Kurt G. Schilling et al. (2022), Figure 7. Brain spherical-mean diffusion signals estimated from full and reduced acquisition schemes.",
+  "figureSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9904413/",
+  "imageKind": "article-figure",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9904413/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9904413/"
+    }
+  ],
+  "pdfAccess": "public",
+  "pdfVerification": "official-link-only"
+}

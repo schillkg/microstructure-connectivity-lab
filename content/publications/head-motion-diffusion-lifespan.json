@@ -52,7 +52,22 @@
   ],
   "source": "https://onlinelibrary.wiley.com/doi/10.1002/hbm.70143",
   "publicationStatus": "Published",
-  "pdf": "",
+  "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11814480/pdf/HBM-46-e70143.pdf",
   "metadataSource": "https://api.crossref.org/works/10.1002/hbm.70143",
-  "datePublished": "2025-02-11"
+  "datePublished": "2025-02-11",
+  "image": "/assets/papers/head-motion-diffusion-lifespan.webp",
+  "imageAlt": "Head motion varies across age, tending to decrease toward young adulthood and increase with aging.",
+  "caption": "Kurt G. Schilling et al. (2025), Figure 5. Head motion varies across age, tending to decrease toward young adulthood and increase with aging.",
+  "figureSource": "https://onlinelibrary.wiley.com/doi/10.1002/hbm.70143",
+  "imageKind": "article-figure",
+  "figureLicense": "https://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11814480/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11814480/"
+    }
+  ],
+  "pdfAccess": "public",
+  "pdfVerification": "official-link-only"
 }

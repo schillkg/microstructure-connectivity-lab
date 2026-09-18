@@ -40,5 +40,18 @@
   "source": "https://doi.org/10.1162/imag_a_00050",
   "summarySource": "https://doi.org/10.1162/imag_a_00050",
   "pdf": "",
-  "publicationStatus": "Published"
+  "publicationStatus": "Published",
+  "image": "/assets/papers/white-matter-lifespan-trajectories.webp",
+  "imageAlt": "Tract-specific lifespan trajectories of fractional anisotropy and intracellular volume fraction.",
+  "caption": "Kurt G. Schilling et al. (2023), Figure 2. Tract-specific lifespan trajectories of fractional anisotropy and intracellular volume fraction.",
+  "figureSource": "https://doi.org/10.1162/imag_a_00050",
+  "imageKind": "article-figure",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12007540/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12007540/"
+    }
+  ],
+  "correction": "https://doi.org/10.1162/imag_x_00158"
 }

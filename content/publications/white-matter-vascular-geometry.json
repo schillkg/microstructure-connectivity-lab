@@ -38,5 +38,18 @@
   "publicationStatus": "Published",
   "pdf": "",
   "metadataSource": "https://api.crossref.org/works/10.1038/s41598-025-99724-z",
-  "datePublished": "2025-05-26"
+  "datePublished": "2025-05-26",
+  "image": "/assets/papers/white-matter-vascular-geometry.webp",
+  "imageAlt": "Examples of alignment and misalignment between white matter tract orientations and vasculature.",
+  "caption": "Kurt G. Schilling et al. (2025), Figure 8. Examples of alignment and misalignment between white matter tract orientations and vasculature.",
+  "figureSource": "https://www.nature.com/articles/s41598-025-99724-z",
+  "imageKind": "article-figure",
+  "figureLicense": "http://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12106635/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12106635/"
+    }
+  ]
 }

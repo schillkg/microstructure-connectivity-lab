@@ -32,5 +32,17 @@
   "source": "https://doi.org/10.1007/s12021-018-9391-z",
   "summarySource": "https://doi.org/10.1007/s12021-018-9391-z",
   "pdf": "",
-  "publicationStatus": "Published"
+  "publicationStatus": "Published",
+  "image": "/assets/papers/chiasm-squirrel-monkey-atlas.webp",
+  "imageAlt": "MRI contrasts and matched histological modalities included in the squirrel monkey atlas.",
+  "caption": "Kurt G. Schilling et al. (2019), Figure 3. MRI contrasts and matched histological modalities included in the squirrel monkey atlas.",
+  "figureSource": "https://doi.org/10.1007/s12021-018-9391-z",
+  "imageKind": "article-figure",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6330248/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6330248/"
+    }
+  ]
 }

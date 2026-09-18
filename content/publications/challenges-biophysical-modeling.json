@@ -28,5 +28,17 @@
   "source": "https://doi.org/10.1016/j.jneumeth.2020.108861",
   "summarySource": "https://doi.org/10.1016/j.jneumeth.2020.108861",
   "pdf": "",
-  "publicationStatus": "Published"
+  "publicationStatus": "Published",
+  "image": "/assets/papers/challenges-biophysical-modeling.webp",
+  "imageAlt": "A roadmap for developing, estimating, and validating diffusion MRI models of tissue microstructure.",
+  "caption": "Ileana O. Jelescu et al. (2020), Figure 3. A roadmap for developing, estimating, and validating diffusion MRI models of tissue microstructure.",
+  "figureSource": "https://doi.org/10.1016/j.jneumeth.2020.108861",
+  "imageKind": "article-figure",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10163379/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10163379/"
+    }
+  ]
 }

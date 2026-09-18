@@ -32,5 +32,10 @@
   "source": "https://linkinghub.elsevier.com/retrieve/pii/B9780128188941000173",
   "publicationStatus": "Published",
   "pdf": "",
-  "metadataSource": "https://api.crossref.org/works/10.1016/b978-0-12-818894-1.00017-3"
+  "metadataSource": "https://api.crossref.org/works/10.1016/b978-0-12-818894-1.00017-3",
+  "image": "/assets/papers/tractography-validation-foundations.webp",
+  "imageAlt": "The tractography validation process spans acquisition, local orientation estimation, tracking, and anatomical interpretation.",
+  "caption": "Tim B. Dyrby et al. (2025), Figure 2. The tractography validation process spans acquisition, local orientation estimation, tracking, and anatomical interpretation.",
+  "figureSource": "https://linkinghub.elsevier.com/retrieve/pii/B9780128188941000173",
+  "imageKind": "article-figure"
 }

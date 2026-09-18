@@ -35,5 +35,17 @@
   "source": "https://doi.org/10.1016/j.mri.2019.05.008",
   "summarySource": "https://doi.org/10.1016/j.mri.2019.05.008",
   "pdf": "",
-  "publicationStatus": "Published"
+  "publicationStatus": "Published",
+  "image": "/assets/papers/synb0-disco.webp",
+  "imageAlt": "Synthesized b0 distortion correction compared with uncorrected and reversed-encoding results.",
+  "caption": "Kurt G. Schilling et al. (2019), Figure 3. Synthesized b0 distortion correction compared with uncorrected and reversed-encoding results.",
+  "figureSource": "https://doi.org/10.1016/j.mri.2019.05.008",
+  "imageKind": "article-figure",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6834894/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6834894/"
+    }
+  ]
 }

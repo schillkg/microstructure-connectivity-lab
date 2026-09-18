@@ -90,9 +90,9 @@
       "description": "Docker image linked by the published article and verified Zenodo processing record."
     }
   ],
-  "image": "/assets/nature-brain-charts-figure-2.png",
-  "imageAlt": "Five example white matter tracts and their normative fractional anisotropy trajectories across the lifespan",
-  "caption": "Kim et al., Nature 655, 979–989 (2026), Fig. 2. CC BY 4.0. PDF page rendered and margins cropped; labels and data unchanged. Age axes are logarithmic; cyan denotes males and red denotes females.",
+  "image": "/assets/papers/white-matter-lifespan-brain-charts.webp",
+  "imageAlt": "Lifespan trajectories of white matter microstructure across major brain pathways.",
+  "caption": "Kim et al. (2026), Figure 2. Lifespan trajectories of white matter microstructure across major brain pathways. CC BY 4.0. Age axes are logarithmic; cyan denotes males and red denotes females.",
   "figureSource": "https://www.nature.com/articles/s41586-026-10454-2",
   "figureLicense": "https://creativecommons.org/licenses/by/4.0/",
   "links": [
@@ -109,5 +109,8 @@
       "label": "Postprocessing pipeline"
     }
   ],
-  "limitations": "The charts describe reference distributions for research. They are not, by themselves, a diagnostic test. The public data release contains permitted derived measurements from 20 of the 50 source datasets, rather than all raw MRI scans."
+  "limitations": "The charts describe reference distributions for research. They are not, by themselves, a diagnostic test. The public data release contains permitted derived measurements from 20 of the 50 source datasets, rather than all raw MRI scans.",
+  "imageKind": "article-figure",
+  "pdfAccess": "public",
+  "pdfVerification": "content-type-and-pdf-signature"
 }

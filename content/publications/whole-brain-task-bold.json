@@ -34,5 +34,18 @@
   "source": "https://doi.org/10.1073/pnas.2219666120",
   "summarySource": "https://doi.org/10.1073/pnas.2219666120",
   "pdf": "",
-  "publicationStatus": "Published"
+  "publicationStatus": "Published",
+  "image": "/assets/papers/whole-brain-task-bold.webp",
+  "imageAlt": "Task-locked BOLD signal changes mapped across gray matter regions and white matter pathways.",
+  "caption": "Kurt G. Schilling et al. (2023), Figure 5. Task-locked BOLD signal changes mapped across gray matter regions and white matter pathways.",
+  "figureSource": "https://doi.org/10.1073/pnas.2219666120",
+  "imageKind": "article-figure",
+  "figureLicense": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10589709/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10589709/"
+    }
+  ]
 }

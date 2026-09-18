@@ -84,9 +84,22 @@
   "metadataSource": "https://api.crossref.org/works/10.1002/mrm.30429",
   "datePublished": "2025-02-26",
   "publicationNote": "Community recommendations / best practices; the series does not claim a formal consensus.",
-  "image": "/assets/paper-7.png",
-  "imageAlt": "Research figure accompanying Considerations and recommendations from the ISMRM diffusion study group for preclinical diffusion MRI: Part 1: In vivo small-animal imaging",
-  "caption": "Figure from the lab’s publication highlight.",
+  "image": "/assets/papers/preclinical-dmri-part-1.webp",
+  "imageAlt": "Diffusion MRI across small-animal models illustrates differences in brain size, geometry, and tissue organization.",
+  "caption": "Ileana O. Jelescu et al. (2025), Figure 2. Diffusion MRI across small-animal models illustrates differences in brain size, geometry, and tissue organization.",
   "featured": false,
-  "order": 0
+  "order": 0,
+  "figureSource": "https://onlinelibrary.wiley.com/doi/10.1002/mrm.30429",
+  "imageKind": "article-figure",
+  "figureLicense": "https://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11971505/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11971505/"
+    }
+  ],
+  "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11971505/pdf/MRM-93-2507.pdf",
+  "pdfAccess": "public",
+  "pdfVerification": "official-link-only"
 }

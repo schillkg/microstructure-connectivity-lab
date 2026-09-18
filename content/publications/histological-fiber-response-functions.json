@@ -1,0 +1,48 @@
+{
+  "slug": "histological-fiber-response-functions",
+  "title": "Histologically derived fiber response functions for diffusion MRI vary across white matter fibers—An ex vivo validation study in the squirrel monkey brain",
+  "year": 2019,
+  "authors": "Kurt G. Schilling, Yurui Gao, Iwona Stepniewska, Vaibhav Janve, Bennett A. Landman, Adam W. Anderson",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Yurui Gao",
+    "Iwona Stepniewska",
+    "Vaibhav Janve",
+    "Bennett A. Landman",
+    "Adam W. Anderson"
+  ],
+  "kurtPosition": "first",
+  "journal": "NMR in Biomedicine",
+  "type": "Article",
+  "doi": "https://doi.org/10.1002/nbm.4090",
+  "publisher": "https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/nbm.4090",
+  "summary": "Histology from three squirrel monkey brains shows that diffusion MRI fiber response functions vary across white matter regions. Choosing a different response function changes reconstructed fiber orientations and can alter tractography accuracy.",
+  "description": "Spherical deconvolution commonly assumes one fiber response function throughout the brain. This study derives reference functions from three-dimensional histology and matched ex vivo diffusion MRI. The functions differ across regions and from conventional estimates, showing that the choice of response function can affect both fiber orientation distributions and reconstructed pathways.",
+  "findings": [
+    "Histologically derived response functions varied across white matter regions.",
+    "Response-function choice changed orientation reconstruction and tractography results."
+  ],
+  "topics": [
+    "Microstructure",
+    "Tractography"
+  ],
+  "source": "https://pubmed.ncbi.nlm.nih.gov/30908803/",
+  "summarySource": "https://pubmed.ncbi.nlm.nih.gov/30908803/",
+  "publicationStatus": "Published",
+  "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6525086/pdf/nihms-1013269.pdf",
+  "metadataSource": "https://api.crossref.org/works/10.1002/nbm.4090",
+  "image": "/assets/papers/histological-fiber-response-functions.webp",
+  "imageAlt": "Histologically derived fiber response functions vary across regions of the same brain.",
+  "caption": "Kurt G. Schilling et al. (2019), Figure 3. Histologically derived fiber response functions vary across regions of the same brain.",
+  "figureSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6525086/",
+  "imageKind": "article-figure",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6525086/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6525086/"
+    }
+  ],
+  "pdfAccess": "public",
+  "pdfVerification": "official-link-only"
+}

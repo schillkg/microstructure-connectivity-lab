@@ -35,5 +35,18 @@
   "publicationStatus": "Published",
   "pdf": "",
   "metadataSource": "https://api.crossref.org/works/10.1007/s00429-025-03062-9",
-  "datePublished": "2026-01-05"
+  "datePublished": "2026-01-05",
+  "image": "/assets/papers/tractography-outside-brain.webp",
+  "imageAlt": "Ex vivo mouse heart tractography shows the changing orientation of cardiomyocytes through the ventricular wall.",
+  "caption": "Kurt G. Schilling et al. (2026), Figure 1. Ex vivo mouse heart tractography shows the changing orientation of cardiomyocytes through the ventricular wall.",
+  "figureSource": "https://link.springer.com/10.1007/s00429-025-03062-9",
+  "imageKind": "article-figure",
+  "figureLicense": "http://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12769612/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12769612/"
+    }
+  ]
 }

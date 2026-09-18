@@ -85,9 +85,19 @@
   "metadataSource": "https://api.crossref.org/works/10.1002/mrm.30424",
   "datePublished": "2025-02-26",
   "publicationNote": "Community recommendations / best practices; the series does not claim a formal consensus.",
-  "image": "/assets/paper-7.png",
-  "imageAlt": "Research figure accompanying Considerations and recommendations from the ISMRM Diffusion Study Group for preclinical diffusion MRI: Part 3—Ex vivo imaging: Data processing, comparisons with microscopy, and tractography",
-  "caption": "Figure from the lab’s publication highlight.",
+  "image": "/assets/papers/preclinical-dmri-part-3.webp",
+  "imageAlt": "Examples of artifacts addressed by preprocessing ex vivo diffusion MRI data.",
+  "caption": "Kurt G. Schilling et al. (2025), Figure 1. Examples of artifacts addressed by preprocessing ex vivo diffusion MRI data.",
   "featured": false,
-  "order": 2
+  "order": 2,
+  "figureSource": "https://onlinelibrary.wiley.com/doi/10.1002/mrm.30424",
+  "imageKind": "article-figure",
+  "figureLicense": "http://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11971500/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11971500/"
+    }
+  ]
 }

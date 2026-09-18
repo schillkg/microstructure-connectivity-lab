@@ -31,5 +31,17 @@
   "source": "https://doi.org/10.1016/j.mri.2017.04.007",
   "summarySource": "https://doi.org/10.1016/j.mri.2017.04.007",
   "pdf": "",
-  "publicationStatus": "Published"
+  "publicationStatus": "Published",
+  "image": "/assets/papers/clinically-feasible-qball.webp",
+  "imageAlt": "Q-ball orientation estimates across diffusion weightings, gradient counts, and spherical harmonic orders.",
+  "caption": "Kurt G. Schilling et al. (2017), Figure 2. Q-ball orientation estimates across diffusion weightings, gradient counts, and spherical harmonic orders.",
+  "figureSource": "https://doi.org/10.1016/j.mri.2017.04.007",
+  "imageKind": "article-figure",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5500983/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5500983/"
+    }
+  ]
 }

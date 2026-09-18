@@ -36,5 +36,18 @@
   "source": "https://doi.org/10.1016/j.mri.2024.01.008",
   "summarySource": "https://doi.org/10.1016/j.mri.2024.01.008",
   "pdf": "",
-  "publicationStatus": "Published"
+  "publicationStatus": "Published",
+  "image": "/assets/papers/spinal-cord-preprocessing-triggering.webp",
+  "imageAlt": "Examples of spinal cord image geometry and contrast after alternative distortion-correction approaches.",
+  "caption": "Kurt G. Schilling et al. (2024), Figure 1. Examples of spinal cord image geometry and contrast after alternative distortion-correction approaches.",
+  "figureSource": "https://doi.org/10.1016/j.mri.2024.01.008",
+  "imageKind": "article-figure",
+  "figureLicense": "http://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11218893/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11218893/"
+    }
+  ]
 }

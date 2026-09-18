@@ -27,7 +27,22 @@
   ],
   "source": "https://onlinelibrary.wiley.com/doi/10.1002/hbm.70520",
   "publicationStatus": "Published",
-  "pdf": "",
+  "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13058440/pdf/HBM-47-e70520.pdf",
   "metadataSource": "https://api.crossref.org/works/10.1002/hbm.70520",
-  "datePublished": "2026-04-07"
+  "datePublished": "2026-04-07",
+  "image": "/assets/papers/prefrontal-histology-tractography.webp",
+  "imageAlt": "Short-range dorsolateral prefrontal pathways reconstructed with guidance from primate tract-tracing evidence.",
+  "caption": "Matthew Amandola et al. (2026), Figure 3. Short-range dorsolateral prefrontal pathways reconstructed with guidance from primate tract-tracing evidence.",
+  "figureSource": "https://onlinelibrary.wiley.com/doi/10.1002/hbm.70520",
+  "imageKind": "article-figure",
+  "figureLicense": "https://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13058440/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13058440/"
+    }
+  ],
+  "pdfAccess": "public",
+  "pdfVerification": "official-link-only"
 }

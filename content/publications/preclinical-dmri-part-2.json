@@ -84,9 +84,19 @@
   "metadataSource": "https://api.crossref.org/works/10.1002/mrm.30435",
   "datePublished": "2025-03-04",
   "publicationNote": "Community recommendations / best practices; the series does not claim a formal consensus.",
-  "image": "/assets/paper-7.png",
-  "imageAlt": "Research figure accompanying Considerations and recommendations from the ISMRM diffusion study group for preclinical diffusion MRI: Part 2—Ex vivo imaging: Added value and acquisition",
-  "caption": "Figure from the lab’s publication highlight.",
+  "image": "/assets/papers/preclinical-dmri-part-2.webp",
+  "imageAlt": "High-resolution ex vivo human imaging supports detailed tissue maps and tractography.",
+  "caption": "Kurt G. Schilling et al. (2025), Figure 5. High-resolution ex vivo human imaging supports detailed tissue maps and tractography.",
   "featured": false,
-  "order": 1
+  "order": 1,
+  "figureSource": "https://onlinelibrary.wiley.com/doi/10.1002/mrm.30435",
+  "imageKind": "article-figure",
+  "figureLicense": "http://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11971501/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11971501/"
+    }
+  ]
 }

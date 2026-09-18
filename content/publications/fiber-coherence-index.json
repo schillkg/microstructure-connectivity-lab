@@ -1,0 +1,50 @@
+{
+  "slug": "fiber-coherence-index",
+  "title": "A fiber coherence index for quality control of B-table orientation in diffusion MRI scans",
+  "year": 2019,
+  "authors": "Kurt G. Schilling, Fang-Cheng Yeh, Vishwesh Nath, Colin Hansen, Owen Williams, Susan Resnick, Adam W. Anderson, Bennett A. Landman",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Fang-Cheng Yeh",
+    "Vishwesh Nath",
+    "Colin Hansen",
+    "Owen Williams",
+    "Susan Resnick",
+    "Adam W. Anderson",
+    "Bennett A. Landman"
+  ],
+  "kurtPosition": "first",
+  "journal": "Magnetic Resonance Imaging",
+  "type": "Article",
+  "doi": "https://doi.org/10.1016/j.mri.2019.01.018",
+  "publisher": "https://linkinghub.elsevier.com/retrieve/pii/S0730725X1830540X",
+  "summary": "A fiber coherence index detects incorrectly flipped or permuted diffusion gradient tables by testing whether neighboring fiber orientations agree. Validation across research, clinical, and animal scans supports its use as an automated quality-control check.",
+  "description": "Incorrect b-vector orientation can invalidate diffusion reconstruction and tractography. This study evaluates a coherence-based method that selects the gradient-table configuration producing the most consistent neighboring fiber orientations. It succeeds across thousands of human scans and a smaller animal dataset; the failures are associated with substantial motion or signal dropout.",
+  "findings": [
+    "Local fiber coherence can identify gradient-table flips and permutations.",
+    "Severe image artifacts accounted for the observed failures."
+  ],
+  "topics": [
+    "Image Processing",
+    "Tractography"
+  ],
+  "source": "https://pubmed.ncbi.nlm.nih.gov/30682379/",
+  "summarySource": "https://pubmed.ncbi.nlm.nih.gov/30682379/",
+  "publicationStatus": "Published",
+  "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6401245/pdf/nihms-1519694.pdf",
+  "metadataSource": "https://api.crossref.org/works/10.1016/j.mri.2019.01.018",
+  "image": "/assets/papers/fiber-coherence-index.webp",
+  "imageAlt": "Correct, flipped, and permuted diffusion gradient tables produce different orientation patterns.",
+  "caption": "Kurt G. Schilling et al. (2019), Figure 1. Correct, flipped, and permuted diffusion gradient tables produce different orientation patterns.",
+  "figureSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6401245/",
+  "imageKind": "article-figure",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6401245/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6401245/"
+    }
+  ],
+  "pdfAccess": "public",
+  "pdfVerification": "official-link-only"
+}

@@ -34,5 +34,20 @@
   "pdf": "https://pure.mpg.de/pubman/item/item_3691120_1/component/file_3691121/Schilling_etal_2026_preprint.pdf",
   "metadataSource": "https://api.crossref.org/works/10.21203/rs.3.rs-8654078/v1",
   "datePublished": "2026-01-29",
-  "authorNote": "Research Square and supplied PDF spell the final author surname Fokel; likely a source typo for Forkel, preserved pending author correction."
+  "authorNote": "Research Square and supplied PDF spell the final author surname Fokel; likely a source typo for Forkel, preserved pending author correction.",
+  "image": "/assets/papers/white-matter-variability-lifespan.webp",
+  "imageAlt": "Spatial variability in white matter pathways across the brain and across lifespan cohorts.",
+  "caption": "Kurt G Schilling et al. (2026), Figure 2. Spatial variability in white matter pathways across the brain and across lifespan cohorts.",
+  "figureSource": "https://www.researchsquare.com/article/rs-8654078/v1",
+  "imageKind": "article-figure",
+  "figureLicense": "https://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12869595/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12869595/"
+    }
+  ],
+  "pdfAccess": "public",
+  "pdfVerification": "official-link-only"
 }

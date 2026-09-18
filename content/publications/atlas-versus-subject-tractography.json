@@ -30,7 +30,22 @@
   ],
   "source": "https://link.springer.com/10.1007/s00429-025-02974-w",
   "publicationStatus": "Published",
-  "pdf": "",
+  "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12380923/pdf/429_2025_Article_2974.pdf",
   "metadataSource": "https://api.crossref.org/works/10.1007/s00429-025-02974-w",
-  "datePublished": "2025-08-26"
+  "datePublished": "2025-08-26",
+  "image": "/assets/papers/atlas-versus-subject-tractography.webp",
+  "imageAlt": "Comparison of atlas propagation and subject-specific tractography workflows.",
+  "caption": "Kurt G. Schilling et al. (2025), Figure 1. Comparison of atlas propagation and subject-specific tractography workflows.",
+  "figureSource": "https://link.springer.com/10.1007/s00429-025-02974-w",
+  "imageKind": "article-figure",
+  "figureLicense": "https://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12380923/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12380923/"
+    }
+  ],
+  "pdfAccess": "public",
+  "pdfVerification": "official-link-only"
 }

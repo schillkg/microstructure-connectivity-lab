@@ -1,0 +1,62 @@
+{
+  "slug": "synbold-disco-conference",
+  "title": "SynBOLD-DisCo: synthetic BOLD images for distortion correction of fMRI without additional calibration scans",
+  "year": 2023,
+  "authors": "Tian Yu, Leon Y. Cai, Victoria L. Morgan, Sarah E. Goodale, Dario J. Englot, Catherine E. Chang, Bennett A. Landman, Kurt G. Schilling",
+  "authorList": [
+    "Tian Yu",
+    "Leon Y. Cai",
+    "Victoria L. Morgan",
+    "Sarah E. Goodale",
+    "Dario J. Englot",
+    "Catherine E. Chang",
+    "Bennett A. Landman",
+    "Kurt G. Schilling"
+  ],
+  "kurtPosition": "last",
+  "journal": "Medical Imaging 2023: Image Processing",
+  "type": "Conference paper",
+  "doi": "https://doi.org/10.1117/12.2653647",
+  "publisher": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12464/2653647/SynBOLD-DisCo--synthetic-BOLD-images-for-distortion-correction-of/10.1117/12.2653647.full",
+  "summary": "This conference paper introduces SynBOLD-DisCo, using a 3D U-Net to synthesize undistorted BOLD images for fMRI susceptibility correction. It is the proceedings contribution preceding the expanded 2023 journal study.",
+  "description": "A synthetic BOLD-contrast target allows FSL topup to correct single-phase-encoding fMRI when field maps or reverse-encoding images are absent. Evaluation shows improved alignment with structural anatomy and performance close to correction using reverse phase-encoded data. This separately published SPIE contribution precedes the expanded journal article.",
+  "findings": [
+    "A 3D U-Net supplied an undistorted target for topup correction.",
+    "The proceedings paper and subsequent journal article are distinct publications."
+  ],
+  "topics": [
+    "Image Processing",
+    "Functional Connectivity"
+  ],
+  "source": "https://pubmed.ncbi.nlm.nih.gov/37465092/",
+  "summarySource": "https://pubmed.ncbi.nlm.nih.gov/37465092/",
+  "publicationStatus": "Published",
+  "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10353777/pdf/nihms-1858278.pdf",
+  "metadataSource": "https://api.crossref.org/works/10.1117/12.2653647",
+  "links": [
+    {
+      "label": "Expanded journal article",
+      "url": "https://doi.org/10.1016/j.mri.2023.06.016"
+    },
+    {
+      "label": "SynBOLD-DisCo code",
+      "url": "https://github.com/MASILab/SynBOLD-DisCo"
+    },
+    {
+      "label": "Expanded journal article",
+      "url": "/publications/synbold-disco/"
+    },
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10353777/"
+    }
+  ],
+  "image": "/assets/papers/synbold-disco-conference.webp",
+  "imageAlt": "Example functional MRI geometry before and after SynBOLD-DisCo correction, compared with a structural reference.",
+  "caption": "Tian Yu et al. (2023), Figure 4. Example functional MRI geometry before and after SynBOLD-DisCo correction, compared with a structural reference.",
+  "figureSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10353777/",
+  "imageKind": "article-figure",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10353777/",
+  "pdfAccess": "public",
+  "pdfVerification": "official-link-only"
+}

@@ -23,7 +23,7 @@
   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13346334/",
   "metadataSource": "https://api.crossref.org/works/10.1002/nbm.70354",
   "publicationStatus": "Published",
-  "pdf": "",
+  "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13346334/pdf/NBM-39-e70354.pdf",
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
   "topics": [
@@ -36,5 +36,20 @@
     "Compares brain and cervical cord measurements in the same participants.",
     "SMI neurite density fraction is sensitive to pathology in both regions.",
     "Model performance and lesion characteristics differ between brain and cord."
-  ]
+  ],
+  "image": "/assets/papers/standard-model-imaging-ms-brain-cord.webp",
+  "imageAlt": "Standard model imaging parameter maps in the brain and spinal cord of a person with relapsing-remitting MS.",
+  "caption": "Witt et al. (2026), Figure 4. Standard model imaging parameter maps in the brain and spinal cord of a person with relapsing-remitting MS.",
+  "figureSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13346334/",
+  "imageKind": "article-figure",
+  "figureLicense": "https://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13346334/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13346334/"
+    }
+  ],
+  "pdfAccess": "public",
+  "pdfVerification": "official-link-only"
 }

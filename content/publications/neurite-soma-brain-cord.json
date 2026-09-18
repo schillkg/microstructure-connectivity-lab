@@ -33,9 +33,22 @@
   "metadataSource": "https://api.crossref.org/works/10.1162/imag.a.111",
   "datePublished": "2025-07-31",
   "dateNote": "Available Online date printed in supplied published PDF; Crossref currently records 2025-08-19.",
-  "image": "/assets/paper-3.png",
-  "imageAlt": "Research figure accompanying Characterization of neurite and soma organization in the brain and spinal cord with diffusion MRI",
-  "caption": "Figure from the lab’s publication highlight.",
+  "image": "/assets/papers/neurite-soma-brain-cord.webp",
+  "imageAlt": "SANDI neurite and soma parameter maps in the brain and cervical spinal cord.",
+  "caption": "Kurt G. Schilling et al. (2025), Figure 6. SANDI neurite and soma parameter maps in the brain and cervical spinal cord.",
   "featured": false,
-  "order": 4
+  "order": 4,
+  "figureSource": "https://direct.mit.edu/imag/article/doi/10.1162/IMAG.a.111/132048/Characterization-of-neurite-and-soma-organization",
+  "imageKind": "article-figure",
+  "figureLicense": "https://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12365691/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12365691/"
+    }
+  ],
+  "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12365691/pdf/imag-3-111.pdf",
+  "pdfAccess": "public",
+  "pdfVerification": "official-link-only"
 }

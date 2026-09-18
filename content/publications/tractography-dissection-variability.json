@@ -165,5 +165,18 @@
   "source": "https://doi.org/10.1016/j.neuroimage.2021.118502",
   "summarySource": "https://doi.org/10.1016/j.neuroimage.2021.118502",
   "pdf": "",
-  "publicationStatus": "Published"
+  "publicationStatus": "Published",
+  "image": "/assets/papers/tractography-dissection-variability.webp",
+  "imageAlt": "Different bundle-dissection protocols yield different reconstructions from the same tractogram.",
+  "caption": "Kurt G. Schilling et al. (2021), Figure 3. Different bundle-dissection protocols yield different reconstructions from the same tractogram.",
+  "figureSource": "https://doi.org/10.1016/j.neuroimage.2021.118502",
+  "imageKind": "article-figure",
+  "figureLicense": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8855321/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8855321/"
+    }
+  ]
 }

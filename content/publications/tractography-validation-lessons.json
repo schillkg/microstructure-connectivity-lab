@@ -27,5 +27,10 @@
   "source": "https://linkinghub.elsevier.com/retrieve/pii/B9780128188941000045",
   "publicationStatus": "Published",
   "pdf": "",
-  "metadataSource": "https://api.crossref.org/works/10.1016/b978-0-12-818894-1.00004-5"
+  "metadataSource": "https://api.crossref.org/works/10.1016/b978-0-12-818894-1.00004-5",
+  "image": "/assets/papers/tractography-validation-lessons.webp",
+  "imageAlt": "Differences in anatomical definitions and dissection protocols alter reconstructed pathway size, shape, and connections.",
+  "caption": "Kurt G. Schilling et al. (2025), Figure 3. Differences in anatomical definitions and dissection protocols alter reconstructed pathway size, shape, and connections.",
+  "figureSource": "https://linkinghub.elsevier.com/retrieve/pii/B9780128188941000045",
+  "imageKind": "article-figure"
 }

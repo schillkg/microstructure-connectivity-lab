@@ -37,5 +37,18 @@
   "source": "https://doi.org/10.1016/j.nbas.2023.100067",
   "summarySource": "https://doi.org/10.1016/j.nbas.2023.100067",
   "pdf": "",
-  "publicationStatus": "Published"
+  "publicationStatus": "Published",
+  "image": "/assets/papers/superficial-white-matter-aging.webp",
+  "imageAlt": "The short superficial white matter pathways used to characterize aging across longitudinal cohorts.",
+  "caption": "Kurt G. Schilling et al. (2023), Figure 2. The short superficial white matter pathways used to characterize aging across longitudinal cohorts.",
+  "figureSource": "https://doi.org/10.1016/j.nbas.2023.100067",
+  "imageKind": "article-figure",
+  "figureLicense": "http://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9937516/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9937516/"
+    }
+  ]
 }

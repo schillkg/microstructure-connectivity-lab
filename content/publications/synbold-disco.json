@@ -1,0 +1,70 @@
+{
+  "slug": "synbold-disco",
+  "title": "Distortion correction of functional MRI without reverse phase encoding scans or field maps",
+  "year": 2023,
+  "authors": "Tian Yu, Leon Y. Cai, Salvatore Torrisi, An Thanh Vu, Victoria L. Morgan, Sarah E. Goodale, Karthik Ramadass, Steven L. Meisler, Jinglei Lv, Aaron E.L. Warren, Dario J. Englot, Laurie Cutting, Catie Chang, John C. Gore, Bennett A. Landman, Kurt G. Schilling",
+  "authorList": [
+    "Tian Yu",
+    "Leon Y. Cai",
+    "Salvatore Torrisi",
+    "An Thanh Vu",
+    "Victoria L. Morgan",
+    "Sarah E. Goodale",
+    "Karthik Ramadass",
+    "Steven L. Meisler",
+    "Jinglei Lv",
+    "Aaron E.L. Warren",
+    "Dario J. Englot",
+    "Laurie Cutting",
+    "Catie Chang",
+    "John C. Gore",
+    "Bennett A. Landman",
+    "Kurt G. Schilling"
+  ],
+  "kurtPosition": "last",
+  "journal": "Magnetic Resonance Imaging",
+  "type": "Article",
+  "doi": "https://doi.org/10.1016/j.mri.2023.06.016",
+  "publisher": "https://linkinghub.elsevier.com/retrieve/pii/S0730725X23001121",
+  "summary": "SynBOLD-DisCo corrects susceptibility distortion in functional MRI using the acquired functional data and a structural image. Synthesized undistorted BOLD contrast provides a correction target when reverse phase-encoding scans or field maps are unavailable.",
+  "description": "This study synthesizes an undistorted image with BOLD-like contrast and uses it as an anatomical target for fMRI distortion correction. In the evaluated data, corrected images align more closely with anatomy and approach the geometric performance of correction using reverse phase-encoded acquisitions. Public code and trained models support integration into preprocessing workflows.",
+  "findings": [
+    "Synthetic BOLD contrast enabled correction without additional calibration scans.",
+    "Corrected functional images showed improved geometric agreement with structural anatomy."
+  ],
+  "topics": [
+    "Image Processing",
+    "Functional Connectivity"
+  ],
+  "source": "https://pubmed.ncbi.nlm.nih.gov/37400042/",
+  "summarySource": "https://pubmed.ncbi.nlm.nih.gov/37400042/",
+  "publicationStatus": "Published",
+  "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10528451/pdf/nihms-1915010.pdf",
+  "metadataSource": "https://api.crossref.org/works/10.1016/j.mri.2023.06.016",
+  "links": [
+    {
+      "label": "SynBOLD-DisCo code",
+      "url": "https://github.com/MASILab/SynBOLD-DisCo"
+    },
+    {
+      "label": "Earlier conference paper",
+      "url": "https://doi.org/10.1117/12.2653647"
+    },
+    {
+      "label": "Earlier conference paper",
+      "url": "/publications/synbold-disco-conference/"
+    },
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10528451/"
+    }
+  ],
+  "image": "/assets/papers/synbold-disco.webp",
+  "imageAlt": "SynBOLD-DisCo synthesizes an undistorted BOLD reference to correct functional MRI geometry.",
+  "caption": "Tian Yu et al. (2023), Figure 3. SynBOLD-DisCo synthesizes an undistorted BOLD reference to correct functional MRI geometry.",
+  "figureSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10528451/",
+  "imageKind": "article-figure",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10528451/",
+  "pdfAccess": "public",
+  "pdfVerification": "official-link-only"
+}

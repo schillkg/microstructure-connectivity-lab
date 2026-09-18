@@ -45,5 +45,18 @@
   "publicationStatus": "Preprint — not peer reviewed",
   "pdf": "",
   "metadataSource": "https://api.crossref.org/works/10.64898/2026.06.09.731210",
-  "datePublished": "2026-06-12"
+  "datePublished": "2026-06-12",
+  "image": "/assets/papers/bundleparc-deep-tegmental-core.webp",
+  "imageAlt": "Representative brainstem and subcortical pathways used to construct the BundleParc reference labels.",
+  "caption": "Kurt G Schilling et al. (2026), Figure 1. Representative brainstem and subcortical pathways used to construct the BundleParc reference labels.",
+  "figureSource": "https://doi.org/10.64898/2026.06.09.731210",
+  "imageKind": "article-figure",
+  "figureLicense": "http://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13277897/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13277897/"
+    }
+  ]
 }

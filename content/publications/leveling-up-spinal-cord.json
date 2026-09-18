@@ -35,9 +35,19 @@
   "publicationStatus": "Published",
   "metadataSource": "https://api.crossref.org/works/10.3389/fnimg.2025.1599966",
   "datePublished": "2025-08-11",
-  "image": "/assets/paper-2.png",
-  "imageAlt": "Research figure accompanying Leveling Up: Along-Level Diffusion Tensor Imaging in the Spinal Cord of Multiple Sclerosis Patients",
-  "caption": "Figure from the lab’s publication highlight.",
+  "image": "/assets/papers/leveling-up-spinal-cord.webp",
+  "imageAlt": "Whole-cord morphometry, lesion load, and diffusion measurements in healthy controls and people with relapsing-remitting MS.",
+  "caption": "Atlee A. Witt et al. (2025), Figure 2. Whole-cord morphometry, lesion load, and diffusion measurements in healthy controls and people with relapsing-remitting MS.",
   "featured": true,
-  "order": 3
+  "order": 3,
+  "figureSource": "https://www.frontiersin.org/articles/10.3389/fnimg.2025.1599966/full",
+  "imageKind": "article-figure",
+  "figureLicense": "http://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12375631/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12375631/"
+    }
+  ]
 }

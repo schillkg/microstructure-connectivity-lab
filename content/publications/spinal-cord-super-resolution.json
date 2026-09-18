@@ -1,0 +1,48 @@
+{
+  "slug": "spinal-cord-super-resolution",
+  "title": "Measuring Impact of Super-Resolution on Spinal Cord MRI Scans: Lesion Detection Sensitivity, Variability, and Clinical Impact",
+  "year": 2025,
+  "authors": "Greyson A. Wintergerst, Samuel W. Remedios, Allen T. Newton, Seth A. Smith, Bennett A. Landman, Kurt G. Schilling",
+  "authorList": [
+    "Greyson A. Wintergerst",
+    "Samuel W. Remedios",
+    "Allen T. Newton",
+    "Seth A. Smith",
+    "Bennett A. Landman",
+    "Kurt G. Schilling"
+  ],
+  "kurtPosition": "last",
+  "journal": "2025 IEEE 22nd International Symposium on Biomedical Imaging (ISBI)",
+  "type": "Conference paper",
+  "doi": "https://doi.org/10.1109/isbi60581.2025.10981088",
+  "publisher": "https://ieeexplore.ieee.org/document/10981088/",
+  "summary": "This study tests whether super-resolution and interpolation improve automated lesion detection in spinal cord MRI from 53 people with multiple sclerosis. Higher isotropic resolution increased lesion-segmentation sensitivity, but lesion measures did not show a significant association with disability scores.",
+  "description": "Anisotropic spinal cord acquisitions limit the visualization of small lesions. This conference study evaluates artificially increasing image resolution before automated lesion analysis, comparing lesion load and volume with clinical measures. Resolution changes improved detection sensitivity in the studied cohort, while the relationship between lesion burden and EDSS disability remained nonsignificant.",
+  "findings": [
+    "Changing image resolution increased sensitivity for automated lesion segmentation.",
+    "Lesion load and volume were not significantly associated with EDSS in this cohort."
+  ],
+  "topics": [
+    "Spinal Cord",
+    "Image Processing"
+  ],
+  "source": "https://pubmed.ncbi.nlm.nih.gov/42077389/",
+  "summarySource": "https://pubmed.ncbi.nlm.nih.gov/42077389/",
+  "publicationStatus": "Published",
+  "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13130011/pdf/nihms-2167797.pdf",
+  "metadataSource": "https://api.crossref.org/works/10.1109/isbi60581.2025.10981088",
+  "image": "/assets/papers/spinal-cord-super-resolution.webp",
+  "imageAlt": "Spinal cord image resolution influences the visibility and segmentation of MS lesions.",
+  "caption": "Greyson A. Wintergerst et al. (2025), Figure 2. Spinal cord image resolution influences the visibility and segmentation of MS lesions.",
+  "figureSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13130011/",
+  "imageKind": "article-figure",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13130011/",
+  "links": [
+    {
+      "label": "Open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13130011/"
+    }
+  ],
+  "pdfAccess": "public",
+  "pdfVerification": "official-link-only"
+}
