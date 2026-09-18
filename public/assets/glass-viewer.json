@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 2,
+  "title": "White matter pathways in a transparent brain",
+  "coordinateSystem": "Shared normalized native RAS+: x right, y anterior, z superior.",
+  "byteOrder": "little-endian",
+  "allStreamlines": true,
+  "allOriginalVertices": true,
+  "streamlineCount": 10000,
+  "pointCount": 341877,
+  "tracts": {
+    "positions": "glass-tracts.bin",
+    "offsets": "glass-offsets.bin",
+    "positionsType": "float32",
+    "offsetsType": "uint32",
+    "offsetUnits": "vertices",
+    "offsetMeaning": "Each bundle has streamlineCount + 1 absolute vertex offsets, including its end offset."
+  },
+  "bundles": [
+    {
+      "id": "af",
+      "name": "Arcuate fasciculus",
+      "color": "#edb360",
+      "streamlineCount": 4000,
+      "pointOffset": 0,
+      "pointCount": 139027,
+      "offsetOffset": 0,
+      "offsetCount": 4001
+    },
+    {
+      "id": "cst",
+      "name": "Corticospinal tract",
+      "color": "#76dde6",
+      "streamlineCount": 4000,
+      "pointOffset": 139027,
+      "pointCount": 139361,
+      "offsetOffset": 4001,
+      "offsetCount": 4001
+    },
+    {
+      "id": "cc",
+      "name": "Corpus callosum \u00b7 CC_4",
+      "color": "#db7fcf",
+      "streamlineCount": 2000,
+      "pointOffset": 278388,
+      "pointCount": 63489,
+      "offsetOffset": 8002,
+      "offsetCount": 2001
+    }
+  ],
+  "brain": {
+    "positions": "glass-brain-positions.bin",
+    "normals": "glass-brain-normals.bin",
+    "indices": "glass-brain-indices.bin",
+    "positionsType": "float32",
+    "normalsType": "float32",
+    "indicesType": "uint16",
+    "vertexCount": 5002,
+    "triangleCount": 10000,
+    "surfaceDescription": "Smoothed outer surface from the matching native diffusion-space brain mask."
+  },
+  "note": "All 10,000 streamlines from the five available pathway reconstructions are included, preserving every original vertex. Streamlines represent a tractography reconstruction, not individual axons. The transparent context surface is smoothed and simplified for display; it is not a cortical parcellation.",
+  "displayBounds": {
+    "minimum": [
+      -0.7204806804656982,
+      -1.0,
+      -0.7438954710960388
+    ],
+    "maximum": [
+      0.7204806804656982,
+      1.0,
+      0.7438954710960388
+    ],
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "radius": 1.0160695314407349
+  },
+  "initialView": {
+    "direction": [
+      -1.6,
+      2.3,
+      0.9
+    ],
+    "up": [
+      0,
+      0,
+      1
+    ]
+  }
+}
