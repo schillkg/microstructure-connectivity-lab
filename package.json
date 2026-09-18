@@ -1,0 +1,13 @@
+{
+  "name": "microstructure-connectivity-lab",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A publication-driven, static lab website for GitHub Pages.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "dev": "node scripts/serve.mjs"
+  }
+}

@@ -1,0 +1,9 @@
+dist/
+.DS_Store
+.sites-runtime/
+node_modules/
+
+# Local rendering provenance and editorial audit (not for publication).
+docs/hero-provenance.json
+docs/render_hero.py
+private/
