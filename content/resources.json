@@ -1,27 +1,36 @@
 [
   {
-    "title": "Brain chart models and scoring",
+    "id": "white-matter-brain-charts",
+    "title": "White Matter Brain Charts",
+    "type": "Code",
+    "description": "Reference charts for tissue properties and pathway shape across the lifespan, with models, processing tools, and shareable derived data.",
+    "publicationSlug": "white-matter-lifespan-brain-charts",
+    "links": [
+      {
+        "label": "Models and scoring code",
+        "url": "https://zenodo.org/records/18435695",
+        "type": "Code"
+      },
+      {
+        "label": "Postprocessing pipeline",
+        "url": "https://zenodo.org/records/17144461",
+        "type": "Code"
+      },
+      {
+        "label": "Processing container",
+        "url": "https://hub.docker.com/r/kimm58/wm_lifespan_processing",
+        "type": "Code"
+      },
+      {
+        "label": "Derived data",
+        "url": "https://zenodo.org/records/18891848",
+        "type": "Dataset"
+      }
+    ],
     "url": "https://zenodo.org/records/18435695",
-    "description": "Version 0.2.1: lifespan models, centile curves, new-dataset alignment, and power-analysis code.",
-    "type": "Code"
-  },
-  {
-    "title": "Derived data",
-    "url": "https://zenodo.org/records/18891848",
-    "description": "Permitted derived features and centile scores from 20 of 50 source datasets; no raw images or diagnostic information.",
-    "type": "Dataset"
-  },
-  {
-    "title": "Postprocessing pipeline",
-    "url": "https://zenodo.org/records/17144461",
-    "description": "Instructions and examples for the container that measures 72 tracts and prepares brain-chart features.",
-    "type": "Code"
-  },
-  {
-    "title": "Processing container",
-    "url": "https://hub.docker.com/r/kimm58/wm_lifespan_processing",
-    "description": "Docker image linked by the published article and verified Zenodo processing record.",
-    "type": "Code"
+    "image": "/assets/nature-brain-charts-figure-2.png",
+    "imageAlt": "Lifespan reference curves for white matter tracts",
+    "linkLabel": "Models and scoring"
   },
   {
     "id": "synb0-disco",
@@ -30,7 +39,19 @@
     "url": "https://github.com/MASILab/Synb0-DISCO",
     "imageIndex": 2,
     "source": "https://www.microstructure-connectivity-lab.com/resources",
-    "title": "Synb0-DISCO"
+    "title": "Synb0-DISCO",
+    "linkLabel": "Code and documentation"
+  },
+  {
+    "id": "synbold-disco",
+    "title": "SynBOLD-DisCo",
+    "type": "Code",
+    "description": "Functional MRI susceptibility distortion correction using synthetic BOLD contrast when reverse phase-encoding scans or field maps are unavailable.",
+    "url": "https://github.com/MASILab/SynBOLD-DisCo",
+    "paper": "https://doi.org/10.1016/j.mri.2023.06.016",
+    "source": "https://github.com/MASILab/SynBOLD-DisCo",
+    "publicationSlug": "synbold-disco",
+    "linkLabel": "Code and documentation"
   },
   {
     "id": "prequal",
@@ -39,7 +60,8 @@
     "url": "https://github.com/MASILab/PreQual",
     "imageIndex": 3,
     "source": "https://www.microstructure-connectivity-lab.com/resources",
-    "title": "PreQual"
+    "title": "PreQual",
+    "linkLabel": "Code and documentation"
   },
   {
     "id": "cornn",
@@ -48,7 +70,8 @@
     "url": "https://github.com/MASILab/cornn_tractography",
     "imageIndex": 4,
     "source": "https://www.microstructure-connectivity-lab.com/resources",
-    "title": "CoRNN Tractography"
+    "title": "CoRNN Tractography",
+    "linkLabel": "Code and documentation"
   },
   {
     "id": "gradient-checking",
@@ -58,16 +81,17 @@
     "secondaryUrl": "https://dsi-studio.labsolver.org/doc/gui_t2.html",
     "imageIndex": 5,
     "source": "https://www.microstructure-connectivity-lab.com/resources",
-    "title": "Gradient table checking"
+    "title": "Gradient table checking",
+    "linkLabel": "Code and documentation"
   },
   {
     "id": "fiber-dissection",
-    "type": "Dataset",
-    "description": "Example imaging data for a practical using DSI Studio.",
+    "type": "Learning",
+    "description": "AAIC lecture and hands-on fiber dissection practical using DSI Studio, with example diffusion MRI data for following along.",
     "url": "https://www.dropbox.com/scl/fo/xsdyss6j3k5ojtuztqaeq/AKyqsjgN-KHHrlGhKF-7T30?rlkey=5iq1j4noq250asfss30l559wg&dl=0",
-    "notes": "Use the explicit dataset link. The source heading incorrectly points to Pandora; the .nii.gz/bval/bvec link is malformed.",
     "source": "https://www.microstructure-connectivity-lab.com/resources",
-    "title": "Hands-on Fiber Dissection Practical"
+    "title": "Hands-on Fiber Dissection Practical",
+    "linkLabel": "Download hands-on data"
   },
   {
     "id": "pandora",
@@ -76,7 +100,8 @@
     "url": "https://github.com/MASILab/Pandora-WhiteMatterAtlas",
     "paper": "https://pubmed.ncbi.nlm.nih.gov/33196967/",
     "source": "https://www.microstructure-connectivity-lab.com/resources",
-    "title": "Pandora White Matter Atlas"
+    "title": "Pandora White Matter Atlas",
+    "linkLabel": "Get dataset"
   },
   {
     "id": "validate29",
@@ -85,7 +110,8 @@
     "url": "https://www.nitrc.org/projects/validate29/",
     "paper": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5671902/",
     "source": "https://www.microstructure-connectivity-lab.com/resources",
-    "title": "VALiDATe29"
+    "title": "VALiDATe29",
+    "linkLabel": "Get dataset"
   },
   {
     "id": "masivar",
@@ -94,7 +120,8 @@
     "url": "https://openneuro.org/datasets/ds003416/versions/2.0.2",
     "paper": "https://pubmed.ncbi.nlm.nih.gov/34270123/",
     "source": "https://www.microstructure-connectivity-lab.com/resources",
-    "title": "MASiVar"
+    "title": "MASiVar",
+    "linkLabel": "Get dataset"
   },
   {
     "id": "bottlenecks",
@@ -103,7 +130,8 @@
     "url": "https://www.nitrc.org/projects/bottlenecks/",
     "paper": "https://onlinelibrary.wiley.com/doi/full/10.1002/hbm.25697",
     "source": "https://www.microstructure-connectivity-lab.com/resources",
-    "title": "White Matter Bottleneck Maps"
+    "title": "White Matter Bottleneck Maps",
+    "linkLabel": "Get dataset"
   },
   {
     "id": "vuiis-bold",
@@ -112,7 +140,8 @@
     "url": "https://www.nitrc.org/projects/vuiis-bold/",
     "paper": "https://www.pnas.org/doi/abs/10.1073/pnas.2219666120",
     "source": "https://www.microstructure-connectivity-lab.com/resources",
-    "title": "VUIIS Functional Contrasts"
+    "title": "VUIIS Functional Contrasts",
+    "linkLabel": "Get dataset"
   },
   {
     "id": "timeline-tractography",
@@ -121,7 +150,8 @@
     "description": "IST Tract-Anat Club lecture by Kurt Schilling.",
     "url": "https://www.youtube.com/watch?v=_U-F-BN0xiU",
     "source": "https://www.microstructure-connectivity-lab.com/resources",
-    "title": "Timeline of Tractography"
+    "title": "Timeline of Tractography",
+    "linkLabel": "Watch lecture"
   },
   {
     "id": "tractography-challenges",
@@ -130,7 +160,8 @@
     "description": "DIPY Workshop lecture.",
     "url": "https://www.youtube.com/watch?v=vhZfH_RYCx4",
     "source": "https://www.microstructure-connectivity-lab.com/resources",
-    "title": "Challenges in diffusion MRI tractography"
+    "title": "Challenges in diffusion MRI tractography",
+    "linkLabel": "Watch lecture"
   },
   {
     "id": "harfi",
@@ -139,6 +170,7 @@
     "description": "MRM Highlights talk.",
     "url": "https://www.youtube.com/watch?v=pMly6kb7jZo",
     "source": "https://www.microstructure-connectivity-lab.com/resources",
-    "title": "Functional tractography of white matter by HARFI"
+    "title": "Functional tractography of white matter by HARFI",
+    "linkLabel": "Watch lecture"
   }
 ]

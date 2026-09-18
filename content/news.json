@@ -1,0 +1,41 @@
+[
+  {
+    "id": "white-matter-brain-charts-2026",
+    "title": "Vanderbilt researchers develop comprehensive guide for how the brain’s wiring changes with age",
+    "date": "2026-05-27",
+    "publisher": "Vanderbilt University News",
+    "url": "https://news.vanderbilt.edu/2026/05/27/vanderbilt-researchers-develop-comprehensive-guide-for-how-the-brains-wiring-changes-with-age/",
+    "summary": "Coverage of the Nature study mapping growth and aging across 72 white matter pathways, with reference charts spanning birth to age 100.",
+    "source": "https://news.vanderbilt.edu/2026/05/27/vanderbilt-researchers-develop-comprehensive-guide-for-how-the-brains-wiring-changes-with-age/",
+    "publicationSlug": "white-matter-lifespan-brain-charts"
+  },
+  {
+    "id": "preclinical-diffusion-guidelines-2025",
+    "title": "Vanderbilt researchers at forefront of global collaboration that advances preclinical imaging with diffusion MRI",
+    "date": "2025-02-03",
+    "publisher": "Vanderbilt School of Engineering",
+    "url": "https://engineering.vanderbilt.edu/2025/02/03/vanderbilt-researchers-at-forefront-of-global-collaboration-that-advances-preclinical-imaging-with-diffusion-mri/",
+    "summary": "An international group of 58 scientists developed a three-part guide to preclinical diffusion MRI, covering acquisition, processing, microscopy comparisons, and tractography.",
+    "source": "https://www.microstructure-connectivity-lab.com/resources"
+  },
+  {
+    "id": "white-matter-bold-2023",
+    "title": "VUMC scientists record powerful signal in the brain’s white matter",
+    "date": "2023-10-16",
+    "publisher": "Vanderbilt Health News",
+    "url": "https://news.vumc.org/2023/10/16/vumc-scientists-record-powerful-signal-in-the-brains-white-matter/",
+    "summary": "Researchers detected task-related BOLD signal changes throughout white matter, highlighting signals often omitted from functional MRI analyses.",
+    "source": "https://www.microstructure-connectivity-lab.com/resources",
+    "publicationSlug": "whole-brain-task-bold"
+  },
+  {
+    "id": "mrm-highlights-harfi-2019",
+    "title": "Q&A with Dr Kurt Schilling and Dr Bennett A. Landman",
+    "date": "2019-03-08",
+    "publisher": "ISMRM MRM Highlights",
+    "url": "https://blog.ismrm.org/2019/03/08/qa-with-dr-kurt-schilling-and-dr-bennett-a-landman/",
+    "summary": "Schilling and Landman discuss HARFI, which uses local directional information in white matter BOLD signals to study functional connectivity.",
+    "source": "https://www.microstructure-connectivity-lab.com/resources",
+    "publicationSlug": "harfi-functional-tractography"
+  }
+]
