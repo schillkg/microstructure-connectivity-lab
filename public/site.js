@@ -39,13 +39,29 @@ if (search) update();
 type?.addEventListener('change', update);
 year?.addEventListener('change', update);
 
-// Only sends events when a configured analytics provider has loaded.
-// Link clicks do not establish that a PDF download completed.
-document.querySelectorAll('[data-event="paper_download_click"]').forEach(a => {
-  const track = event => {
-    if (event.type === 'auxclick' && event.button !== 1) return;
-    if (typeof window.plausible === 'function') window.plausible('paper_download_click', {props: {paper: a.dataset.paperSlug, host: new URL(a.href).hostname}});
-  };
-  a.addEventListener('click', track);
-  a.addEventListener('auxclick', track);
+// Counts interactions only after the owner configures an analytics site tag.
+// No names, email addresses, search text, or complete external URLs are sent.
+function trackLabEvent(name,props={}) {
+  if(typeof window.goatcounter?.count==='function'){
+    const labels={paper_download_click:'PDF link',paper_link_click:'Article link',resource_click:'Resource',figure_open:'Figure',news_click:'News',navigation_click:'Navigation',viewer_mode:'Viewer'};
+    const item=props.paper||props.resource||props.mode||props.page||props.host||'';
+    window.goatcounter.count({path:name+'-'+item,title:(labels[name]||name)+' · '+item.replace(/-/g,' '),event:true,no_session:true});
+  }else if(typeof window.plausible==='function')window.plausible(name,{props});
+}
+function trackLink(event){
+  if(event.type==='auxclick'&&event.button!==1)return;
+  const a=event.target.closest('a');if(!a)return;
+  const destination=new URL(a.href),paper=a.dataset.paperSlug||a.closest('[data-paper-slug]')?.dataset.paperSlug;
+  if(a.dataset.event==='paper_download_click')trackLabEvent('paper_download_click',{paper,host:destination.hostname});
+  else if(a.closest('[data-resource]'))trackLabEvent('resource_click',{resource:a.closest('[data-resource]').dataset.resource,host:destination.hostname});
+  else if(a.closest('.paper-body figure'))trackLabEvent('figure_open',{paper});
+  else if(a.closest('.paper-actions')&&paper)trackLabEvent('paper_link_click',{paper,host:destination.hostname});
+  else if(a.closest('.news-card'))trackLabEvent('news_click',{host:destination.hostname});
+  else if(a.closest('nav'))trackLabEvent('navigation_click',{page:destination.pathname});
+}
+document.addEventListener('click',trackLink);
+document.addEventListener('auxclick',trackLink);
+document.addEventListener('change',event=>{
+  const el=event.target;
+  if(el.matches('[data-render-mode]'))trackLabEvent('viewer_mode',{mode:el.value});
 });
