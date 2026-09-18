@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Kurt G. Schilling, PhD",
+    "role": "Principal Investigator",
+    "group": "Lab",
+    "interests": "Microstructure, connectivity, and quantitative MRI",
+    "image": "/assets/kurt.png",
+    "profile": "/team/kurt-schilling/"
+  },
+  {
+    "name": "Matt Amandola, PhD",
+    "role": "Postdoctoral Research Fellow Trainee",
+    "group": "Lab",
+    "interests": "Neuroanatomy, white matter, comparative anatomy"
+  },
+  {
+    "name": "Michael Kim",
+    "role": "Graduate Student · MASI Lab",
+    "group": "Collaborators",
+    "interests": "Informatics, brain charts"
+  },
+  {
+    "name": "Chloe Cho",
+    "role": "Graduate Student · MASI Lab",
+    "group": "Collaborators",
+    "interests": "Superficial white matter"
+  },
+  {
+    "name": "Atlee Witt",
+    "role": "Graduate Student · NOB Lab",
+    "group": "Collaborators",
+    "interests": "Spinal cord, fMRI, multiple sclerosis"
+  },
+  {
+    "name": "Elyssa McMaster",
+    "role": "Graduate Student · MASI Lab",
+    "group": "Collaborators",
+    "interests": "Bundle segmentation, image resolution"
+  },
+  {
+    "name": "Nancy Newlin",
+    "role": "Graduate Student · MASI Lab",
+    "group": "Collaborators",
+    "interests": "Connectomics, graph theory, harmonization"
+  }
+]

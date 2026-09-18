@@ -1,0 +1,64 @@
+[
+  {
+    "id": "tractography",
+    "number": "01",
+    "title": "White matter pathways",
+    "short": "Tractography",
+    "description": "We develop and validate diffusion MRI tractography to investigate white matter pathways and the organization of the living brain.",
+    "image": "/assets/tractography.png",
+    "alt": "Color-coded white matter pathways from the lab\u2019s tractography research",
+    "topics": [
+      "Tractography"
+    ],
+    "source": "https://www.microstructure-connectivity-lab.com/research"
+  },
+  {
+    "id": "microstructure",
+    "number": "02",
+    "title": "Tissue microstructure",
+    "short": "Microstructure",
+    "description": "We connect MRI measurements with histology to study tissue organization in the brain and spinal cord.",
+    "topics": [
+      "Microstructure"
+    ],
+    "source": "https://www.microstructure-connectivity-lab.com/research"
+  },
+  {
+    "id": "lifespan",
+    "number": "03",
+    "title": "White matter across the lifespan",
+    "short": "Lifespan",
+    "description": "We investigate how white matter develops and changes with age using diffusion MRI and longitudinal modeling.",
+    "image": "/assets/lifespan.png",
+    "alt": "Projection tract illustration and age-related microstructural and macrostructural measurements",
+    "topics": [
+      "Lifespan"
+    ],
+    "source": "https://www.microstructure-connectivity-lab.com/research"
+  },
+  {
+    "id": "open-science",
+    "number": "04",
+    "title": "Software and validation",
+    "short": "Open science",
+    "description": "We share pipelines, quality assurance methods, datasets, and community challenges to support reproducible imaging research.",
+    "topics": [
+      "Image Processing",
+      "Reviews & Consensus"
+    ],
+    "source": "https://www.microstructure-connectivity-lab.com/research"
+  },
+  {
+    "id": "spinal-cord",
+    "number": "05",
+    "title": "Spinal cord MRI",
+    "short": "Spinal cord",
+    "description": "We develop spinal cord acquisition and processing methods that address motion, distortion, and signal variability.",
+    "image": "/assets/spinal-cord.png",
+    "alt": "Spinal cord MRI and tractography visualization from the lab\u2019s research page",
+    "topics": [
+      "Spinal Cord"
+    ],
+    "source": "https://www.microstructure-connectivity-lab.com/research"
+  }
+]
