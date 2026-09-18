@@ -79,7 +79,7 @@ Custom-domain migration is separate; see [the domain plan](docs/decision-and-mig
 | Shared layout and page generation | `scripts/build.mjs` |
 | Interactive pathway viewer | `public/viewer.js` |
 
-`dist/` is generated output. Edit the source, not this folder. The streamline demonstration contains selected arcuate, corticospinal, and callosal fibers, not a whole-brain connectome; coordinates are reduced and normalized for display. The Nature figure is attributed under CC BY 4.0. Other scientific assets retain their original rights; this repository does not impose a new license on them.
+`dist/` is generated output. Edit the source, not this folder. The homepage includes a rotatable glass-brain viewer, with an optional larger view at `/tractography/`. It contains all 10,000 streamlines and all 341,877 original vertices from the five available reconstructions: left/right arcuate, left/right corticospinal, and callosal segment CC_4. These are three pathway groups, not a whole-brain connectome. Geometry is normalized together for display; only the matching brain-mask surface is smoothed and simplified. WebGL2 renders the tubes, with a static image fallback where unavailable. The Nature figure is attributed under CC BY 4.0. Other scientific assets retain their original rights; this repository does not impose a new license on them.
 
 ## Checks and editorial review
 
@@ -88,4 +88,4 @@ npm run build
 npm run check
 ```
 
-Checks cover generated HTML, local links/assets, anchors, repository prefixes, JSON-LD, publication exports, PDF citation links, and accidental private paths. Browser checks additionally cover desktop/mobile layouts, search/filter combinations, gallery controls, and the viewer. Automated checks do not replace review of scientific summaries or verification of external download permissions. The supplied PDFs and publisher metadata informed this selection; the Google Scholar page could not be fully retrieved.
+Checks cover generated HTML, local links/assets, anchors, repository prefixes, JSON-LD, publication exports, PDF citation links, accidental private paths, and complete streamline/brain geometry. Browser checks additionally cover desktop/mobile layouts, search/filter combinations, and viewer controls. Automated checks do not replace review of scientific summaries or verification of external download permissions. The supplied PDFs and publisher metadata informed this selection; the Google Scholar page could not be fully retrieved.
