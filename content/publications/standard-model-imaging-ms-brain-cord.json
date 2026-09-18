@@ -1,0 +1,40 @@
+{
+  "slug": "standard-model-imaging-ms-brain-cord",
+  "title": "Standard Model Imaging in the Brain and Spinal Cord of MS Patients: Initial Assessment and Comparison to Diffusion Tensor Imaging",
+  "year": 2026,
+  "datePublished": "2026-07-08",
+  "authors": "Atlee Witt, Alicia E. Cronin, Bailey Busher, Isabella Stuart, Grace Sweeney, Kristin P. O'Grady, Seth A. Smith, Samantha By, Kurt Schilling",
+  "authorList": [
+    "Atlee Witt",
+    "Alicia E. Cronin",
+    "Bailey Busher",
+    "Isabella Stuart",
+    "Grace Sweeney",
+    "Kristin P. O'Grady",
+    "Seth A. Smith",
+    "Samantha By",
+    "Kurt Schilling"
+  ],
+  "kurtPosition": "last",
+  "journal": "NMR in Biomedicine",
+  "type": "Article",
+  "doi": "https://doi.org/10.1002/nbm.70354",
+  "publisher": "https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/nbm.70354",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13346334/",
+  "metadataSource": "https://api.crossref.org/works/10.1002/nbm.70354",
+  "publicationStatus": "Published",
+  "pdf": "",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "topics": [
+    "Microstructure",
+    "Spinal Cord"
+  ],
+  "summary": "Same-session brain and spinal cord imaging compares standard diffusion tensor measurements with Standard Model Imaging in 34 people with relapsing-remitting multiple sclerosis and 36 controls. Neurite density estimates show sensitivity to pathology in both regions, while the usefulness of other measurements depends on the anatomical setting.",
+  "description": "This study evaluates diffusion tensor imaging and Standard Model Imaging with free water in the brain and cervical spinal cord during the same 3T MRI session. It includes 34 people with relapsing-remitting multiple sclerosis and 36 healthy controls. Analyses compare lesions and normal-appearing white matter and assess reproducibility in controls. SMI-derived neurite density fraction provides a sensitive measurement in both anatomical regions, while comparable sensitivity from fractional anisotropy and radial diffusivity is observed in the brain. The findings support further investigation of SMI for assessment across the central nervous system.",
+  "findings": [
+    "Compares brain and cervical cord measurements in the same participants.",
+    "SMI neurite density fraction is sensitive to pathology in both regions.",
+    "Model performance and lesion characteristics differ between brain and cord."
+  ]
+}

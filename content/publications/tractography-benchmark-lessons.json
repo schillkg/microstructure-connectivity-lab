@@ -1,0 +1,37 @@
+{
+  "slug": "tractography-benchmark-lessons",
+  "title": "Challenges in diffusion MRI tractography – Lessons learned from international benchmark competitions",
+  "year": 2019,
+  "authors": "Kurt G. Schilling, Alessandro Daducci, Klaus Maier-Hein, Cyril Poupon, Jean-Christophe Houde, Vishwesh Nath, Adam W. Anderson, Bennett A. Landman, Maxime Descoteaux",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Alessandro Daducci",
+    "Klaus Maier-Hein",
+    "Cyril Poupon",
+    "Jean-Christophe Houde",
+    "Vishwesh Nath",
+    "Adam W. Anderson",
+    "Bennett A. Landman",
+    "Maxime Descoteaux"
+  ],
+  "kurtPosition": "first",
+  "journal": "Magnetic Resonance Imaging",
+  "type": "Review",
+  "doi": "https://doi.org/10.1016/j.mri.2018.11.014",
+  "publisher": "https://doi.org/10.1016/j.mri.2018.11.014",
+  "summary": "This review synthesizes a decade of tractography benchmark competitions. Physical phantoms, simulated data, and anatomical references reveal recurring tradeoffs between finding true pathways and avoiding false connections, while showing how acquisition, reconstruction, seeding, and evaluation choices shape apparent performance.",
+  "description": "International tractography challenges provide shared datasets and reference standards for comparing algorithms under common conditions. This paper reviews lessons from a decade of such competitions, spanning local orientation reconstruction and whole-pathway connectivity. Across benchmarks, plausible-looking bundles can coexist with incomplete coverage, incorrect branching, and false connections. Denoising, sharper orientation estimates, and spatial constraints can help, but seeding and tracking choices change the balance between sensitivity and specificity. Deterministic and probabilistic methods often favor different aspects of that balance. Because each benchmark captures only part of tissue complexity and has its own reference limitations, the paper argues for interpreting competition results in context rather than treating one ranking as universal.",
+  "findings": [
+    "Benchmark studies repeatedly revealed incomplete bundle coverage and false-positive connections.",
+    "Seeding, noise, local orientation estimation, and tracking strategy materially affected results.",
+    "Different reference datasets probe complementary limitations and cannot establish one universally optimal algorithm."
+  ],
+  "topics": [
+    "Tractography",
+    "Reviews & Consensus"
+  ],
+  "source": "https://doi.org/10.1016/j.mri.2018.11.014",
+  "summarySource": "https://doi.org/10.1016/j.mri.2018.11.014",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

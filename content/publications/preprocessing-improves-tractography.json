@@ -1,0 +1,39 @@
+{
+  "slug": "preprocessing-improves-tractography",
+  "title": "Did you know? State-of-the-art preprocessing diffusion MRI data can improve tractography",
+  "year": 2026,
+  "authors": "Kurt G. Schilling, Matthew Cieslak, Maxime Descoteaux, Bennett A. Landman, Franco Pestilli, Ariel Rokem, Stamatios N. Sotiropoulos, Jacques-Donald Tournier, Jelle Veraart",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Matthew Cieslak",
+    "Maxime Descoteaux",
+    "Bennett A. Landman",
+    "Franco Pestilli",
+    "Ariel Rokem",
+    "Stamatios N. Sotiropoulos",
+    "Jacques-Donald Tournier",
+    "Jelle Veraart"
+  ],
+  "kurtPosition": "first",
+  "journal": "Brain Structure and Function",
+  "type": "Review",
+  "doi": "https://doi.org/10.1007/s00429-026-03107-7",
+  "publisher": "https://link.springer.com/10.1007/s00429-026-03107-7",
+  "summary": "This review explains how modern diffusion MRI preprocessing improves the anatomical fidelity and repeatability of tractography. It brings together evidence for denoising and correction of motion, eddy currents, susceptibility distortion, and Gibbs ringing. Practical acquisition advice and integrated pipelines help researchers apply these methods consistently.",
+  "description": "Tractography depends on estimates of local fiber orientation, so image noise and artifacts can propagate into reconstructed pathways. This review synthesizes evidence comparing modern preprocessing with minimally processed diffusion data. It covers denoising, motion and eddy-current correction, echo-planar distortion correction, and Gibbs-ringing removal, alongside emerging processing steps. The authors also describe publicly available integrated pipelines and practical acquisition and data-handling choices that enable effective correction. The article provides a methodological guide for improving anatomical fidelity and scan–rescan reproducibility, while emphasizing that reliable reconstruction starts with careful treatment of the underlying diffusion images.",
+  "findings": [
+    "Image artifacts propagate into orientation estimates and reconstructed tracts.",
+    "Modern preprocessing can improve anatomical fidelity and repeatability.",
+    "Integrated public pipelines support standardized application of correction methods."
+  ],
+  "topics": [
+    "Image Processing",
+    "Tractography",
+    "Reviews & Consensus"
+  ],
+  "source": "https://link.springer.com/10.1007/s00429-026-03107-7",
+  "publicationStatus": "Published",
+  "pdf": "",
+  "metadataSource": "https://api.crossref.org/works/10.1007/s00429-026-03107-7",
+  "datePublished": "2026-03-30"
+}

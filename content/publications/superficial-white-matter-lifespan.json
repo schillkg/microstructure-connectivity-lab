@@ -1,0 +1,39 @@
+{
+  "slug": "superficial-white-matter-lifespan",
+  "title": "Superficial white matter across development, young adulthood, and aging: volume, thickness, and relationship with cortical features",
+  "year": 2023,
+  "authors": "Kurt G. Schilling, Derek Archer, Francois Rheault, Ilwoo Lyu, Yuankai Huo, Leon Y. Cai, Silvia A. Bunge, Kevin S. Weiner, John C. Gore, Adam W. Anderson, Bennett A. Landman",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Derek Archer",
+    "Francois Rheault",
+    "Ilwoo Lyu",
+    "Yuankai Huo",
+    "Leon Y. Cai",
+    "Silvia A. Bunge",
+    "Kevin S. Weiner",
+    "John C. Gore",
+    "Adam W. Anderson",
+    "Bennett A. Landman"
+  ],
+  "kurtPosition": "first",
+  "journal": "Brain Structure and Function",
+  "type": "Article",
+  "doi": "https://doi.org/10.1007/s00429-023-02642-x",
+  "publisher": "https://doi.org/10.1007/s00429-023-02642-x",
+  "summary": "Imaging from 2,421 people aged 5–100 maps how the thickness and volume of superficial white matter vary across the brain and lifespan. These features follow region-specific trajectories and relate to cortical thickness and curvature, adding an often-missing component to descriptions of brain maturation and aging.",
+  "description": "The authors combined large diffusion MRI datasets with superficial white matter tractography to measure regional volume and thickness in 2,421 participants aged 5–100. Superficial white matter thickness varied consistently across cortical locations, and both thickness and volume showed nonlinear cross-sectional age patterns. Absolute volume peaked around adolescence, while the fraction of total brain volume occupied by superficial white matter continued to rise with age. Thickness also related to cortical thickness and curvature. These observations provide a lifespan reference, but they do not measure within-person development. Coarse diffusion resolution, tractography limitations, and the chosen thickness definition may influence the estimated boundaries and magnitudes.",
+  "findings": [
+    "The cross-sectional analysis included 2,421 participants spanning ages 5–100.",
+    "Superficial white matter volume and thickness followed distinct, regionally varying lifespan trajectories.",
+    "Thickness was associated with cortical thickness and curvature, while the relative brain-volume fraction increased with age."
+  ],
+  "topics": [
+    "Lifespan",
+    "Tractography"
+  ],
+  "source": "https://doi.org/10.1007/s00429-023-02642-x",
+  "summarySource": "https://doi.org/10.1007/s00429-023-02642-x",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

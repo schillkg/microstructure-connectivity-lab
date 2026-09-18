@@ -1,0 +1,38 @@
+{
+  "slug": "7t-four-way-phase-encoding",
+  "title": "Advancing high-resolution 7 T diffusion MRI: Evaluating phase-encoding correction strategies for distortion correction from basic to four-way acquisitions",
+  "year": 2026,
+  "authors": "Kurt G. Schilling, Alexander J.S. Beckett, Matthew Amandola, Erica B. Walker, David A. Feinberg, Silvia A. Bunge, An T. Vu",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Alexander J.S. Beckett",
+    "Matthew Amandola",
+    "Erica B. Walker",
+    "David A. Feinberg",
+    "Silvia A. Bunge",
+    "An T. Vu"
+  ],
+  "kurtPosition": "first",
+  "journal": "Magnetic Resonance Imaging",
+  "type": "Article",
+  "doi": "https://doi.org/10.1016/j.mri.2026.110694",
+  "publisher": "https://linkinghub.elsevier.com/retrieve/pii/S0730725X26000871",
+  "summary": "At 0.9 mm resolution on a NexGen 7T scanner, this study compares 11 time-matched diffusion acquisition and correction strategies. Four-direction phase encoding provides the strongest geometric fidelity and repeatability in five adults scanned twice. The findings inform high-resolution protocols for both fine superficial connections and long-range pathways.",
+  "description": "High-resolution diffusion MRI at 7T offers detailed tissue measurements but also amplifies geometric distortion. Five healthy adults were scanned twice with a highly sampled, four-direction phase-encoding protocol on the NexGen 7T system. The authors derived 11 time-equivalent, ten-minute acquisition strategies and compared their alignment with anatomical images and the reproducibility of diffusion tensor measurements. Full reversed-direction diffusion acquisitions outperformed correction using a single reversed non-diffusion-weighted image, and four-direction acquisition performed best among the tested strategies. The results provide practical guidance for this high-resolution setting, with the small cohort and specialized scanner defining the scope of the evidence.",
+  "findings": [
+    "Compared 11 time-matched strategies using repeated scans in five adults.",
+    "Full reversed-encoding diffusion data outperformed a single reversed b=0 image.",
+    "Four-direction encoding gave the best geometry and reproducibility among tested strategies."
+  ],
+  "topics": [
+    "Image Processing",
+    "Tractography",
+    "Microstructure"
+  ],
+  "source": "https://linkinghub.elsevier.com/retrieve/pii/S0730725X26000871",
+  "publicationStatus": "Published",
+  "pdf": "",
+  "metadataSource": "https://api.crossref.org/works/10.1016/j.mri.2026.110694",
+  "publicationNote": "Available online 17 April 2026, as printed in supplied published PDF; September 2026 issue.",
+  "datePublished": "2026-04-17"
+}

@@ -1,0 +1,35 @@
+{
+  "slug": "anatomical-priors-tractography-accuracy",
+  "title": "Brain connections derived from diffusion MRI tractography can be highly anatomically accurate—if we know where white matter pathways start, where they end, and where they do not go",
+  "year": 2020,
+  "authors": "Kurt G. Schilling, Laurent Petit, Francois Rheault, Samuel Remedios, Carlo Pierpaoli, Adam W. Anderson, Bennett A. Landman, Maxime Descoteaux",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Laurent Petit",
+    "Francois Rheault",
+    "Samuel Remedios",
+    "Carlo Pierpaoli",
+    "Adam W. Anderson",
+    "Bennett A. Landman",
+    "Maxime Descoteaux"
+  ],
+  "kurtPosition": "first",
+  "journal": "Brain Structure and Function",
+  "type": "Article",
+  "doi": "https://doi.org/10.1007/s00429-020-02129-z",
+  "publisher": "https://doi.org/10.1007/s00429-020-02129-z",
+  "summary": "Anatomical inclusion and exclusion constraints substantially improve tractography in a previously studied validation dataset. The results demonstrate that high sensitivity and specificity can coexist when prior pathway knowledge is available, while also showing why this best-case setting differs from discovering unknown connections.",
+  "description": "The authors revisited a dataset used in influential tractography validation studies and added anatomical constraints through manually defined or template-driven regions of interest. These constraints specify where pathways should begin, end, and avoid, resembling common human bundle-dissection practice. Compared with less constrained tracking, both approaches substantially improved agreement with the reference anatomy and allowed high sensitivity and specificity simultaneously. The experiment demonstrates the value of prior information for reconstructing known bundles. However, the anatomical reference used for validation also informed the constraints, and the study represents a best-case setting. It therefore does not establish equivalent accuracy when anatomy is unknown or independent prior information is unavailable.",
+  "findings": [
+    "Manually placed and template-driven anatomical constraints improved agreement with reference connections.",
+    "High sensitivity and specificity were achieved together for the studied pathways.",
+    "The validation reference also informed the constraints, limiting interpretation as an independent test of unknown connectivity."
+  ],
+  "topics": [
+    "Tractography"
+  ],
+  "source": "https://doi.org/10.1007/s00429-020-02129-z",
+  "summarySource": "https://doi.org/10.1007/s00429-020-02129-z",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

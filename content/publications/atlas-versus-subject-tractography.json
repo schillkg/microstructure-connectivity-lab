@@ -1,0 +1,36 @@
+{
+  "slug": "atlas-versus-subject-tractography",
+  "title": "Atlas-based templates vs. subject-specific tractography: resolving the debate",
+  "year": 2025,
+  "authors": "Kurt G. Schilling, Fan Zhang, J-Donald Tournier, Francesco Vergani, Stamatios N. Sotiropoulos, Ariel Rokem, Lauren J. O’Donnell",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Fan Zhang",
+    "J-Donald Tournier",
+    "Francesco Vergani",
+    "Stamatios N. Sotiropoulos",
+    "Ariel Rokem",
+    "Lauren J. O’Donnell"
+  ],
+  "kurtPosition": "first",
+  "journal": "Brain Structure and Function",
+  "type": "Commentary",
+  "doi": "https://doi.org/10.1007/s00429-025-02974-w",
+  "publisher": "https://link.springer.com/10.1007/s00429-025-02974-w",
+  "summary": "Atlas templates and subject-specific tractography answer overlapping but different anatomical questions. This debate article explains the strengths of standardized population references and individual pathway reconstruction. It outlines why methodological choices should follow the research question, especially when individual variation and pathway geometry are central to an analysis.",
+  "description": "The article examines a debate from the 2024 International Society for Tractography meeting about what individual tractography adds beyond atlas templates. Atlas-based methods provide standardized anatomical labels and simplify comparisons across participants. Subject-specific tractography uses each person’s diffusion data to reconstruct pathways and can characterize anatomical variation that a population reference may not capture. The authors introduce volumetric and streamline-based atlases, explain common reconstruction strategies, and discuss the strengths and weaknesses of both approaches. Their comparison helps readers decide how the choice of method affects anatomical interpretation, individual-level measurements, and the design of tractography studies.",
+  "findings": [
+    "Atlases provide standardized population references and anatomical labels.",
+    "Subject-specific reconstructions can capture individual pathway organization.",
+    "The appropriate approach depends on the anatomical question and required measurements."
+  ],
+  "topics": [
+    "Tractography",
+    "Reviews & Consensus"
+  ],
+  "source": "https://link.springer.com/10.1007/s00429-025-02974-w",
+  "publicationStatus": "Published",
+  "pdf": "",
+  "metadataSource": "https://api.crossref.org/works/10.1007/s00429-025-02974-w",
+  "datePublished": "2025-08-26"
+}

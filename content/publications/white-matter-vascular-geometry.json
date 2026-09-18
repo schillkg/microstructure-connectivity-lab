@@ -1,0 +1,42 @@
+{
+  "slug": "white-matter-vascular-geometry",
+  "title": "The relationship of white matter tract orientation to vascular geometry in the human brain",
+  "year": 2025,
+  "authors": "Kurt G. Schilling, Allen Newton, Chantal M. W. Tax, Maxime Chamberland, Samuel W. Remedios, Yurui Gao, Muwei Li, Catie Chang, Francois Rheault, Farshid Sepherband, Adam Anderson, John C. Gore, Bennett Landman",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Allen Newton",
+    "Chantal M. W. Tax",
+    "Maxime Chamberland",
+    "Samuel W. Remedios",
+    "Yurui Gao",
+    "Muwei Li",
+    "Catie Chang",
+    "Francois Rheault",
+    "Farshid Sepherband",
+    "Adam Anderson",
+    "John C. Gore",
+    "Bennett Landman"
+  ],
+  "kurtPosition": "first",
+  "journal": "Scientific Reports",
+  "type": "Article",
+  "doi": "https://doi.org/10.1038/s41598-025-99724-z",
+  "publisher": "https://www.nature.com/articles/s41598-025-99724-z",
+  "summary": "Diffusion and susceptibility-weighted imaging reveal how white matter pathways relate to the orientation of nearby blood vessels. Vessels often align with some local fiber populations but do not consistently follow the dominant tract direction or an entire pathway. The findings help interpret MRI contrasts influenced by both vascular and axonal geometry.",
+  "description": "White matter axons and blood vessels both have directional organization that can influence MRI measurements. This study combines diffusion MRI and susceptibility-weighted imaging from the same healthy young adults to compare their orientations across regions and along pathways. Vascular geometry is related to local fiber organization, but vessels do not necessarily align with the dominant diffusion direction. Crossing fibers can explain alignment with alternative fiber populations within a voxel. Moreover, parallel organization along portions of a tract does not imply that vessels follow its full course. These observations refine the anatomical basis for interpreting orientation-sensitive structural and functional MRI contrasts.",
+  "findings": [
+    "Vessels do not consistently align with the dominant white matter orientation.",
+    "Crossing fiber populations can explain local vascular–axonal alignment.",
+    "Vascular organization does not follow all tracts continuously along their lengths."
+  ],
+  "topics": [
+    "Microstructure",
+    "Tractography"
+  ],
+  "source": "https://www.nature.com/articles/s41598-025-99724-z",
+  "publicationStatus": "Published",
+  "pdf": "",
+  "metadataSource": "https://api.crossref.org/works/10.1038/s41598-025-99724-z",
+  "datePublished": "2025-05-26"
+}

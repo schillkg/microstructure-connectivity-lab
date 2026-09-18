@@ -1,0 +1,41 @@
+{
+  "slug": "neurite-soma-brain-cord",
+  "title": "Characterization of neurite and soma organization in the brain and spinal cord with diffusion MRI",
+  "year": 2025,
+  "authors": "Kurt G. Schilling, Marco Palombo, Atlee A. Witt, Kristin P. O’Grady, Marco Pizzolato, Bennett A. Landman, Seth A. Smith",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Marco Palombo",
+    "Atlee A. Witt",
+    "Kristin P. O’Grady",
+    "Marco Pizzolato",
+    "Bennett A. Landman",
+    "Seth A. Smith"
+  ],
+  "kurtPosition": "first",
+  "journal": "Imaging Neuroscience",
+  "type": "Article",
+  "doi": "https://doi.org/10.1162/imag.a.111",
+  "publisher": "https://direct.mit.edu/imag/article/doi/10.1162/IMAG.a.111/132048/Characterization-of-neurite-and-soma-organization",
+  "summary": "A shared 3T diffusion MRI protocol characterizes brain and spinal cord microstructure using DTI, Standard Model Imaging, and SANDI. The study evaluates image quality, tissue contrast, and repeatability across the neuroaxis. It establishes the feasibility of combined measurements while identifying greater reproducibility and partial volume challenges in the cord.",
+  "description": "Brain and spinal cord microstructure are often studied separately despite their close anatomical and functional relationships. This work implements a clinically feasible 3T diffusion protocol that supports diffusion tensor imaging, Standard Model Imaging, and Soma and Neurite Density Imaging across both structures. The authors evaluate image quality, regional contrasts, and reproducibility, including the first assessment of SMI and SANDI in the spinal cord reported by the study. Most model-derived metrics show repeatability comparable to DTI, although spinal cord contrasts and reproducibility are generally weaker than in the brain. The protocol offers a harmonized basis for studies across the central nervous system.",
+  "findings": [
+    "Evaluates DTI, SMI, and SANDI in both brain and spinal cord.",
+    "Most SMI and SANDI metrics have reproducibility comparable to DTI.",
+    "Cord measurements face greater partial volume and preprocessing challenges."
+  ],
+  "topics": [
+    "Microstructure",
+    "Spinal Cord"
+  ],
+  "source": "https://direct.mit.edu/imag/article/doi/10.1162/IMAG.a.111/132048/Characterization-of-neurite-and-soma-organization",
+  "publicationStatus": "Published",
+  "metadataSource": "https://api.crossref.org/works/10.1162/imag.a.111",
+  "datePublished": "2025-07-31",
+  "dateNote": "Available Online date printed in supplied published PDF; Crossref currently records 2025-08-19.",
+  "image": "/assets/paper-3.png",
+  "imageAlt": "Research figure accompanying Characterization of neurite and soma organization in the brain and spinal cord with diffusion MRI",
+  "caption": "Figure from the lab’s publication highlight.",
+  "featured": false,
+  "order": 4
+}

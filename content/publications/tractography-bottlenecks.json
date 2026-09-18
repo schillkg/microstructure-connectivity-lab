@@ -1,0 +1,35 @@
+{
+  "slug": "tractography-bottlenecks",
+  "title": "Prevalence of white matter pathways coming into a single white matter voxel orientation: The bottleneck issue in tractography",
+  "year": 2022,
+  "authors": "Kurt G. Schilling, Chantal M. W. Tax, Francois Rheault, Bennett A. Landman, Adam W. Anderson, Maxime Descoteaux, Laurent Petit",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Chantal M. W. Tax",
+    "Francois Rheault",
+    "Bennett A. Landman",
+    "Adam W. Anderson",
+    "Maxime Descoteaux",
+    "Laurent Petit"
+  ],
+  "kurtPosition": "first",
+  "journal": "Human Brain Mapping",
+  "type": "Article",
+  "doi": "https://doi.org/10.1002/hbm.25697",
+  "publisher": "https://doi.org/10.1002/hbm.25697",
+  "summary": "Distinct white matter bundles frequently share the same local orientation before diverging, creating ambiguities that better crossing-fiber detection cannot resolve. This study maps such bottlenecks across the brain and finds them throughout major pathway classes, including regions often described as containing a single fiber orientation.",
+  "description": "The authors segmented known white matter pathways with diffusion tractography and assigned each bundle to the voxels and individual orientations, or fixels, it traversed. This identified locations where multiple bundles run in parallel and later diverge. Bottlenecks occurred in more than 50–70% of white matter fixels across the evaluated settings and involved projection, association, and commissural pathways. Even apparently single-orientation regions could therefore contain multiple anatomical bundles. The work explains why accurate local orientation estimates do not uniquely determine long-range connections. Because prevalence was estimated using tractography-derived bundles, its exact magnitude depends on the segmentation and modeling choices rather than constituting a direct histological census.",
+  "findings": [
+    "Bottlenecks were estimated in more than 50–70% of white matter fixels in the evaluated analyses.",
+    "Projection, association, and commissural pathways all contributed to shared local orientations.",
+    "A single local fiber orientation did not imply that only one anatomical pathway passed through it."
+  ],
+  "topics": [
+    "Tractography",
+    "Microstructure"
+  ],
+  "source": "https://doi.org/10.1002/hbm.25697",
+  "summarySource": "https://doi.org/10.1002/hbm.25697",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

@@ -1,0 +1,37 @@
+{
+  "slug": "bundle-segmentation-acquisition-confounds",
+  "title": "Fiber tractography bundle segmentation depends on scanner effects, vendor effects, acquisition resolution, diffusion sampling scheme, diffusion sensitization, and bundle segmentation workflow",
+  "year": 2021,
+  "authors": "Kurt G. Schilling, Chantal M. W. Tax, Francois Rheault, Colin Hansen, Qi Yang, Fang-Cheng Yeh, Leon Cai, Adam W. Anderson, Bennett A. Landman",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Chantal M. W. Tax",
+    "Francois Rheault",
+    "Colin Hansen",
+    "Qi Yang",
+    "Fang-Cheng Yeh",
+    "Leon Cai",
+    "Adam W. Anderson",
+    "Bennett A. Landman"
+  ],
+  "kurtPosition": "first",
+  "journal": "NeuroImage",
+  "type": "Article",
+  "doi": "https://doi.org/10.1016/j.neuroimage.2021.118451",
+  "publisher": "https://doi.org/10.1016/j.neuroimage.2021.118451",
+  "summary": "Four bundle-segmentation workflows reveal how scanner, vendor, and acquisition changes affect white matter measurements. Spatial resolution was a major acquisition confound, while differences between segmentation workflows exceeded every other tested source of variation, particularly near the cortex.",
+  "description": "Using two multi-subject benchmark datasets, the study compared four bundle-segmentation workflows across scan repeats, scanners, vendors, spatial resolutions, diffusion direction schemes, and b-values. It assessed spatial overlap, pathway shape, and microstructural measurements within bundles. Acquisition resolution produced the largest protocol-related differences, followed by vendor and scanner effects; direction schemes and b-values were closer to scan-rescan variability. Deep white matter locations were relatively consistent, while disagreement increased near the cortical interface. Crucially, changing the segmentation workflow produced larger differences than any other studied confound. These effects varied by bundle and method, showing why harmonizing image measurements alone cannot remove all variability in tract-specific analyses.",
+  "findings": [
+    "Spatial resolution caused the lowest reproducibility among the acquisition factors tested.",
+    "Differences between segmentation workflows exceeded the scanner and protocol confounds examined.",
+    "Tractography introduced additional variability into bundle microstructure measurements beyond image-level variability."
+  ],
+  "topics": [
+    "Tractography",
+    "Image Processing"
+  ],
+  "source": "https://doi.org/10.1016/j.neuroimage.2021.118451",
+  "summarySource": "https://doi.org/10.1016/j.neuroimage.2021.118451",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

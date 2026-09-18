@@ -1,0 +1,44 @@
+{
+  "slug": "white-matter-lifespan-trajectories",
+  "title": "White matter tract microstructure, macrostructure, and associated cortical gray matter morphology across the lifespan",
+  "year": 2023,
+  "authors": "Kurt G. Schilling, Jordan A. Chad, Maxime Chamberland, Victor Nozais, Francois Rheault, Derek Archer, Muwei Li, Yurui Gao, Leon Cai, Flavio Del’Acqua, Allen Newton, Daniel Moyer, John C. Gore, Catherine Lebel, Bennett A. Landman",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Jordan A. Chad",
+    "Maxime Chamberland",
+    "Victor Nozais",
+    "Francois Rheault",
+    "Derek Archer",
+    "Muwei Li",
+    "Yurui Gao",
+    "Leon Cai",
+    "Flavio Del’Acqua",
+    "Allen Newton",
+    "Daniel Moyer",
+    "John C. Gore",
+    "Catherine Lebel",
+    "Bennett A. Landman"
+  ],
+  "kurtPosition": "first",
+  "journal": "Imaging Neuroscience",
+  "type": "Article",
+  "doi": "https://doi.org/10.1162/imag_a_00050",
+  "publisher": "https://doi.org/10.1162/imag_a_00050",
+  "summary": "Across 2,789 imaging sessions spanning ages 0–100, this study links tract microstructure, tract geometry, and the morphology of connected cortex. Different features and pathways mature and decline on different schedules, and developmental age associations are related to patterns observed during aging.",
+  "description": "Four cross-sectional datasets spanning the first century of life were analyzed with diffusion modeling and tractography to characterize 63 white matter pathways. Across 2,789 imaging sessions, the study measured tissue-related diffusion properties, bundle shape, and morphology of associated cortical gray matter. Each feature followed its own lifespan trajectory, with pathway-specific differences in the timing and rate of maturation and later decline. Relationships between features suggested coordinated changes across connected white and gray matter, and developmental age associations were related to aging associations. The findings provide normative descriptions, but cross-sectional comparisons and acquisition differences across cohorts limit inference about individual developmental trajectories or biological causation.",
+  "findings": [
+    "The analysis used 2,789 imaging sessions spanning ages 0–100 and characterized 63 pathways.",
+    "Microstructural, macrostructural, and cortical features showed distinct pathway-specific lifespan trajectories.",
+    "Age associations during development were strongly related to those observed during aging."
+  ],
+  "topics": [
+    "Lifespan",
+    "Tractography",
+    "Microstructure"
+  ],
+  "source": "https://doi.org/10.1162/imag_a_00050",
+  "summarySource": "https://doi.org/10.1162/imag_a_00050",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

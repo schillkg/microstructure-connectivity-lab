@@ -1,0 +1,38 @@
+{
+  "slug": "validate29-squirrel-monkey-atlas",
+  "title": "The VALiDATe29 MRI Based Multi-Channel Atlas of the Squirrel Monkey Brain",
+  "year": 2017,
+  "authors": "Kurt G. Schilling, Yurui Gao, Iwona Stepniewska, Tung-Lin Wu, Feng Wang, Bennett A. Landman, John C. Gore, Li Min Chen, Adam W. Anderson",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Yurui Gao",
+    "Iwona Stepniewska",
+    "Tung-Lin Wu",
+    "Feng Wang",
+    "Bennett A. Landman",
+    "John C. Gore",
+    "Li Min Chen",
+    "Adam W. Anderson"
+  ],
+  "kurtPosition": "first",
+  "journal": "Neuroinformatics",
+  "type": "Article",
+  "doi": "https://doi.org/10.1007/s12021-017-9334-0",
+  "publisher": "https://doi.org/10.1007/s12021-017-9334-0",
+  "summary": "VALiDATe29 provides a common anatomical reference built from MRI of 29 squirrel monkeys. Structural, diffusion, and ex vivo templates are paired with cortical and white matter labels to support registration, regional measurements, and comparisons across animals and experiments.",
+  "description": "The authors built a population-averaged squirrel monkey brain atlas using unbiased nonlinear registration of MRI from 29 animals. The atlas combines proton-density, T1-weighted, and T2*-weighted templates with fractional anisotropy and mean diffusivity maps, plus ex vivo structural and diffusion templates. Histologically defined cortical regions and tractography-defined white matter labels extend the reference beyond image intensity alone. Demonstrated applications include spatial normalization, anatomical localization, and propagation of regional labels to new scans. The atlas provides a shared coordinate system for experiments, but population averaging and registration cannot capture every individual anatomical feature, and tractography labels are not direct measurements of all axonal connections.",
+  "findings": [
+    "The population template was constructed from MRI of 29 squirrel monkeys.",
+    "Multiple structural and diffusion contrasts were combined with cortical and white matter labels.",
+    "The resource supports spatial normalization and label propagation across experimental datasets."
+  ],
+  "topics": [
+    "Image Processing",
+    "Tractography",
+    "Microstructure"
+  ],
+  "source": "https://doi.org/10.1007/s12021-017-9334-0",
+  "summarySource": "https://doi.org/10.1007/s12021-017-9334-0",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

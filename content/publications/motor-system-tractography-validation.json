@@ -1,0 +1,33 @@
+{
+  "slug": "motor-system-tractography-validation",
+  "title": "Anatomical accuracy of standard-practice tractography algorithms in the motor system - A histological validation in the squirrel monkey brain",
+  "year": 2019,
+  "authors": "Kurt G. Schilling, Yurui Gao, Iwona Stepniewska, Vaibhav Janve, Bennett A. Landman, Adam W. Anderson",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Yurui Gao",
+    "Iwona Stepniewska",
+    "Vaibhav Janve",
+    "Bennett A. Landman",
+    "Adam W. Anderson"
+  ],
+  "kurtPosition": "first",
+  "journal": "Magnetic Resonance Imaging",
+  "type": "Article",
+  "doi": "https://doi.org/10.1016/j.mri.2018.09.004",
+  "publisher": "https://doi.org/10.1016/j.mri.2018.09.004",
+  "summary": "Forty commonly used tractography configurations were tested against motor-cortex tracer anatomy in squirrel monkeys. Accuracy depended strongly on reconstruction, tracking, and seeding choices, and deteriorated with distance from the seed; some methods missed substantial parts of known pathways.",
+  "description": "The authors compared forty tractography outputs with histological tracer distributions originating in primary motor cortex, evaluating both voxel-level pathway coverage and regional connectivity. Although all methods used the same MRI inputs, their reconstructions varied substantially, and no configuration succeeded on every accuracy metric. Reconstruction model, tracking algorithm, and seed definition were major determinants of performance. Errors often arose when streamlines left gray matter, and anatomical accuracy decreased farther from the seed. The validation involved one injection site in two squirrel monkey brains and a relatively modest acquisition, so the results characterize common implementations in this motor-system setting rather than all pathways or imaging regimes.",
+  "findings": [
+    "No tested configuration achieved the best performance across all validation metrics.",
+    "Accuracy depended on reconstruction, tracking, and how the seed region was used.",
+    "Tractography accuracy decreased with distance from the seed, with frequent failures near the cortical boundary."
+  ],
+  "topics": [
+    "Tractography"
+  ],
+  "source": "https://doi.org/10.1016/j.mri.2018.09.004",
+  "summarySource": "https://doi.org/10.1016/j.mri.2018.09.004",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

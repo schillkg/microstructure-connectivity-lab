@@ -1,0 +1,47 @@
+{
+  "slug": "pandora-white-matter-atlas",
+  "title": "Pandora: 4-D White Matter Bundle Population-Based Atlases Derived from Diffusion MRI Fiber Tractography",
+  "year": 2021,
+  "authors": "Colin B. Hansen, Qi Yang, Ilwoo Lyu, Francois Rheault, Cailey Kerley, Bramsh Qamar Chandio, Shreyas Fadnavis, Owen Williams, Andrea T. Shafer, Susan M. Resnick, David H. Zald, Laurie E. Cutting, Warren D. Taylor, Brian Boyd, Eleftherios Garyfallidis, Adam W. Anderson, Maxime Descoteaux, Bennett A. Landman, Kurt G. Schilling",
+  "authorList": [
+    "Colin B. Hansen",
+    "Qi Yang",
+    "Ilwoo Lyu",
+    "Francois Rheault",
+    "Cailey Kerley",
+    "Bramsh Qamar Chandio",
+    "Shreyas Fadnavis",
+    "Owen Williams",
+    "Andrea T. Shafer",
+    "Susan M. Resnick",
+    "David H. Zald",
+    "Laurie E. Cutting",
+    "Warren D. Taylor",
+    "Brian Boyd",
+    "Eleftherios Garyfallidis",
+    "Adam W. Anderson",
+    "Maxime Descoteaux",
+    "Bennett A. Landman",
+    "Kurt G. Schilling"
+  ],
+  "kurtPosition": "last",
+  "journal": "Neuroinformatics",
+  "type": "Article",
+  "doi": "https://doi.org/10.1007/s12021-020-09497-1",
+  "publisher": "https://doi.org/10.1007/s12021-020-09497-1",
+  "summary": "Pandora provides population-based maps of 216 white matter bundles derived from 2,443 people using six automated tractography approaches. Its overlapping bundle representations support anatomical localization and comparison across studies without treating white matter as a single uniform region.",
+  "description": "The Pandora atlas organizes white matter as overlapping fiber bundles rather than mutually exclusive anatomical regions. Using diffusion MRI from 2,443 participants and six automated tractography methods, the study produced 216 bundle maps in standard volumetric and surface coordinates. The resulting resource supports region definition, segmentation, and comparisons across populations while retaining differences between tractography workflows. It also highlights why a bundle atlas contains information that a conventional regional parcellation misses. These maps summarize tractography-derived population anatomy, so their spatial probabilities and boundaries should not be interpreted as direct histological ground truth or exact pathways in every individual.",
+  "findings": [
+    "The atlas contains 216 white matter bundles derived from six automated tractography approaches.",
+    "Population maps were generated from 2,443 subjects and provided in volumetric and surface coordinates.",
+    "Overlapping bundle representations preserve relationships that mutually exclusive white matter region labels cannot express."
+  ],
+  "topics": [
+    "Tractography",
+    "Image Processing"
+  ],
+  "source": "https://doi.org/10.1007/s12021-020-09497-1",
+  "summarySource": "https://doi.org/10.1007/s12021-020-09497-1",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

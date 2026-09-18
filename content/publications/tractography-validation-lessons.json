@@ -1,0 +1,31 @@
+{
+  "slug": "tractography-validation-lessons",
+  "title": "Tractography validation part 3: Lessons learned through validation studies",
+  "year": 2025,
+  "authors": "Kurt G. Schilling, Francois Rheault, Tim B. Dyrby",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Francois Rheault",
+    "Tim B. Dyrby"
+  ],
+  "kurtPosition": "first",
+  "journal": "Handbook of Diffusion MR Tractography",
+  "type": "Book chapter",
+  "doi": "https://doi.org/10.1016/b978-0-12-818894-1.00004-5",
+  "publisher": "https://linkinghub.elsevier.com/retrieve/pii/B9780128188941000045",
+  "summary": "This handbook chapter synthesizes what validation studies have taught us about tractography. Evidence from simulations, phantoms, histology, and anatomical comparisons reveals both reliable capabilities and persistent limitations. The chapter connects complex tissue anatomy and reconstruction assumptions to the practical interpretation and continued development of diffusion MRI tractography.",
+  "description": "Building on chapters that introduce validation strategies, this contribution focuses on the lessons those experiments have produced. It draws on simulations, physical phantoms, anatomical models, and empirical studies to explain how tractography succeeds and where it oversimplifies structural connectivity. Topics include complexity in axonal geometry, differences between anatomical definitions, and the implications of modeling and reconstruction choices. By linking observations from microscopy and other reference methods to diffusion MRI behavior, the chapter helps readers interpret reconstructed pathways with appropriate anatomical context. It also shows how validation can guide the development of more informative tractography methods.",
+  "findings": [
+    "Validation reveals where anatomical complexity exceeds reconstruction assumptions.",
+    "Different reference methods test complementary aspects of tractography.",
+    "Lessons from validation inform both method development and interpretation."
+  ],
+  "topics": [
+    "Tractography",
+    "Reviews & Consensus"
+  ],
+  "source": "https://linkinghub.elsevier.com/retrieve/pii/B9780128188941000045",
+  "publicationStatus": "Published",
+  "pdf": "",
+  "metadataSource": "https://api.crossref.org/works/10.1016/b978-0-12-818894-1.00004-5"
+}

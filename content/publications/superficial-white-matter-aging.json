@@ -1,0 +1,41 @@
+{
+  "slug": "superficial-white-matter-aging",
+  "title": "Short superficial white matter and aging: A longitudinal multi-site study of 1293 subjects and 2711 sessions",
+  "year": 2023,
+  "authors": "Kurt G. Schilling, Derek Archer, Fang-Cheng Yeh, Francois Rheault, Leon Y. Cai, Andrea Shafer, Susan M. Resnick, Timothy Hohman, Angela Jefferson, Adam W. Anderson, Hakmook Kang, Bennett A. Landman",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Derek Archer",
+    "Fang-Cheng Yeh",
+    "Francois Rheault",
+    "Leon Y. Cai",
+    "Andrea Shafer",
+    "Susan M. Resnick",
+    "Timothy Hohman",
+    "Angela Jefferson",
+    "Adam W. Anderson",
+    "Hakmook Kang",
+    "Bennett A. Landman"
+  ],
+  "kurtPosition": "first",
+  "journal": "Aging Brain",
+  "type": "Article",
+  "doi": "https://doi.org/10.1016/j.nbas.2023.100067",
+  "publisher": "https://doi.org/10.1016/j.nbas.2023.100067",
+  "summary": "Short superficial white matter pathways show widespread age-related diffusion changes and regionally varying reductions in length and volume. Data from 1,293 participants distinguish changes in fibers connecting neighboring gyri from those running within a gyrus, extending aging research beyond long-range bundles.",
+  "description": "Using 2,711 sessions from 1,293 participants across three longitudinal and cross-sectional datasets, the study characterized superficial white matter systems immediately beneath the cortex. Diffusivities increased and fractional anisotropy decreased with age, with prominent associations in frontal, temporal, and temporoparietal regions. Tract length and volume also declined, but their patterns differed across locations and between inter-gyral and intra-gyral systems. These macrostructural changes were slower than those observed in long-range pathways. The results establish an aging reference for connections often omitted from tract studies. Their interpretation remains subject to the difficulty of reconstructing short, curved superficial fibers and to combining data with different acquisition characteristics.",
+  "findings": [
+    "The study included 1,293 participants and 2,711 imaging sessions.",
+    "Superficial white matter diffusivities rose and fractional anisotropy fell with age.",
+    "Length and volume changes varied between inter-gyral and intra-gyral systems and were slower than in long-range pathways."
+  ],
+  "topics": [
+    "Lifespan",
+    "Tractography",
+    "Microstructure"
+  ],
+  "source": "https://doi.org/10.1016/j.nbas.2023.100067",
+  "summarySource": "https://doi.org/10.1016/j.nbas.2023.100067",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

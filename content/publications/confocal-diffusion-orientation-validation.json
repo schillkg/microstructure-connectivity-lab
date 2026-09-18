@@ -1,0 +1,34 @@
+{
+  "slug": "confocal-diffusion-orientation-validation",
+  "title": "Comparison of 3D Orientation Distribution Functions Measured with Confocal Microscopy and Diffusion MRI",
+  "year": 2016,
+  "authors": "Kurt Schilling, Vaibhav Janve, Yurui Gao, Iwona Stepniewska, Bennett A. Landman, Adam W. Anderson",
+  "authorList": [
+    "Kurt Schilling",
+    "Vaibhav Janve",
+    "Yurui Gao",
+    "Iwona Stepniewska",
+    "Bennett A. Landman",
+    "Adam W. Anderson"
+  ],
+  "kurtPosition": "first",
+  "journal": "NeuroImage",
+  "type": "Article",
+  "doi": "https://doi.org/10.1016/j.neuroimage.2016.01.022",
+  "publisher": "https://doi.org/10.1016/j.neuroimage.2016.01.022",
+  "summary": "Three-dimensional confocal microscopy provides a direct reference for testing diffusion MRI estimates of fiber orientation. Comparisons with constrained spherical deconvolution found good agreement for nearly parallel fibers but larger errors in crossing regions, including failure to resolve crossings below 60 degrees in this dataset.",
+  "description": "This study developed a method to extract three-dimensional fiber orientation distributions from confocal microscopy z-stacks and compare them with diffusion MRI in the same postmortem tissue. Unlike validation confined to a two-dimensional section, the microscopy approach measures orientations throughout a small tissue volume. Constrained spherical deconvolution estimated nearly parallel fibers with approximately 6-degree orientation error, increasing to about 10–11 degrees in crossing regions. Crossings below 60 degrees were not resolved in the studied dataset. The work establishes a practical validation framework while showing that accurate local orientation estimation depends on fiber geometry; its numerical results describe the acquisition and reconstruction tested.",
+  "findings": [
+    "Orientation error was approximately 6 degrees for nearly parallel fibers and 10–11 degrees in crossing regions.",
+    "Constrained spherical deconvolution did not resolve crossings below 60 degrees in the evaluated dataset.",
+    "Confocal z-stacks enabled a three-dimensional histological reference rather than a two-dimensional comparison."
+  ],
+  "topics": [
+    "Tractography",
+    "Microstructure"
+  ],
+  "source": "https://doi.org/10.1016/j.neuroimage.2016.01.022",
+  "summarySource": "https://doi.org/10.1016/j.neuroimage.2016.01.022",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

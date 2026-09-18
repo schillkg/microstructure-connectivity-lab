@@ -1,0 +1,113 @@
+{
+  "slug": "white-matter-lifespan-brain-charts",
+  "title": "White matter micro- and macrostructure brain charts for the human lifespan",
+  "year": 2026,
+  "authors": "Michael E. Kim, Chenyu Gao, Karthik Ramadass, Nancy R. Newlin, Praitayini Kanakaraj, Sam Bogdanov, Gaurav Rudravaram, Derek Archer, Timothy J. Hohman, Angela L. Jefferson, Victoria L. Morgan, Alexandra Roche, Dario J. Englot, Susan M. Resnick, Lori L. Beason-Held, Laurie E. Cutting, Laura A. Barquero, Micah A. D’archangel, Tin Q. Nguyen, Kathryn L. Humphreys, Yanbin Niu, Sophia Vinci-Booher, Carissa J. Cascio, The HABS-HD Study Team, L. Taylor Davis, Zhiyuan Li, Simon N. Vandekar, Panpan Zhang, John C. Gore, Bennett A. Landman, Kurt G. Schilling",
+  "authorList": [
+    "Michael E. Kim",
+    "Chenyu Gao",
+    "Karthik Ramadass",
+    "Nancy R. Newlin",
+    "Praitayini Kanakaraj",
+    "Sam Bogdanov",
+    "Gaurav Rudravaram",
+    "Derek Archer",
+    "Timothy J. Hohman",
+    "Angela L. Jefferson",
+    "Victoria L. Morgan",
+    "Alexandra Roche",
+    "Dario J. Englot",
+    "Susan M. Resnick",
+    "Lori L. Beason-Held",
+    "Laurie E. Cutting",
+    "Laura A. Barquero",
+    "Micah A. D’archangel",
+    "Tin Q. Nguyen",
+    "Kathryn L. Humphreys",
+    "Yanbin Niu",
+    "Sophia Vinci-Booher",
+    "Carissa J. Cascio",
+    "The HABS-HD Study Team",
+    "L. Taylor Davis",
+    "Zhiyuan Li",
+    "Simon N. Vandekar",
+    "Panpan Zhang",
+    "John C. Gore",
+    "Bennett A. Landman",
+    "Kurt G. Schilling"
+  ],
+  "kurtPosition": "last",
+  "journal": "Nature",
+  "type": "Article",
+  "doi": "https://doi.org/10.1038/s41586-026-10454-2",
+  "publisher": "https://www.nature.com/articles/s41586-026-10454-2",
+  "summary": "White matter growth charts built from 35,120 brain scans provide reference trajectories from birth to 100 years. The study measures tissue properties and pathway shape across 72 tracts, enabling age- and sex-adjusted comparisons. Public models, processing tools, and shareable derived data support independent use of the charts.",
+  "description": "This Nature study establishes lifespan reference charts for white matter using 35,120 scans from 50 studies. It models microstructural diffusion measures and macrostructural pathway geometry across 72 tracts, describing typical values, variability, and developmental milestones from birth through age 100. The charts show that maturation and aging follow different schedules across pathways and measurements. Individual centile scores quantify departures from age- and sex-specific reference distributions, and analyses demonstrate differences in selected clinical groups. Public models support scoring new research datasets, with companion processing tools and a release of derived data permitted by the contributing studies. These cross-sectional references provide a foundation for further research and clinical validation.",
+  "findings": [
+    "Normative charts span birth to age 100 using 35,120 scans from 50 studies.",
+    "Microstructural and macrostructural trajectories differ across 72 white matter pathways.",
+    "Centile scores enable individual measurements to be compared with reference distributions.",
+    "Open models, processing instructions, and permitted derived datasets accompany the study."
+  ],
+  "topics": [
+    "Lifespan",
+    "Microstructure",
+    "Tractography"
+  ],
+  "source": "https://www.nature.com/articles/s41586-026-10454-2",
+  "publicationStatus": "Published",
+  "pdf": "https://www.nature.com/articles/s41586-026-10454-2.pdf",
+  "metadataSource": "https://api.crossref.org/works/10.1038/s41586-026-10454-2",
+  "datePublished": "2026-05-13",
+  "featured": true,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "correction": "https://www.nature.com/articles/s41586-026-10693-3",
+  "correctionNote": "Publisher correction, 2026-06-02: Figure 3a label corrected to White matter tracts.",
+  "resources": [
+    {
+      "label": "Brain chart models and scoring",
+      "url": "https://zenodo.org/records/18435695",
+      "type": "Models",
+      "description": "Version 0.2.1: lifespan models, centile curves, new-dataset alignment, and power-analysis code."
+    },
+    {
+      "label": "Derived data",
+      "url": "https://zenodo.org/records/18891848",
+      "type": "Data",
+      "description": "Permitted derived features and centile scores from 20 of 50 source datasets; no raw images or diagnostic information."
+    },
+    {
+      "label": "Postprocessing pipeline",
+      "url": "https://zenodo.org/records/17144461",
+      "type": "Code",
+      "description": "Instructions and examples for the container that measures 72 tracts and prepares brain-chart features."
+    },
+    {
+      "label": "Processing container",
+      "url": "https://hub.docker.com/r/kimm58/wm_lifespan_processing",
+      "type": "Container",
+      "description": "Docker image linked by the published article and verified Zenodo processing record."
+    }
+  ],
+  "image": "/assets/nature-brain-charts-figure-2.png",
+  "imageAlt": "Five example white matter tracts and their normative fractional anisotropy trajectories across the lifespan",
+  "caption": "Kim et al., Nature 655, 979–989 (2026), Fig. 2. CC BY 4.0. PDF page rendered and margins cropped; labels and data unchanged. Age axes are logarithmic; cyan denotes males and red denotes females.",
+  "figureSource": "https://www.nature.com/articles/s41586-026-10454-2",
+  "figureLicense": "https://creativecommons.org/licenses/by/4.0/",
+  "links": [
+    {
+      "url": "https://zenodo.org/records/18435695",
+      "label": "Brain chart models and scoring"
+    },
+    {
+      "url": "https://zenodo.org/records/18891848",
+      "label": "Derived data"
+    },
+    {
+      "url": "https://zenodo.org/records/17144461",
+      "label": "Postprocessing pipeline"
+    }
+  ],
+  "limitations": "The charts describe reference distributions for research. They are not, by themselves, a diagnostic test. The public data release contains permitted derived measurements from 20 of the 50 source datasets, rather than all raw MRI scans."
+}

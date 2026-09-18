@@ -1,0 +1,34 @@
+{
+  "slug": "histological-fod-dispersion-validation",
+  "title": "Histological validation of diffusion MRI fiber orientation distributions and dispersion",
+  "year": 2018,
+  "authors": "Kurt G. Schilling, Vaibhav Janve, Yurui Gao, Iwona Stepniewska, Bennett A. Landman, Adam W. Anderson",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Vaibhav Janve",
+    "Yurui Gao",
+    "Iwona Stepniewska",
+    "Bennett A. Landman",
+    "Adam W. Anderson"
+  ],
+  "kurtPosition": "first",
+  "journal": "NeuroImage",
+  "type": "Article",
+  "doi": "https://doi.org/10.1016/j.neuroimage.2017.10.046",
+  "publisher": "https://doi.org/10.1016/j.neuroimage.2017.10.046",
+  "summary": "Histological validation compares several diffusion reconstruction methods against three-dimensional fiber geometry. Models captured overall angular structure better than discrete peak counts or low-angle crossings, and no method led across all accuracy criteria; dispersion estimates also showed limited agreement with histology.",
+  "description": "Three-dimensional histological fiber orientation distributions were compared with constrained spherical deconvolution, q-ball imaging, diffusion orientation transform, persistent angular structure, and NODDI-based measurements. The evaluation tested overall distribution shape, fiber count, orientation accuracy, and dispersion across acquisition settings and tissue geometries. Continuous angular structure was generally reproduced with median angular correlations above 0.70, but identifying discrete peaks remained difficult. Median errors were approximately 10 degrees for the primary direction and 20 degrees for a secondary direction. No method adequately resolved crossings below 60 degrees, and dispersion agreement was limited. The comparison therefore identifies tradeoffs rather than a single universally superior reconstruction method.",
+  "findings": [
+    "No reconstruction method performed best across all evaluated accuracy measures.",
+    "Median angular errors were approximately 10 degrees for primary and 20 degrees for secondary fiber directions.",
+    "All tested methods struggled with crossings below 60 degrees and with accurate dispersion estimation."
+  ],
+  "topics": [
+    "Tractography",
+    "Microstructure"
+  ],
+  "source": "https://doi.org/10.1016/j.neuroimage.2017.10.046",
+  "summarySource": "https://doi.org/10.1016/j.neuroimage.2017.10.046",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

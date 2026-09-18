@@ -1,0 +1,33 @@
+{
+  "slug": "prefrontal-histology-tractography",
+  "title": "Bridging Histology and Tractography: First In Vivo Visualization of Short-Range Prefrontal Connections Informed by Primate Tract-Tracing",
+  "year": 2026,
+  "authors": "Matthew Amandola, Michael E. Kim, François Rheault, Bennett Landman, Kurt Schilling",
+  "authorList": [
+    "Matthew Amandola",
+    "Michael E. Kim",
+    "François Rheault",
+    "Bennett Landman",
+    "Kurt Schilling"
+  ],
+  "kurtPosition": "last",
+  "journal": "Human Brain Mapping",
+  "type": "Article",
+  "doi": "https://doi.org/10.1002/hbm.70520",
+  "publisher": "https://onlinelibrary.wiley.com/doi/10.1002/hbm.70520",
+  "summary": "Anatomical evidence from primate tract tracing guides reconstruction of short connections within the living human prefrontal cortex. The study maps 91 connections in 1,003 participants, finding reproducible individual patterns and substantial variation between people. It offers a framework for studying local circuitry using anatomically informed diffusion tractography.",
+  "description": "Short prefrontal connections are difficult to reconstruct because their small size and complex geometry make tractography vulnerable to false positives. This study uses established nonhuman primate tract-tracing observations to guide high-resolution probabilistic tractography across five prefrontal subdivisions in 1,003 people. Reconstructions are evaluated against the histological organization, achieving precision above 80% and accuracy above 70% in that comparison. The resulting pathways show high repeatability within participants and considerable variation between individuals. These findings support anatomically informed investigations of local human circuitry while retaining the distinction between noninvasive reconstructions and direct histological observations.",
+  "findings": [
+    "Mapped 91 short-range connections across five prefrontal subdivisions.",
+    "Reconstruction precision exceeded 80% and accuracy exceeded 70% relative to the histological reference.",
+    "Connections were reproducible within individuals while varying between individuals."
+  ],
+  "topics": [
+    "Tractography"
+  ],
+  "source": "https://onlinelibrary.wiley.com/doi/10.1002/hbm.70520",
+  "publicationStatus": "Published",
+  "pdf": "",
+  "metadataSource": "https://api.crossref.org/works/10.1002/hbm.70520",
+  "datePublished": "2026-04-07"
+}

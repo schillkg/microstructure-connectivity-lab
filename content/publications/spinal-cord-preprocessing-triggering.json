@@ -1,0 +1,40 @@
+{
+  "slug": "spinal-cord-preprocessing-triggering",
+  "title": "Influence of preprocessing, distortion correction and cardiac triggering on the quality of diffusion MR images of spinal cord",
+  "year": 2024,
+  "authors": "Kurt G. Schilling, Anna J. E. Combes, Karthik Ramadass, Francois Rheault, Grace Sweeney, Logan Prock, Subramaniam Sriram, Julien Cohen-Adad, John C. Gore, Bennett A. Landman, Seth A. Smith, Kristin P. O’Grady",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Anna J. E. Combes",
+    "Karthik Ramadass",
+    "Francois Rheault",
+    "Grace Sweeney",
+    "Logan Prock",
+    "Subramaniam Sriram",
+    "Julien Cohen-Adad",
+    "John C. Gore",
+    "Bennett A. Landman",
+    "Seth A. Smith",
+    "Kristin P. O’Grady"
+  ],
+  "kurtPosition": "first",
+  "journal": "Magnetic Resonance Imaging",
+  "type": "Article",
+  "doi": "https://doi.org/10.1016/j.mri.2024.01.008",
+  "publisher": "https://doi.org/10.1016/j.mri.2024.01.008",
+  "summary": "Tests of spinal cord diffusion preprocessing show that better overall image alignment does not necessarily improve geometry or tissue contrast within the cord. Separate experiments found that omitting cardiac triggering shortened cervical acquisitions while preserving similar image quality and diffusion measurements under the conditions studied.",
+  "description": "The study evaluated four distortion-processing strategies across seven cervical and lumbar spinal cord datasets, then separately tested the effect of cardiac triggering. Distortion correction increased similarity to structural images, but this improvement was largely driven by high-contrast cerebrospinal fluid and did not consistently improve intra-cord geometry or white-to-gray matter contrast. The authors recommend at least bulk-motion correction and call for approaches adapted to cord anatomy. In the cervical experiments, non-triggered scans showed comparable artifacts, tensor measures, and reproducibility with shorter acquisitions. These results depend on the protocols and quality measures tested and should not be read as evidence that triggering is unnecessary for every spinal region or acquisition.",
+  "findings": [
+    "Four distortion-processing strategies were evaluated across seven cervical and lumbar cord datasets.",
+    "Improved overall structural similarity did not consistently translate into improved intra-cord geometry or contrast.",
+    "Removing cardiac triggering enabled shorter cervical scans with similar measured image quality and tensor reproducibility."
+  ],
+  "topics": [
+    "Spinal Cord",
+    "Image Processing"
+  ],
+  "source": "https://doi.org/10.1016/j.mri.2024.01.008",
+  "summarySource": "https://doi.org/10.1016/j.mri.2024.01.008",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

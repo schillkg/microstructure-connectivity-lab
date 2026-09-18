@@ -1,0 +1,35 @@
+{
+  "slug": "clinically-feasible-qball",
+  "title": "Empirical consideration of the effects of acquisition parameters and analysis model on clinically feasible q-ball imaging",
+  "year": 2017,
+  "authors": "Kurt G. Schilling, Vishwesh Nath, Justin A. Blaber, Prasanna Parvathaneni, Adam W. Anderson, Bennett A. Landman",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Vishwesh Nath",
+    "Justin A. Blaber",
+    "Prasanna Parvathaneni",
+    "Adam W. Anderson",
+    "Bennett A. Landman"
+  ],
+  "kurtPosition": "first",
+  "journal": "Magnetic Resonance Imaging",
+  "type": "Article",
+  "doi": "https://doi.org/10.1016/j.mri.2017.04.007",
+  "publisher": "https://doi.org/10.1016/j.mri.2017.04.007",
+  "summary": "Repeated scans test how short clinical q-ball acquisitions balance diffusion weighting, direction count, and model complexity. The analysis shows that spherical harmonic order strongly affects derived metrics and that adding directions can be more useful than repeating measurements within a fixed scan time.",
+  "description": "Using eleven repeats of a five-b-value dataset from one participant at 3 T, this study evaluated q-ball imaging protocols lasting less than five minutes. Both diffusion weighting and direction count affected derived tissue and orientation measures, but the spherical harmonic representation had a particularly strong influence. Insufficient directional sampling inflated anisotropy and generated false orientation peaks. The authors recommend collecting at least 8–12 more directions than estimated harmonic coefficients and found that greater directional coverage was preferable to repeated observations at equal scan time. Because the empirical evaluation used one participant, these recommendations address the tested low-SNR acquisition regime rather than every population or scanner.",
+  "findings": [
+    "Spherical harmonic order strongly influenced q-ball indices and numerical stability.",
+    "The study recommends oversampling by at least 8–12 directions beyond the number of fitted harmonic coefficients.",
+    "At equal scan time, increasing directional sampling was preferable to repeating observations."
+  ],
+  "topics": [
+    "Image Processing",
+    "Microstructure",
+    "Tractography"
+  ],
+  "source": "https://doi.org/10.1016/j.mri.2017.04.007",
+  "summarySource": "https://doi.org/10.1016/j.mri.2017.04.007",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

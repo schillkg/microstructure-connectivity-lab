@@ -1,0 +1,46 @@
+{
+  "slug": "aging-white-matter-shape",
+  "title": "Aging and white matter microstructure and macrostructure: a longitudinal multi-site diffusion MRI study of 1218 participants",
+  "year": 2022,
+  "authors": "Kurt G. Schilling, Derek Archer, Fang-Cheng Yeh, Francois Rheault, Leon Y. Cai, Colin Hansen, Qi Yang, Karthik Ramdass, Andrea T. Shafer, Susan M. Resnick, Kimberly R. Pechman, Katherine A. Gifford, Timothy J. Hohman, Angela Jefferson, Adam W. Anderson, Hakmook Kang, Bennett A. Landman",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Derek Archer",
+    "Fang-Cheng Yeh",
+    "Francois Rheault",
+    "Leon Y. Cai",
+    "Colin Hansen",
+    "Qi Yang",
+    "Karthik Ramdass",
+    "Andrea T. Shafer",
+    "Susan M. Resnick",
+    "Kimberly R. Pechman",
+    "Katherine A. Gifford",
+    "Timothy J. Hohman",
+    "Angela Jefferson",
+    "Adam W. Anderson",
+    "Hakmook Kang",
+    "Bennett A. Landman"
+  ],
+  "kurtPosition": "first",
+  "journal": "Brain Structure and Function",
+  "type": "Article",
+  "doi": "https://doi.org/10.1007/s00429-022-02503-z",
+  "publisher": "https://doi.org/10.1007/s00429-022-02503-z",
+  "summary": "Across 1,218 older adults, diffusion measurements and tract shape both changed with age. Microstructural trends were relatively widespread, while volume, length, and surface-area changes differed more across pathways, suggesting that bundle geometry adds complementary information about aging.",
+  "description": "The study analyzed 2,459 imaging sessions from 1,218 participants aged 50–97 across one cross-sectional and two longitudinal cohorts. Linear mixed-effects models tested age associations for four microstructural and eleven macrostructural features across 120 white matter pathways. Diffusivities generally increased and anisotropy decreased with age, while most length, area, and volume measures declined. Unlike the relatively consistent microstructural trends, macrostructural changes varied across pathways, with greater decline in several projection, thalamic, and commissural tracts. These findings support combining shape and diffusion measurements in aging research. Interpretation remains dependent on the single segmentation algorithm and heterogeneous acquisitions used in the analysis.",
+  "findings": [
+    "The analysis covered 120 pathways in 1,218 participants and 2,459 sessions.",
+    "Diffusivities increased and anisotropy decreased with age across broadly similar pathway patterns.",
+    "Macrostructural age associations were more heterogeneous across pathways than the microstructural associations."
+  ],
+  "topics": [
+    "Lifespan",
+    "Tractography",
+    "Microstructure"
+  ],
+  "source": "https://doi.org/10.1007/s00429-022-02503-z",
+  "summarySource": "https://doi.org/10.1007/s00429-022-02503-z",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

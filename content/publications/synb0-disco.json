@@ -1,0 +1,39 @@
+{
+  "slug": "synb0-disco",
+  "title": "Synthesized b0 for diffusion distortion correction (Synb0-DisCo)",
+  "year": 2019,
+  "authors": "Kurt G. Schilling, Justin Blaber, Yuankai Huo, Allen Newton, Colin Hansen, Vishwesh Nath, Andrea T. Shafer, Owen Williams, Susan M. Resnick, Baxter Rogers, Adam W. Anderson, Bennett A. Landman",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Justin Blaber",
+    "Yuankai Huo",
+    "Allen Newton",
+    "Colin Hansen",
+    "Vishwesh Nath",
+    "Andrea T. Shafer",
+    "Owen Williams",
+    "Susan M. Resnick",
+    "Baxter Rogers",
+    "Adam W. Anderson",
+    "Bennett A. Landman"
+  ],
+  "kurtPosition": "first",
+  "journal": "Magnetic Resonance Imaging",
+  "type": "Article",
+  "doi": "https://doi.org/10.1016/j.mri.2019.05.008",
+  "publisher": "https://doi.org/10.1016/j.mri.2019.05.008",
+  "summary": "Synb0-DisCo uses a structural MRI scan to synthesize an undistorted diffusion reference image. This enables susceptibility-distortion correction for datasets lacking reverse phase-encoded scans, improving anatomical alignment and reducing variation in diffusion modeling in the evaluated data.",
+  "description": "Many historical or abbreviated diffusion MRI protocols lack the reversed phase-encoding images needed for standard susceptibility correction. Synb0-DisCo addresses this gap by using deep learning to synthesize a non-diffusion-weighted image from a structural scan, providing an undistorted anatomical target for TOPUP-based processing. The evaluated pipeline improved agreement with structural geometry and reduced variation in diffusion-derived measurements, with performance comparable to paired phase-encoding references in the study. The method makes additional datasets usable, but the synthesized reference is a model prediction rather than an acquired opposite-encoding image. Its reliability therefore depends on synthesis quality and the similarity of new data to the evaluated conditions.",
+  "findings": [
+    "A structural image was used to synthesize an undistorted b0-like reference.",
+    "Correction improved geometric correspondence with anatomical images and reduced diffusion-model variation.",
+    "The approach enabled TOPUP-like correction without an acquired reversed phase-encoding scan."
+  ],
+  "topics": [
+    "Image Processing"
+  ],
+  "source": "https://doi.org/10.1016/j.mri.2019.05.008",
+  "summarySource": "https://doi.org/10.1016/j.mri.2019.05.008",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

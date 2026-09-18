@@ -1,0 +1,35 @@
+{
+  "slug": "qball-directions-bvalue",
+  "title": "Effects of b-Value and Number of Gradient Directions on Diffusion MRI Measures Obtained with Q-ball Imaging",
+  "year": 2017,
+  "authors": "Kurt G. Schilling, Vishwesh Nath, Justin Blaber, Robert L. Harrigan, Zhaohua Ding, Adam W. Anderson, Bennett A. Landman",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Vishwesh Nath",
+    "Justin Blaber",
+    "Robert L. Harrigan",
+    "Zhaohua Ding",
+    "Adam W. Anderson",
+    "Bennett A. Landman"
+  ],
+  "kurtPosition": "first",
+  "journal": "Proceedings of SPIE: Medical Imaging 2017, Image Processing",
+  "type": "Article",
+  "doi": "https://doi.org/10.1117/12.2254545",
+  "publisher": "https://doi.org/10.1117/12.2254545",
+  "summary": "This full conference paper uses eleven repeated diffusion acquisitions to examine q-ball measurement precision. It shows that directional sampling and the spherical harmonic model can bias tissue and orientation metrics, helping explain why acquisition choices must be evaluated together with the reconstruction method.",
+  "description": "A high-angular-resolution diffusion dataset acquired across multiple b-values and repeated eleven times in one participant was used to test q-ball imaging measurements. The study varied the number of gradient directions and spherical harmonic representation to evaluate precision and reproducibility of tissue and fiber-orientation indices. Derived quantities were sensitive to sampling and model order, and undersampling often introduced systematic bias rather than only increasing random variability. The findings support choosing acquisition and reconstruction settings together when shortening a protocol. This eleven-page proceedings paper provides an empirical methods analysis, with the single-participant design limiting direct extrapolation to other populations and acquisition systems.",
+  "findings": [
+    "Q-ball tissue and orientation measures were sensitive to the number of diffusion directions.",
+    "The spherical harmonic representation affected measurement precision and bias.",
+    "Undersampled acquisition/model combinations could produce biased q-ball metrics."
+  ],
+  "topics": [
+    "Image Processing",
+    "Microstructure"
+  ],
+  "source": "https://doi.org/10.1117/12.2254545",
+  "summarySource": "https://doi.org/10.1117/12.2254545",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

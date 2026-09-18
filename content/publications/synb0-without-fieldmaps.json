@@ -1,0 +1,42 @@
+{
+  "slug": "synb0-without-fieldmaps",
+  "title": "Distortion correction of diffusion weighted MRI without reverse phase-encoding scans or field-maps",
+  "year": 2020,
+  "authors": "Kurt G. Schilling, Justin Blaber, Colin Hansen, Leon Cai, Baxter Rogers, Adam W. Anderson, Seth Smith, Praitayini Kanakaraj, Tonia Rex, Susan M. Resnick, Andrea T. Shafer, Laurie E. Cutting, Neil Woodward, David Zald, Bennett A. Landman",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Justin Blaber",
+    "Colin Hansen",
+    "Leon Cai",
+    "Baxter Rogers",
+    "Adam W. Anderson",
+    "Seth Smith",
+    "Praitayini Kanakaraj",
+    "Tonia Rex",
+    "Susan M. Resnick",
+    "Andrea T. Shafer",
+    "Laurie E. Cutting",
+    "Neil Woodward",
+    "David Zald",
+    "Bennett A. Landman"
+  ],
+  "kurtPosition": "first",
+  "journal": "PLOS ONE",
+  "type": "Article",
+  "doi": "https://doi.org/10.1371/journal.pone.0236418",
+  "publisher": "https://doi.org/10.1371/journal.pone.0236418",
+  "summary": "A second-generation Synb0 pipeline uses three-dimensional deep learning to create an undistorted diffusion reference from available MRI data. It supports distortion correction when reverse phase-encoding scans or field maps are missing, extending practical preprocessing options for historical and heterogeneous datasets.",
+  "description": "The study develops a three-dimensional U-net approach to synthesize an undistorted b0 image with structural T1-weighted geometry and diffusion-like contrast. A heterogeneous training dataset was used to improve applicability across acquisition conditions, and performance was evaluated on withheld data against standard reversed phase-encoding correction and intensity-based registration. The synthesized target enabled correction of geometric distortions without collecting an additional field map or opposite-encoding scan. This extends the earlier Synb0-DisCo method and reduces reliance on computationally intensive registration alone. Because the target is synthesized, unusual anatomy, contrast, or acquisition conditions still require quality control; successful correction in the test set is not a guarantee for every new scan.",
+  "findings": [
+    "The pipeline used three-dimensional U-nets and heterogeneous training acquisitions to synthesize an undistorted b0 image.",
+    "Withheld test data showed successful geometric distortion correction without additional correction scans.",
+    "The proposed approach was quantitatively compared with intensity-based registration and FSL TOPUP."
+  ],
+  "topics": [
+    "Image Processing"
+  ],
+  "source": "https://doi.org/10.1371/journal.pone.0236418",
+  "summarySource": "https://doi.org/10.1371/journal.pone.0236418",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

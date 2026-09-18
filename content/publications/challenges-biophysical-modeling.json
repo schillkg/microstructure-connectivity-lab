@@ -1,0 +1,32 @@
+{
+  "slug": "challenges-biophysical-modeling",
+  "title": "Challenges for biophysical modeling of microstructure",
+  "year": 2020,
+  "authors": "Ileana O. Jelescu, Marco Palombo, Francesca Bagnato, Kurt G. Schilling",
+  "authorList": [
+    "Ileana O. Jelescu",
+    "Marco Palombo",
+    "Francesca Bagnato",
+    "Kurt G. Schilling"
+  ],
+  "kurtPosition": "last",
+  "journal": "Journal of Neuroscience Methods",
+  "type": "Review",
+  "doi": "https://doi.org/10.1016/j.jneumeth.2020.108861",
+  "publisher": "https://doi.org/10.1016/j.jneumeth.2020.108861",
+  "summary": "This review follows diffusion MRI biophysical models from design to clinical application. It explains how model assumptions, acquisition choices, parameter estimation, and validation determine what can be inferred about tissue, and why interpreting model parameters becomes especially difficult in disease.",
+  "description": "The review examines the steps required to turn diffusion MRI measurements into defensible estimates of tissue microstructure. It considers which tissue properties can be identified, how acquisitions should be designed, how numerical simulations and experimental measurements test performance, and how complementary methods can validate estimates. Examples from tumors, ischemia, and demyelinating disease illustrate why assumptions suitable for healthy tissue may fail in pathology. Four unresolved challenges concern microstructural ground truth, parameters inaccessible to complementary techniques, a broadly applicable model across brain regions and diseases, and communication between model developers and clinical users. The paper offers a critical framework rather than a universally validated model.",
+  "findings": [
+    "Acquisition design, model identifiability, and fitting strategy must be evaluated together.",
+    "Pathological tissue may require adaptations to assumptions developed for healthy tissue.",
+    "The review identifies four unresolved challenges involving ground truth, validation, model generalization, and communication."
+  ],
+  "topics": [
+    "Microstructure",
+    "Reviews & Consensus"
+  ],
+  "source": "https://doi.org/10.1016/j.jneumeth.2020.108861",
+  "summarySource": "https://doi.org/10.1016/j.jneumeth.2020.108861",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

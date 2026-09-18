@@ -1,0 +1,36 @@
+{
+  "slug": "chiasm-squirrel-monkey-atlas",
+  "title": "A Web-Based Atlas Combining MRI and Histology of the Squirrel Monkey Brain",
+  "year": 2019,
+  "authors": "Kurt G. Schilling, Yurui Gao, Matthew Christian, Vaibhav Janve, Iwona Stepniewska, Bennett A. Landman, Adam W. Anderson",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Yurui Gao",
+    "Matthew Christian",
+    "Vaibhav Janve",
+    "Iwona Stepniewska",
+    "Bennett A. Landman",
+    "Adam W. Anderson"
+  ],
+  "kurtPosition": "first",
+  "journal": "Neuroinformatics",
+  "type": "Article",
+  "doi": "https://doi.org/10.1007/s12021-018-9391-z",
+  "publisher": "https://doi.org/10.1007/s12021-018-9391-z",
+  "summary": "CHIASM combines structural MRI, diffusion MRI, histological stains, and motor-cortex tracing in a common squirrel monkey reference space. The integrated atlas lets researchers compare tissue appearance across modalities and use labeled cortical regions and white matter pathways for anatomical localization.",
+  "description": "The Combined Histology-MRI Integrated Atlas of the Squirrel Monkey aligns in vivo and ex vivo MRI acquired at 9.4 T with Nissl and myelin histology. A tracer injection in primary motor cortex adds a specific anatomical connectivity reference. The atlas includes diffusion tensor glyphs, 57 tractography-defined white matter labels, and 18 cortical regions identified from cytoarchitecture, accessible through a multimodal web viewer. Bringing these contrasts into one coordinate system supports anatomical interpretation and validation across imaging methods. The reference remains tied to its specimen, registration accuracy, and motor-cortex injection; its tractography labels and histological measurements provide complementary rather than interchangeable evidence.",
+  "findings": [
+    "The atlas combines MRI, Nissl staining, myelin staining, and primary motor-cortex tracer information in one space.",
+    "It includes 57 tractography-defined white matter pathways and 18 histologically defined cortical regions.",
+    "A web-based viewer supports comparisons between user-selected contrasts and resolutions."
+  ],
+  "topics": [
+    "Image Processing",
+    "Tractography",
+    "Microstructure"
+  ],
+  "source": "https://doi.org/10.1007/s12021-018-9391-z",
+  "summarySource": "https://doi.org/10.1007/s12021-018-9391-z",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

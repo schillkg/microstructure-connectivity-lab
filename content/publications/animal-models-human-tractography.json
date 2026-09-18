@@ -1,0 +1,37 @@
+{
+  "slug": "animal-models-human-tractography",
+  "title": "Animal models are useful in studying human neuroanatomy with tractography",
+  "year": 2025,
+  "authors": "Alard Roebroeck, Suzanne Haber, Elena Borra, Simona Schiavi, Stephanie J. Forkel, Kathleen Rockland, Tim B. Dyrby, Kurt Schilling",
+  "authorList": [
+    "Alard Roebroeck",
+    "Suzanne Haber",
+    "Elena Borra",
+    "Simona Schiavi",
+    "Stephanie J. Forkel",
+    "Kathleen Rockland",
+    "Tim B. Dyrby",
+    "Kurt Schilling"
+  ],
+  "kurtPosition": "last",
+  "journal": "Brain Structure and Function",
+  "type": "Commentary",
+  "doi": "https://doi.org/10.1007/s00429-025-02945-1",
+  "publisher": "https://link.springer.com/10.1007/s00429-025-02945-1",
+  "summary": "This short communication examines how animal models inform human tractography, drawing on a debate at the 2024 Tract-Anat Retreat. It highlights histological validation, high-resolution imaging, disease research, and comparative anatomy. The discussion also addresses species differences and the care required when translating findings to humans.",
+  "description": "Animal models can connect diffusion tractography to experimental evidence that is difficult or impossible to obtain in living humans. This communication synthesizes a retreat discussion about their contribution to human neuroanatomical knowledge. The authors describe four broad applications: comparisons with histology, acquisition of detailed imaging data, investigation of disease mechanisms, and comparative neuroanatomy. They also consider limitations arising from differences in species anatomy, biology, scanner hardware, and acquisition protocols. The resulting argument supports carefully selected animal models as useful tools for improving tractography methods and interpretation, while emphasizing that biological and technical differences must inform cross-species comparisons.",
+  "findings": [
+    "Animal experiments support tractography validation against histological evidence.",
+    "High-resolution data and controlled disease studies complement human investigations.",
+    "Species and acquisition differences shape the limits of translation."
+  ],
+  "topics": [
+    "Tractography",
+    "Reviews & Consensus"
+  ],
+  "source": "https://link.springer.com/10.1007/s00429-025-02945-1",
+  "publicationStatus": "Published",
+  "pdf": "",
+  "metadataSource": "https://api.crossref.org/works/10.1007/s00429-025-02945-1",
+  "datePublished": "2025-05-31"
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "tractography-validation-foundations",
+  "title": "Tractography validation Part 1: Foundations, numerical simulations, and phantom models",
+  "year": 2025,
+  "authors": "Tim B. Dyrby, Els Fieremans, Francois Rheault, Adam W. Anderson, Marco Palombo, Silvio Sarubbo, Peter Neher, Kurt G. Schilling",
+  "authorList": [
+    "Tim B. Dyrby",
+    "Els Fieremans",
+    "Francois Rheault",
+    "Adam W. Anderson",
+    "Marco Palombo",
+    "Silvio Sarubbo",
+    "Peter Neher",
+    "Kurt G. Schilling"
+  ],
+  "kurtPosition": "last",
+  "journal": "Handbook of Diffusion MR Tractography",
+  "type": "Book chapter",
+  "doi": "https://doi.org/10.1016/b978-0-12-818894-1.00017-3",
+  "publisher": "https://linkinghub.elsevier.com/retrieve/pii/B9780128188941000173",
+  "summary": "This handbook chapter introduces the foundations of tractography validation and the roles of numerical simulations and physical phantoms. It explains how controlled reference systems can test reconstruction methods at different anatomical scales. The discussion helps researchers choose validation strategies and understand the limits of their conclusions.",
+  "description": "Validation asks how faithfully diffusion tractography represents anatomical connections, but different experiments test different aspects of that relationship. This chapter in the Handbook of Diffusion MR Tractography sets out the anatomical scales and methodological assumptions relevant to validation. It then discusses numerical simulations and physical phantom models as controlled systems for studying diffusion measurements and reconstructed pathways. These approaches make it possible to vary known properties and assess reconstruction behavior, while their simplifications limit direct translation to biological tissue. The chapter provides a foundation for selecting appropriate reference models and interpreting what a successful validation experiment demonstrates.",
+  "findings": [
+    "Validation must be matched to the anatomical scale and question of interest.",
+    "Numerical simulations and physical phantoms offer controlled reference conditions.",
+    "Simplified reference systems do not reproduce every property of biological tissue."
+  ],
+  "topics": [
+    "Tractography",
+    "Reviews & Consensus"
+  ],
+  "source": "https://linkinghub.elsevier.com/retrieve/pii/B9780128188941000173",
+  "publicationStatus": "Published",
+  "pdf": "",
+  "metadataSource": "https://api.crossref.org/works/10.1016/b978-0-12-818894-1.00017-3"
+}

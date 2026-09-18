@@ -1,0 +1,38 @@
+{
+  "slug": "white-matter-variability-lifespan",
+  "title": "The average does not represent the individual: White matter variability across the brain, across the population, and across the lifespan",
+  "year": 2026,
+  "authors": "Kurt G Schilling, Lilit Dulyan, Eva Guzmán Chacón, Matthew Amandola, Michael Kim, Bennett A Landman, Stephanie J. Fokel",
+  "authorList": [
+    "Kurt G Schilling",
+    "Lilit Dulyan",
+    "Eva Guzmán Chacón",
+    "Matthew Amandola",
+    "Michael Kim",
+    "Bennett A Landman",
+    "Stephanie J. Fokel"
+  ],
+  "kurtPosition": "first",
+  "journal": "Research Square",
+  "type": "Preprint",
+  "doi": "https://doi.org/10.21203/rs.3.rs-8654078/v1",
+  "publisher": "https://www.researchsquare.com/article/rs-8654078/v1",
+  "summary": "This preprint examines individual differences across 64 white matter pathways using more than 2,800 diffusion scans spanning ages 0–100. Variability follows spatial and lifespan patterns rather than behaving as random noise. Associations with behavior motivate treating anatomical diversity as an informative feature of brain organization.",
+  "description": "Group averages can obscure the structured ways in which individual brains differ. This preprint measures spatial, microstructural, and macrostructural variability across 64 white matter pathways in more than 2,800 diffusion MRI scans spanning birth to age 100. Spatial variability follows a gradient from deep to superficial white matter, while between-person variability generally decreases during early development and increases with aging. Different tissue and pathway features show distinct trajectories and hemispheric patterns. Associations with behavior are strongest during development. The work proposes a framework for studying anatomical diversity and its relevance to normative modeling; its findings remain presented as preprint results.",
+  "findings": [
+    "Variability follows a deep-to-superficial spatial gradient.",
+    "Between-person variability decreases during early development and increases with aging.",
+    "Behavioral associations are strongest during development."
+  ],
+  "topics": [
+    "Lifespan",
+    "Microstructure",
+    "Tractography"
+  ],
+  "source": "https://www.researchsquare.com/article/rs-8654078/v1",
+  "publicationStatus": "Preprint — not peer reviewed",
+  "pdf": "https://pure.mpg.de/pubman/item/item_3691120_1/component/file_3691121/Schilling_etal_2026_preprint.pdf",
+  "metadataSource": "https://api.crossref.org/works/10.21203/rs.3.rs-8654078/v1",
+  "datePublished": "2026-01-29",
+  "authorNote": "Research Square and supplied PDF spell the final author surname Fokel; likely a source typo for Forkel, preserved pending author correction."
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "bundleparc-deep-tegmental-core",
+  "title": "Automated Segmentation of Brainstem and Subcortical White Matter: Mapping the Deep Tegmental Core with BundleParc",
+  "year": 2026,
+  "authors": "Kurt G Schilling, Gaurav Rudravaram, Antoine Theberge, Matthew Amandola, Michael E. Kim, Kathryn L. Humphreys, Laurie Cutting, Derek Archer, Timothy J. Hohman, Angela L. Jefferson, Lori L. Beason Held, Murat Bilgel, Alzheimer’s Disease Neuroimaging Initiative, The BIOCARD Study Team, Maxime Chamberland, Maxime Descoteaux, Laurent Petit, Francois Rheault, Bennett Landman",
+  "authorList": [
+    "Kurt G Schilling",
+    "Gaurav Rudravaram",
+    "Antoine Theberge",
+    "Matthew Amandola",
+    "Michael E. Kim",
+    "Kathryn L. Humphreys",
+    "Laurie Cutting",
+    "Derek Archer",
+    "Timothy J. Hohman",
+    "Angela L. Jefferson",
+    "Lori L. Beason Held",
+    "Murat Bilgel",
+    "Alzheimer’s Disease Neuroimaging Initiative",
+    "The BIOCARD Study Team",
+    "Maxime Chamberland",
+    "Maxime Descoteaux",
+    "Laurent Petit",
+    "Francois Rheault",
+    "Bennett Landman"
+  ],
+  "kurtPosition": "first",
+  "journal": "bioRxiv",
+  "type": "Preprint",
+  "doi": "https://doi.org/10.64898/2026.06.09.731210",
+  "publisher": "https://doi.org/10.64898/2026.06.09.731210",
+  "summary": "This preprint extends BundleParc to segment and divide 97 brainstem and subcortical white matter pathways along their trajectories. Trained from anatomically curated Human Connectome Project tractography, the method operates on native-space fiber orientation distributions. External datasets test its performance across development, aging, disease cohorts, and acquisition differences.",
+  "description": "Automated tractography tools have mainly emphasized large cerebral bundles, leaving many compact brainstem and subcortical pathways underrepresented. This preprint adapts BundleParc to identify and produce ordered along-tract subdivisions for 97 pathways supporting motor, sensory, cerebellar, limbic, and homeostatic systems. Training references combine anatomy-guided tractography, inclusion and exclusion rules, outlier removal, and manual quality assurance. The method operates directly on native-space fiber orientation distributions and is evaluated in external datasets with different ages, diagnoses, resolutions, and angular sampling. Released models and reference resources are intended to support systematic studies of this anatomy, with the work currently identified as a preprint.",
+  "findings": [
+    "Targets 97 subcortical and brainstem pathways.",
+    "Produces direct segmentation and ordered along-tract parcellation.",
+    "Evaluates generalization across external cohorts and acquisition differences."
+  ],
+  "topics": [
+    "Tractography",
+    "Image Processing",
+    "Lifespan"
+  ],
+  "source": "https://doi.org/10.64898/2026.06.09.731210",
+  "publicationStatus": "Preprint — not peer reviewed",
+  "pdf": "",
+  "metadataSource": "https://api.crossref.org/works/10.64898/2026.06.09.731210",
+  "datePublished": "2026-06-12"
+}

@@ -1,0 +1,38 @@
+{
+  "slug": "whole-brain-task-bold",
+  "title": "Whole-brain, gray, and white matter time-locked functional signal changes with simple tasks and model-free analysis",
+  "year": 2023,
+  "authors": "Kurt G. Schilling, Muwei Li, Francois Rheault, Yurui Gao, Leon Cai, Yu Zhao, Lyuan Xu, Zhaohua Ding, Adam W. Anderson, Bennett A. Landman, John C. Gore",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Muwei Li",
+    "Francois Rheault",
+    "Yurui Gao",
+    "Leon Cai",
+    "Yu Zhao",
+    "Lyuan Xu",
+    "Zhaohua Ding",
+    "Adam W. Anderson",
+    "Bennett A. Landman",
+    "John C. Gore"
+  ],
+  "kurtPosition": "first",
+  "journal": "Proceedings of the National Academy of Sciences",
+  "type": "Article",
+  "doi": "https://doi.org/10.1073/pnas.2219666120",
+  "publisher": "https://doi.org/10.1073/pnas.2219666120",
+  "summary": "Simple tasks and model-free analysis reveal widespread time-locked BOLD changes in both gray and white matter. The shape of the response varies across regions and stimuli, indicating that conventional analyses can miss distributed signals when they impose a narrow response model or discard white matter.",
+  "description": "The authors examined task-locked functional MRI signals across gray and white matter using simple stimuli and analyses that did not require one fixed hemodynamic response shape. A majority of both tissue types showed significant task-related BOLD changes for every stimulus examined, with regional differences in response timing and form. The same region could also respond differently to different stimuli. These observations challenge the routine exclusion of white matter signals and the assumption that task effects are confined to small cortical areas. They establish widespread hemodynamic responses, not direct evidence that every detected region has the same neural role or that BOLD alone identifies the underlying causal mechanism.",
+  "findings": [
+    "A majority of gray and white matter showed statistically significant time-locked changes for all tasks investigated.",
+    "Different regions displayed different BOLD responses to the same task.",
+    "Individual regions could display distinct response shapes for different stimuli."
+  ],
+  "topics": [
+    "Functional Connectivity"
+  ],
+  "source": "https://doi.org/10.1073/pnas.2219666120",
+  "summarySource": "https://doi.org/10.1073/pnas.2219666120",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

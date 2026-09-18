@@ -1,0 +1,38 @@
+{
+  "slug": "short-association-insights",
+  "title": "Short association fiber tractography: key insights and surprising facts",
+  "year": 2025,
+  "authors": "Kurt Schilling, Fan Zhang, Claudio Román, Lauren J. O’Donnell, Pamela Guevara",
+  "authorList": [
+    "Kurt Schilling",
+    "Fan Zhang",
+    "Claudio Román",
+    "Lauren J. O’Donnell",
+    "Pamela Guevara"
+  ],
+  "kurtPosition": "first",
+  "journal": "Brain Structure and Function",
+  "type": "Commentary",
+  "doi": "https://doi.org/10.1007/s00429-025-02966-w",
+  "publisher": "https://link.springer.com/10.1007/s00429-025-02966-w",
+  "summary": "Short association fibers are numerous but challenging to reconstruct because of their small size, variable anatomy, and partial volume effects. This communication summarizes key anatomical and methodological insights. It describes how better images, adapted processing, and suitable tracking parameters are opening the superficial white matter to investigation.",
+  "description": "This concise communication focuses on short association fibers, the local connections that link nearby cortical areas through superficial white matter. These fibers substantially outnumber long-range connections but are difficult to study with conventional tractography because of their scale, variability, and proximity to tissue boundaries. The authors review advances in image acquisition and processing that make their reconstruction increasingly feasible. They explain why parameters and pipelines designed for long tracts may require adaptation and discuss the importance of reproducible pathway definitions. The article provides practical context for researchers extending connectome studies into this anatomically complex region.",
+  "findings": [
+    "Short association fibers substantially outnumber long fibers.",
+    "Small size, anatomical variability, and partial volume effects complicate reconstruction.",
+    "Adapted pipelines and tracking parameters are important for reproducible studies."
+  ],
+  "topics": [
+    "Tractography",
+    "Reviews & Consensus"
+  ],
+  "source": "https://link.springer.com/10.1007/s00429-025-02966-w",
+  "publicationStatus": "Published",
+  "metadataSource": "https://api.crossref.org/works/10.1007/s00429-025-02966-w",
+  "datePublished": "2025-06-14",
+  "image": "/assets/paper-5.png",
+  "imageAlt": "Research figure accompanying Short association fiber tractography: key insights and surprising facts",
+  "caption": "Figure from the lab’s publication highlight.",
+  "featured": false,
+  "order": 6
+}

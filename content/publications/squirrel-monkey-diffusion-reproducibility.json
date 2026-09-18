@@ -1,0 +1,34 @@
+{
+  "slug": "squirrel-monkey-diffusion-reproducibility",
+  "title": "Reproducibility and variation of diffusion measures in the squirrel monkey brain, in vivo and ex vivo",
+  "year": 2017,
+  "authors": "Kurt Schilling, Yurui Gao, Iwona Stepniewska, Ann S. Choe, Bennett A. Landman, Adam W. Anderson",
+  "authorList": [
+    "Kurt Schilling",
+    "Yurui Gao",
+    "Iwona Stepniewska",
+    "Ann S. Choe",
+    "Bennett A. Landman",
+    "Adam W. Anderson"
+  ],
+  "kurtPosition": "first",
+  "journal": "Magnetic Resonance Imaging",
+  "type": "Article",
+  "doi": "https://doi.org/10.1016/j.mri.2016.08.015",
+  "publisher": "https://doi.org/10.1016/j.mri.2016.08.015",
+  "summary": "Repeated in vivo and ex vivo imaging of three squirrel monkeys establishes reference diffusion measurements and their variability. Mean diffusivity was relatively reproducible, while fractional anisotropy varied more across regions and subjects; fixation substantially changed both measures.",
+  "description": "Three healthy squirrel monkeys were each scanned twice in vivo and once ex vivo to measure reproducibility, regional variation, and agreement across tissue conditions. The analysis examined fractional anisotropy, mean diffusivity, and principal diffusion orientation in anatomically defined regions. Mean diffusivity showed coefficients of variation below 10%, while fractional anisotropy was more variable. Ex vivo mean diffusivity decreased by 30–50% and fractional anisotropy increased by 30–39% relative to in vivo values. These reference measurements support validation studies using the squirrel monkey model. The small sample and possible residual alignment errors between histological regions and MRI limit generalization and precision.",
+  "findings": [
+    "Mean diffusivity coefficients of variation were below 10% for both within-subject and between-subject comparisons.",
+    "Ex vivo mean diffusivity fell by 30–50%, while fractional anisotropy rose by 30–39%.",
+    "The modal angular difference between in vivo and ex vivo principal eigenvectors was 12 degrees."
+  ],
+  "topics": [
+    "Microstructure",
+    "Image Processing"
+  ],
+  "source": "https://doi.org/10.1016/j.mri.2016.08.015",
+  "summarySource": "https://doi.org/10.1016/j.mri.2016.08.015",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

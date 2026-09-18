@@ -1,0 +1,36 @@
+{
+  "slug": "cervical-cord-microstructure-validation",
+  "title": "Diffusion MRI microstructural models in the cervical spinal cord – Application, normative values, and correlations with histological analysis",
+  "year": 2019,
+  "authors": "Kurt G. Schilling, Samantha By, Haley R. Feiler, Bailey A. Box, Kristin P. O’Grady, Atlee Witt, Bennett A. Landman, Seth A. Smith",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Samantha By",
+    "Haley R. Feiler",
+    "Bailey A. Box",
+    "Kristin P. O’Grady",
+    "Atlee Witt",
+    "Bennett A. Landman",
+    "Seth A. Smith"
+  ],
+  "kurtPosition": "first",
+  "journal": "NeuroImage",
+  "type": "Article",
+  "doi": "https://doi.org/10.1016/j.neuroimage.2019.116026",
+  "publisher": "https://doi.org/10.1016/j.neuroimage.2019.116026",
+  "summary": "DTI, NODDI, and spherical mean techniques were evaluated in the cervical spinal cords of 21 healthy participants. Comparisons with a histological template showed sensitivity to tissue differences but limited specificity for the biological properties that model parameters are often assumed to measure.",
+  "description": "This study applied diffusion tensor imaging, NODDI, and the spherical mean technique to cervical spinal cord MRI from 21 healthy controls. It reports reference measurements across ascending and descending white matter pathways and gray matter regions, then compares those measurements with microstructural features from a histological template. Tensor indices reflected several tissue properties without isolating one mechanism. More elaborate microstructural models also showed associations, but did not specifically recover the properties their parameters were intended to represent. Some correlations were driven by broad white-versus-gray matter differences. Because the reference was a template rather than matched histology from each participant, the work motivates cord-specific validation rather than definitive individual tissue quantification.",
+  "findings": [
+    "Normative DTI, NODDI, and SMT measurements were reported for 21 healthy cervical spinal cords.",
+    "Microstructural model parameters did not specifically capture the histological properties explicitly modeled.",
+    "Broad differences between white and gray matter contributed strongly to several observed correlations."
+  ],
+  "topics": [
+    "Spinal Cord",
+    "Microstructure"
+  ],
+  "source": "https://doi.org/10.1016/j.neuroimage.2019.116026",
+  "summarySource": "https://doi.org/10.1016/j.neuroimage.2019.116026",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

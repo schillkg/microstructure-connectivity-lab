@@ -1,0 +1,41 @@
+{
+  "slug": "dti-alps-geometry",
+  "title": "White Matter Geometry Confounds Diffusion Tensor Imaging Along Perivascular Space (DTI-ALPS) Measures",
+  "year": 2025,
+  "authors": "Kurt G. Schilling, Allen Newton, Chantal Tax, Markus Nilsson, Maxime Chamberland, Adam Anderson, Bennett Landman, Maxime Descoteaux",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Allen Newton",
+    "Chantal Tax",
+    "Markus Nilsson",
+    "Maxime Chamberland",
+    "Adam Anderson",
+    "Bennett Landman",
+    "Maxime Descoteaux"
+  ],
+  "kurtPosition": "first",
+  "journal": "Human Brain Mapping",
+  "type": "Article",
+  "doi": "https://doi.org/10.1002/hbm.70282",
+  "publisher": "https://onlinelibrary.wiley.com/doi/10.1002/hbm.70282",
+  "summary": "The study tests whether DTI-ALPS measurements specifically reflect diffusion along perivascular spaces. Analyses of high-resolution diffusion and vascular imaging show strong effects of fiber crossings, dispersion, and undulation. These anatomical influences complicate interpreting an ALPS index as a direct measurement of glymphatic function across individuals or groups.",
+  "description": "DTI-ALPS has been proposed as a noninvasive marker related to perivascular transport, but its interpretation depends on assumptions about tissue geometry. This study evaluates those assumptions using high-resolution multishell diffusion data and vascular imaging. Radial diffusion asymmetry is widespread and persists at high diffusion weighting, while crossings, dispersion, and axonal undulations can alter ALPS-related measurements independently of perivascular diffusion. Medullary vein orientations also vary in regions commonly used for ALPS analysis. The results show why white matter geometry must be considered when interpreting these indices and motivate methods that separate vascular contributions from underlying axonal structure.",
+  "findings": [
+    "Crossing fibers can increase ALPS indices.",
+    "Dispersion and undulations generate radial asymmetry independent of perivascular diffusion.",
+    "Vascular orientations vary within regions commonly used for ALPS measurements."
+  ],
+  "topics": [
+    "Microstructure",
+    "Image Processing"
+  ],
+  "source": "https://onlinelibrary.wiley.com/doi/10.1002/hbm.70282",
+  "publicationStatus": "Published",
+  "metadataSource": "https://api.crossref.org/works/10.1002/hbm.70282",
+  "datePublished": "2025-07-07",
+  "image": "/assets/paper-4.png",
+  "imageAlt": "Research figure accompanying White Matter Geometry Confounds Diffusion Tensor Imaging Along Perivascular Space (DTI-ALPS) Measures",
+  "caption": "Figure from the lab’s publication highlight.",
+  "featured": true,
+  "order": 5
+}

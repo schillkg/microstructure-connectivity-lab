@@ -1,0 +1,34 @@
+{
+  "slug": "gyral-bias-validation",
+  "title": "Confirmation of a gyral bias in diffusion MRI fiber tractography",
+  "year": 2018,
+  "authors": "Kurt Schilling, Yurui Gao, Vaibhav Janve, Iwona Stepniewska, Bennett A. Landman, Adam W. Anderson",
+  "authorList": [
+    "Kurt Schilling",
+    "Yurui Gao",
+    "Vaibhav Janve",
+    "Iwona Stepniewska",
+    "Bennett A. Landman",
+    "Adam W. Anderson"
+  ],
+  "kurtPosition": "first",
+  "journal": "Human Brain Mapping",
+  "type": "Article",
+  "doi": "https://doi.org/10.1002/hbm.23936",
+  "publisher": "https://doi.org/10.1002/hbm.23936",
+  "summary": "Comparing tractography with myelin-stained histology confirms that streamlines preferentially terminate on gyral crowns. The bias persists across tracking algorithms, diffusion models, weightings, and high-resolution acquisitions, complicating interpretation of cortical connectivity from streamline density.",
+  "description": "The study compared axonal orientation and density near the white matter–gray matter boundary with diffusion MRI orientations and tractography in corresponding tissue locations. Histological observations showed that tractography overrepresented terminations at gyral crowns relative to sulcal banks. The effect appeared with deterministic and probabilistic tracking, tensor and higher-angular-resolution models, and multiple diffusion weightings, including very high-resolution data. This demonstrates a systematic anatomical bias rather than a peculiarity of one tracking configuration. The histological reference was two-dimensional and sensitive to myelinated axons, and the analysis did not directly identify full cortico-cortical connections; these limits matter when extending the results to connectivity estimates.",
+  "findings": [
+    "Tractography preferentially terminated on gyral crowns compared with histological axon distributions.",
+    "The bias persisted across deterministic/probabilistic tracking and multiple diffusion models and weightings.",
+    "Higher spatial resolution did not eliminate the observed gyral bias."
+  ],
+  "topics": [
+    "Tractography",
+    "Microstructure"
+  ],
+  "source": "https://doi.org/10.1002/hbm.23936",
+  "summarySource": "https://doi.org/10.1002/hbm.23936",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

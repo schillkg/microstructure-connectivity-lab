@@ -1,0 +1,34 @@
+{
+  "slug": "resolution-crossing-fibers",
+  "title": "Can increased spatial resolution solve the crossing fiber problem for diffusion MRI?",
+  "year": 2017,
+  "authors": "Kurt Schilling, Yurui Gao, Vaibhav Janve, Iwona Stepniewska, Bennett A. Landman, Adam W. Anderson",
+  "authorList": [
+    "Kurt Schilling",
+    "Yurui Gao",
+    "Vaibhav Janve",
+    "Iwona Stepniewska",
+    "Bennett A. Landman",
+    "Adam W. Anderson"
+  ],
+  "kurtPosition": "first",
+  "journal": "NMR in Biomedicine",
+  "type": "Article",
+  "doi": "https://doi.org/10.1002/nbm.3787",
+  "publisher": "https://doi.org/10.1002/nbm.3787",
+  "summary": "Ex vivo diffusion MRI and matched histology challenge the assumption that smaller voxels eliminate crossing fibers. Across the tested scales, finer resolution revealed more complex orientations, indicating that tissue geometry remains a fundamental obstacle even when image resolution improves.",
+  "description": "The study combined ex vivo macaque diffusion MRI with histological analysis of the same specimen to measure crossing-fiber prevalence as spatial resolution increased. Histology extended the analysis below practical MRI voxel sizes. Contrary to the usual expectation, the proportion of voxels with multiple orientations increased with finer sampling. Even at a histological voxel size of 32 micrometers, more than half of white matter voxels contained crossing configurations. The results show that improved resolution can reveal previously averaged structure without removing the ambiguity faced by tractography or microstructural models. These conclusions derive from the studied specimen and methods, rather than proving performance for every possible reconstruction.",
+  "findings": [
+    "Crossing-fiber prevalence increased as spatial resolution increased in both MRI and histology.",
+    "More than 50% of white matter voxels still showed crossing fibers at a 32-micrometer histological scale.",
+    "Signal-to-noise analyses indicated that noise alone did not explain the observed resolution effect."
+  ],
+  "topics": [
+    "Tractography",
+    "Microstructure"
+  ],
+  "source": "https://doi.org/10.1002/nbm.3787",
+  "summarySource": "https://doi.org/10.1002/nbm.3787",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

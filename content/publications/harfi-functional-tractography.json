@@ -1,0 +1,37 @@
+{
+  "slug": "harfi-functional-tractography",
+  "title": "Functional tractography of white matter by high angular resolution functional-correlation imaging (HARFI)",
+  "year": 2019,
+  "authors": "Kurt G. Schilling, Yurui Gao, Muwei Li, Tung-Lin Wu, Justin Blaber, Bennett A. Landman, Adam W. Anderson, Zhaohua Ding, John C. Gore",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Yurui Gao",
+    "Muwei Li",
+    "Tung-Lin Wu",
+    "Justin Blaber",
+    "Bennett A. Landman",
+    "Adam W. Anderson",
+    "Zhaohua Ding",
+    "John C. Gore"
+  ],
+  "kurtPosition": "first",
+  "journal": "Magnetic Resonance in Medicine",
+  "type": "Article",
+  "doi": "https://doi.org/10.1002/mrm.27512",
+  "publisher": "https://doi.org/10.1002/mrm.27512",
+  "summary": "HARFI estimates the directional structure of correlations in white matter BOLD signals without restricting them to a tensor. Its sampling approach reduces orientation bias and represents bending or fanning patterns, providing a functional MRI complement to diffusion-based descriptions of white matter pathways.",
+  "description": "The study introduces high-angular-resolution functional-correlation imaging to characterize how resting-state BOLD correlations vary with direction and distance in white matter. Conventional functional-correlation tensors use nearest neighbors and impose an ellipsoidal, symmetric shape, creating orientation biases and limiting the patterns they can describe. HARFI uses broader radial and angular sampling to estimate more complex distributions, including asymmetric bending and fanning. The resulting orientation information reconstructed known white matter pathways and supported proposed functional and asymmetry indices. This is a proof of concept for spatial BOLD organization: correlation-derived trajectories should not be equated with direct measurements of axons, neural signaling direction, or causal connectivity.",
+  "findings": [
+    "HARFI sampling removed orientation biases demonstrated in nearest-neighbor tensor models.",
+    "Estimated functional orientation distributions supported reconstruction of known white matter pathways.",
+    "The representation allowed asymmetric bending and fanning patterns excluded by a symmetric tensor."
+  ],
+  "topics": [
+    "Functional Connectivity",
+    "Tractography"
+  ],
+  "source": "https://doi.org/10.1002/mrm.27512",
+  "summarySource": "https://doi.org/10.1002/mrm.27512",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

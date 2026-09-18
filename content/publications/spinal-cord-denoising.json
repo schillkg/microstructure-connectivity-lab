@@ -1,0 +1,41 @@
+{
+  "slug": "spinal-cord-denoising",
+  "title": "Denoising of diffusion MRI in the cervical spinal cord – effects of denoising strategy and acquisition on intra-cord contrast, signal modeling, and feature conspicuity",
+  "year": 2023,
+  "authors": "Kurt G. Schilling, Shreyas Fadnavis, Joshua Batson, Mereze Visagie, Anna J. E. Combes, Samantha By, Colin D. McKnight, Francesca Bagnato, Eleftherios Garyfallidis, Bennett A. Landman, Seth A. Smith, Kristin P. O’Grady",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Shreyas Fadnavis",
+    "Joshua Batson",
+    "Mereze Visagie",
+    "Anna J. E. Combes",
+    "Samantha By",
+    "Colin D. McKnight",
+    "Francesca Bagnato",
+    "Eleftherios Garyfallidis",
+    "Bennett A. Landman",
+    "Seth A. Smith",
+    "Kristin P. O’Grady"
+  ],
+  "kurtPosition": "first",
+  "journal": "NeuroImage",
+  "type": "Article",
+  "doi": "https://doi.org/10.1016/j.neuroimage.2022.119826",
+  "publisher": "https://doi.org/10.1016/j.neuroimage.2022.119826",
+  "summary": "Phantom and human experiments compare three denoising methods for spinal cord diffusion MRI. MPPCA and Patch2Self improved image quality, tissue contrast, and precision even with the small direction counts common in clinical scans, while all tested methods improved visibility of multiple sclerosis lesions in diffusion-weighted images.",
+  "description": "The study evaluated Non-Local Means, Marchenko–Pastur PCA, and Patch2Self across five experiments: a phantom test, multi-vendor acquisitions, bootstrapped parameter uncertainty, multiple sclerosis lesion conspicuity, and advanced multi-compartment modeling. All methods increased signal-to-noise ratio and lesion visibility in individual diffusion-weighted images. MPPCA and Patch2Self were particularly effective at improving intra-cord contrast and parameter precision, including acquisitions with only 16–32 diffusion-weighted images. These results support denoising as part of practical spinal cord preprocessing. Performance depended on method and acquisition, and improved image appearance or precision does not by itself establish greater biological specificity or diagnostic accuracy for the resulting model parameters.",
+  "findings": [
+    "Five complementary experiments evaluated image quality, bias, precision, lesion conspicuity, and model fitting.",
+    "MPPCA and Patch2Self improved intra-cord contrast and diffusion parameter precision with 16–32 images.",
+    "All three methods improved the conspicuity of multiple sclerosis lesions in individual diffusion-weighted images."
+  ],
+  "topics": [
+    "Spinal Cord",
+    "Image Processing",
+    "Microstructure"
+  ],
+  "source": "https://doi.org/10.1016/j.neuroimage.2022.119826",
+  "summarySource": "https://doi.org/10.1016/j.neuroimage.2022.119826",
+  "pdf": "",
+  "publicationStatus": "Published"
+}

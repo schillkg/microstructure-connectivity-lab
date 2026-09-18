@@ -1,0 +1,39 @@
+{
+  "slug": "tractography-outside-brain",
+  "title": "Diffusion tractography outside the brain: the road less travelled",
+  "year": 2026,
+  "authors": "Kurt G. Schilling, Irvin Teh, Julien Cohen-Adad, Richard Dortch, Ibrahim Ibrahim, Nian Wang, Bruce Damon, Rory L. Cochran, Alexander Leemans",
+  "authorList": [
+    "Kurt G. Schilling",
+    "Irvin Teh",
+    "Julien Cohen-Adad",
+    "Richard Dortch",
+    "Ibrahim Ibrahim",
+    "Nian Wang",
+    "Bruce Damon",
+    "Rory L. Cochran",
+    "Alexander Leemans"
+  ],
+  "kurtPosition": "first",
+  "journal": "Brain Structure and Function",
+  "type": "Review",
+  "doi": "https://doi.org/10.1007/s00429-025-03062-9",
+  "publisher": "https://link.springer.com/10.1007/s00429-025-03062-9",
+  "summary": "Tractography can probe organized tissue far beyond cerebral white matter. This review surveys applications in the spinal cord, heart, peripheral nerves, brachial plexus, kidney, skeletal muscle, and prostate. It explains the acquisition and modeling adaptations each region requires, together with the anatomical opportunities and unresolved interpretation challenges.",
+  "description": "The organized structure of many tissues creates diffusion patterns that can be investigated with tractography. This review surveys applications outside the brain, including the spinal cord, heart, peripheral nerves, brachial plexus, kidney, skeletal muscle, and prostate. Each application introduces specific acquisition, modeling, and processing requirements, shaped by anatomy and physiology. Motion, susceptibility artifacts, lower anisotropy, and uncertainty about streamline interpretation remain important obstacles. By comparing these settings, the authors describe how diffusion tractography can provide noninvasive information about tissue organization beyond its conventional cerebral applications and identify methodological work needed to strengthen its biomedical use.",
+  "findings": [
+    "Reviews tractography across seven anatomical regions outside the brain.",
+    "Acquisition and modeling must be adapted to tissue-specific anatomy and physiology.",
+    "Motion, artifacts, and streamline validity remain recurring challenges."
+  ],
+  "topics": [
+    "Tractography",
+    "Spinal Cord",
+    "Reviews & Consensus"
+  ],
+  "source": "https://link.springer.com/10.1007/s00429-025-03062-9",
+  "publicationStatus": "Published",
+  "pdf": "",
+  "metadataSource": "https://api.crossref.org/works/10.1007/s00429-025-03062-9",
+  "datePublished": "2026-01-05"
+}

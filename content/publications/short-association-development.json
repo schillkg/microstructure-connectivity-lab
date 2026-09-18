@@ -1,0 +1,40 @@
+{
+  "slug": "short-association-development",
+  "title": "Microstructural Characterization of Short Association Fibers Related to Long-Range White Matter Tracts in Normative Development",
+  "year": 2025,
+  "authors": "Chloe Cho, Maxime Chamberland, Francois Rheault, Daniel Moyer, Bennett A. Landman, Kurt G. Schilling",
+  "authorList": [
+    "Chloe Cho",
+    "Maxime Chamberland",
+    "Francois Rheault",
+    "Daniel Moyer",
+    "Bennett A. Landman",
+    "Kurt G. Schilling"
+  ],
+  "kurtPosition": "last",
+  "journal": "Human Brain Mapping",
+  "type": "Article",
+  "doi": "https://doi.org/10.1002/hbm.70255",
+  "publisher": "https://onlinelibrary.wiley.com/doi/10.1002/hbm.70255",
+  "summary": "This study compares the development of short association fibers and long-range pathways in 616 participants aged 5.6–21.9 years. Diffusion tensor and NODDI measurements reveal shared age-related patterns alongside distinct features of superficial white matter. The results provide a reference for future studies of atypical development.",
+  "description": "Short association fibers connect nearby cortical regions, yet their developmental trajectories have received less attention than those of long-range pathways. The study combines diffusion tractography, diffusion tensor imaging, and NODDI in 616 participants aged 5.6–21.9 years. Both pathway classes show broadly similar associations between age and diffusion measurements, but fractional anisotropy, axial diffusivity, and orientation dispersion distinguish superficial from deep white matter. Sex-related differences also appear in selected measures. The work provides normative descriptions of these pathways during childhood and young adulthood and motivates studies of how their development is coordinated across anatomical scales.",
+  "findings": [
+    "Short and long pathways share several age-associated microstructural trends.",
+    "FA, axial diffusivity, and orientation dispersion distinguish the two pathway classes.",
+    "Selected measurements also differed between males and females."
+  ],
+  "topics": [
+    "Microstructure",
+    "Lifespan",
+    "Tractography"
+  ],
+  "source": "https://onlinelibrary.wiley.com/doi/10.1002/hbm.70255",
+  "publicationStatus": "Published",
+  "metadataSource": "https://api.crossref.org/works/10.1002/hbm.70255",
+  "datePublished": "2025-06-09",
+  "image": "/assets/paper-6.png",
+  "imageAlt": "Research figure accompanying Microstructural Characterization of Short Association Fibers Related to Long-Range White Matter Tracts in Normative Development",
+  "caption": "Figure from the lab’s publication highlight.",
+  "featured": true,
+  "order": 7
+}

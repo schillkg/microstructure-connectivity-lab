@@ -1,0 +1,43 @@
+{
+  "slug": "leveling-up-spinal-cord",
+  "title": "Leveling up: along-level diffusion tensor imaging in the spinal cord of multiple sclerosis patients",
+  "year": 2025,
+  "authors": "Atlee A. Witt, Anna J. E. Combes, Grace Sweeney, Logan E. Prock, Delaney Houston, Seth Stubblefield, Colin D. McKnight, Kristin P. O’Grady, Seth A. Smith, Kurt G. Schilling",
+  "authorList": [
+    "Atlee A. Witt",
+    "Anna J. E. Combes",
+    "Grace Sweeney",
+    "Logan E. Prock",
+    "Delaney Houston",
+    "Seth Stubblefield",
+    "Colin D. McKnight",
+    "Kristin P. O’Grady",
+    "Seth A. Smith",
+    "Kurt G. Schilling"
+  ],
+  "kurtPosition": "last",
+  "journal": "Frontiers in Neuroimaging",
+  "type": "Article",
+  "doi": "https://doi.org/10.3389/fnimg.2025.1599966",
+  "publisher": "https://www.frontiersin.org/articles/10.3389/fnimg.2025.1599966/full",
+  "summary": "Analyzing spinal cord measurements by cervical level reveals localized changes in relapsing-remitting multiple sclerosis that whole-cord averages can miss. The study combines diffusion and structural measurements within white and gray matter regions. Gray matter atrophy relates to disability, while the measured microstructural changes do not show significant disability associations.",
+  "description": "The spinal cord has a natural anatomical coordinate system in its cervical levels, providing a way to localize disease-related changes. This study compares people with relapsing-remitting multiple sclerosis and healthy controls using diffusion tensor and macrostructural measurements along the cord. Analyses of white matter tracts and gray matter subdivisions detect spatially restricted differences that are less apparent when measurements are averaged across the whole cord. Gray matter atrophy is associated with clinical disability, whereas microstructural measurements do not show significant correlations with disability in this cohort. The findings support level-specific analysis for characterizing heterogeneous spinal cord pathology.",
+  "findings": [
+    "Level-specific analyses are more sensitive to localized group differences than whole-cord averaging.",
+    "White and gray matter changes vary along levels and across axial regions.",
+    "Gray matter atrophy, but not measured microstructural changes, correlates with disability."
+  ],
+  "topics": [
+    "Spinal Cord",
+    "Microstructure"
+  ],
+  "source": "https://www.frontiersin.org/articles/10.3389/fnimg.2025.1599966/full",
+  "publicationStatus": "Published",
+  "metadataSource": "https://api.crossref.org/works/10.3389/fnimg.2025.1599966",
+  "datePublished": "2025-08-11",
+  "image": "/assets/paper-2.png",
+  "imageAlt": "Research figure accompanying Leveling Up: Along-Level Diffusion Tensor Imaging in the Spinal Cord of Multiple Sclerosis Patients",
+  "caption": "Figure from the lab’s publication highlight.",
+  "featured": true,
+  "order": 3
+}
