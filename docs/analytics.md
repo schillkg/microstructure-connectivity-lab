@@ -1,10 +1,10 @@
 # Site analytics
 
-Tracking remains off until an analytics account and its site-specific tag are configured. GitHub Pages serves the site; it does not supply the visitor dashboard described here.
+The lab’s GoatCounter site code, `schillkg`, is configured in `content/site.json`. Dashboard: [schillkg.goatcounter.com](https://schillkg.goatcounter.com/). GitHub Pages serves the site; it does not supply the visitor dashboard described here.
 
 Recommended service: **GoatCounter**, whose hosted service is free for reasonable public usage. Its dashboard provides page views, approximate unique visits, referrers, broad geography, browsers, and click events. It does not identify the people reading a paper. See [GoatCounter](https://www.goatcounter.com/) and its [visitor-count explanation](https://www.goatcounter.com/help/sessions).
 
-The site accepts a GoatCounter site code in `content/site.json`, described in the README. No tracking is sent while `analytics` is `null`. Create a free account at https://www.goatcounter.com/signup, keep its dashboard private, and configure the actual code. These events appear with readable titles in the dashboard:
+The site accepts a GoatCounter site code in `content/site.json`, described in the README. No tracking is sent while `analytics` is `null`. The dashboard remains private to logged-in users. Its “Your site” field should match the website’s current host; update it to `www.microstructure-connectivity-lab.com` when the domain moves. These events appear with readable titles in the dashboard:
 
 | Event | What it means |
 |---|---|
@@ -14,6 +14,7 @@ The site accepts a GoatCounter site code in `content/site.json`, described in th
 | `figure_open` | A figure opened at full size from a paper page |
 | `news_click` | A linked news story |
 | `navigation_click` | A navigation link, with its destination page |
+| `viewer_open` | A click opening the full pathway explorer |
 | `viewer_mode` | A switch between streamlines and centroids |
 
 The tracking code does not send names, emails, search text, or full external URLs. Page-view tracking is handled by the provider’s script. The script uses the official [event API](https://www.goatcounter.com/help/events). Verify the dashboard with real test visits before declaring analytics active. Avoid enabling a second automatic download/outbound tracker for the same actions, which could confuse reporting.
