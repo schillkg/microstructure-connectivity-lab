@@ -9,7 +9,10 @@
   "sourceSite": "https://www.microstructure-connectivity-lab.com",
   "reviewPreview": true,
   "indexing": false,
-  "analytics": null,
+  "analytics": {
+    "provider": "goatcounter",
+    "siteCode": "schillkg"
+  },
   "scholar": "https://scholar.google.com/citations?user=mYSU6lUAAAAJ",
   "contactSource": "https://www.microstructure-connectivity-lab.com/contact"
 }
