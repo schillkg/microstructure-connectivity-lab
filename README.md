@@ -42,15 +42,15 @@ These measures make the research easier to parse; they do not guarantee indexing
 
 ## Free site analytics
 
-Tracking is currently disabled (`analytics: null`). GoatCounter is the recommended free service for visits, page views, approximate unique visits, referring sites, and paper/resource click counts. Its hosted service is free for reasonable public usage; no paid plan is required for a normal lab site. See [GoatCounter](https://www.goatcounter.com/).
+GoatCounter is configured for the lab’s `schillkg` account in `content/site.json`. It is the free service for visits, page views, approximate unique visits, referring sites, and paper/resource click counts. Its hosted service is free for reasonable public usage; no paid plan is required for a normal lab site. See [GoatCounter](https://www.goatcounter.com/).
 
-Create a free account, then put its actual site code in `content/site.json`:
+The current configuration is:
 
 ```json
-"analytics": {"provider": "goatcounter", "siteCode": "YOUR-ACTUAL-CODE"}
+"analytics": {"provider": "goatcounter", "siteCode": "schillkg"}
 ```
 
-The generator installs its official script. Page views and human-readable event titles appear in the dashboard. PDF links, article links, resource links, figures, news, navigation, and viewer-mode controls have tracking hooks. No event is sent without a configured provider. Verify a real visit and click in the dashboard before treating analytics as active. Do not add a second generic click tracker for the same actions.
+The generator installs its official script. Page views and human-readable event titles appear in the dashboard. PDF links, article links, resource links, figures, news, navigation, and viewer-mode controls have tracking hooks. The dashboard is at [schillkg.goatcounter.com](https://schillkg.goatcounter.com/). No event is sent without a configured provider. Verify a real visit and click in the dashboard before treating analytics as active. Do not add a second generic click tracker for the same actions.
 
 PDF-link clicks are not confirmed completed downloads or readers. Direct publisher/repository downloads bypassing this site are not counted, and blockers can undercount. Unique visitors are estimates; the dashboard does not identify individuals. See [the analytics guide](docs/analytics.md).
 
