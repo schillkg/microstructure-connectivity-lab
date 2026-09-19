@@ -7,8 +7,8 @@
   "address": "1161 21st Ave S, AA-1105, Nashville, TN 37232",
   "prototype": false,
   "sourceSite": "https://www.microstructure-connectivity-lab.com",
-  "reviewPreview": true,
-  "indexing": false,
+  "reviewPreview": false,
+  "indexing": true,
   "analytics": {
     "provider": "goatcounter",
     "siteCode": "schillkg"
