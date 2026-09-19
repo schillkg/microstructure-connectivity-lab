@@ -4,11 +4,11 @@ The lab’s GoatCounter site code, `schillkg`, is configured in `content/site.js
 
 Recommended service: **GoatCounter**, whose hosted service is free for reasonable public usage. Its dashboard provides page views, approximate unique visits, referrers, broad geography, browsers, and click events. It does not identify the people reading a paper. See [GoatCounter](https://www.goatcounter.com/) and its [visitor-count explanation](https://www.goatcounter.com/help/sessions).
 
-The site accepts a GoatCounter site code in `content/site.json`, described in the README. No tracking is sent while `analytics` is `null`. The dashboard remains private to logged-in users. Its “Your site” field should match the website’s current host; update it to `www.microstructure-connectivity-lab.com` when the domain moves. These events appear with readable titles in the dashboard:
+The site accepts a GoatCounter site code in `content/site.json`, described in the README. No tracking is sent while `analytics` is `null`. The dashboard remains private to logged-in users. Its “Your site” field is `www.microstructure-connectivity-lab.com`. Setup was verified with page views, explorer opening, centroid-mode selection, and the Nature paper’s PDF-link click. These initial test interactions remain in the dashboard. These events appear with readable titles in the dashboard:
 
 | Event | What it means |
 |---|---|
-| `paper_download_click` | A click on a PDF link, with the paper slug and destination host |
+| `paper_download_click` | A click on a PDF link, identified by the paper slug |
 | `paper_link_click` | A click on an article, full text, citation, or related paper resource |
 | `resource_click` | A software, data, or teaching resource link |
 | `figure_open` | A figure opened at full size from a paper page |

@@ -4,7 +4,7 @@ GitHub Pages is a good fit for this lab website. Hosting on GitHub does not limi
 
 The current prototype uses a zero-dependency Node static generator. Each paper has one record in `content/publications/*.json`. That record supplies its title, authors, date, topics, summary, figure, and links to the homepage highlights, topic pages, searchable publication list, individual publication page, and related work. Correcting a paper once updates every place it appears the next time the site is built.
 
-The review version contains **64 selected works (60 published works and 4 preprints)**, including reviews and book chapters. Selection used the supplied paper collection and verified publisher/Crossref metadata; it is not a complete Google Scholar export. Review scientific summaries, publication types, the roster, and figure choices before the domain launch. Automatic Drive ingestion is still a proposed next step, not a running service.
+The site contains **64 selected works (60 published works and 4 preprints)**, including reviews and book chapters. Selection used the supplied paper collection and verified publisher/Crossref metadata; it is not a complete Google Scholar export. Scientific summaries, publication types, the roster, and figure choices can be revised through the same content records. Automatic Drive ingestion is still a proposed next step, not a running service.
 
 ## A practical update workflow
 
@@ -40,4 +40,4 @@ The advantages are flexible design, one publication source, portable content, au
 5. Change the website routing records only. Preserve MX records and email-related TXT records such as SPF, DKIM, and DMARC. Keep the registrar and other DNS services in place unless there is a separate reason to change them.
 6. Allow DNS and certificate provisioning to finish, enable HTTPS, and check both domain variants, legacy URLs, figures, and PDFs. Keep the Google Sites content available until those checks pass. [HTTPS setup](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https)
 
-The site is published at https://schillkg.github.io/microstructure-connectivity-lab/. The domain cutover is authorized; the existing Google Site must remain saved and published. Current DNS is managed through Squarespace.
+The configured canonical domain is https://www.microstructure-connectivity-lab.com/. Ownership is verified by GitHub. Squarespace DNS points `www` to `schillkg.github.io`; retain the GitHub challenge TXT and the original Google verification TXT. The existing Google Site is preserved. The bare domain currently uses its existing Squarespace forwarding service, updated to a permanent HTTPS redirect that preserves page paths. The custom-domain launch is pending GitHub HTTPS. Squarespace requires removal of its forwarding rule before replacement apex A records can be added; that remaining transition is awaiting approval because it can briefly interrupt access.
