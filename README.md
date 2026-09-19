@@ -1,6 +1,6 @@
 # Microstructure & Connectivity Lab
 
-A static lab website built for GitHub Pages. The review version includes 64 selected first- or last-author works (60 published works and 4 preprints), individual paper summaries and illustrations, scholarly metadata, grouped software and data links, four news stories, and an interactive streamline viewer. The existing Google Site and domain remain separate during review.
+A static lab website built for GitHub Pages. The review version includes 64 selected first- or last-author works (60 published works and 4 preprints), individual paper summaries and illustrations, scholarly metadata, grouped software and data links, four news stories, and an interactive streamline viewer. The custom domain is being moved to GitHub Pages; the original Google Site is preserved.
 
 ## Local preview
 
@@ -36,7 +36,7 @@ The proposed next step is Drive upload → DOI/hash matching → metadata and su
 
 Every paper has visible HTML text, full author citation metadata, a DOI, ScholarlyArticle/Chapter JSON-LD, a plain Markdown summary, and a BibTeX citation. The site exports `publications.json`, `sitemap.xml`, and an optional `llms.txt` index. No JavaScript is needed to read the paper text. Summaries identify findings and methods and link to authoritative source material; they do not reproduce the complete article.
 
-The review site uses `noindex,follow` to avoid indexing unfinished text. Set `indexing: true` and `reviewPreview: false` in `content/site.json` at the approved domain launch. Sitemap and crawlable content are generated in either mode. A `noindex` directive is not access control: the preview is public and can be shared.
+The main site is enabled for indexing (`indexing: true`, `reviewPreview: false`). All three style alternatives and their comparison page remain public for feedback, with `noindex,nofollow`, no analytics, and no sitemap entries. A `noindex` directive is not access control: these review pages can be shared.
 
 These measures make the research easier to parse; they do not guarantee indexing, citation, or prominence in an AI answer. Google states that no special AI markup or new AI text file is required: [Google AI search guidance](https://developers.google.com/search/docs/appearance/ai-features). Scholar inclusion is also subject to its own rules: [Scholar inclusion guidelines](https://scholar.google.com/intl/en/scholar/inclusion.html).
 
@@ -50,7 +50,7 @@ The current configuration is:
 "analytics": {"provider": "goatcounter", "siteCode": "schillkg"}
 ```
 
-The generator installs its official script. Page views and human-readable event titles appear in the dashboard. PDF links, article links, resource links, figures, news, navigation, and viewer-mode controls have tracking hooks. The dashboard is at [schillkg.goatcounter.com](https://schillkg.goatcounter.com/). No event is sent without a configured provider. Verify a real visit and click in the dashboard before treating analytics as active. Do not add a second generic click tracker for the same actions.
+The generator installs its official script. Page views and human-readable event titles appear in the dashboard. PDF links, article links, resource links, figures, news, navigation, and viewer-mode controls have tracking hooks. The dashboard is at [schillkg.goatcounter.com](https://schillkg.goatcounter.com/). No event is sent without a configured provider. Page views, explorer controls, and a PDF-link click have been verified in the dashboard. Do not add a second generic click tracker for the same actions.
 
 PDF-link clicks are not confirmed completed downloads or readers. Direct publisher/repository downloads bypassing this site are not counted, and blockers can undercount. Unique visitors are estimates; the dashboard does not identify individuals. See [the analytics guide](docs/analytics.md).
 
@@ -66,7 +66,7 @@ BASE_PATH=/microstructure-connectivity-lab PORT=4322 npm run dev
 
 Visit http://127.0.0.1:4322/microstructure-connectivity-lab/. Both local servers use `dist/`, so do not run builds with different prefixes simultaneously.
 
-Custom-domain migration is separate; see [the domain plan](docs/decision-and-migration.md). Do not change DNS until the temporary site has been reviewed. Set the custom domain in Pages, verify ownership, update the required web DNS records, preserve mail records, and enable HTTPS. GitHub supplies the deployment path automatically.
+The configured custom domain is `www.microstructure-connectivity-lab.com`. Ownership is verified under the GitHub account. Squarespace manages DNS, with `www` pointing to `schillkg.github.io`. Preserve the existing Google Site and Google verification TXT. See [the domain plan](docs/decision-and-migration.md). GitHub supplies the deployment path automatically; rebuild after changing domain or HTTPS settings so canonical URLs and sitemap entries match production.
 
 ## Style previews
 
