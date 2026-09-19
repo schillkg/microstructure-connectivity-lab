@@ -1,6 +1,6 @@
 # Microstructure & Connectivity Lab
 
-A static lab website built for GitHub Pages. The review version includes 64 selected first- or last-author works (60 published works and 4 preprints), individual paper summaries and illustrations, scholarly metadata, grouped software and data links, four news stories, and an interactive streamline viewer. The custom domain is being moved to GitHub Pages; the original Google Site is preserved.
+A static lab website built for GitHub Pages. The review version includes 64 selected first- or last-author works (60 published works and 4 preprints), individual paper summaries and illustrations, scholarly metadata, grouped software and data links, four news stories, and an interactive streamline viewer. The site is published at https://www.microstructure-connectivity-lab.com/ through GitHub Pages; the original Google Site is preserved.
 
 ## Local preview
 
