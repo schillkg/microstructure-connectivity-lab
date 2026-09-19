@@ -43,7 +43,7 @@ year?.addEventListener('change', update);
 // No names, email addresses, search text, or complete external URLs are sent.
 function trackLabEvent(name,props={}) {
   if(typeof window.goatcounter?.count==='function'){
-    const labels={paper_download_click:'PDF link',paper_link_click:'Article link',resource_click:'Resource',figure_open:'Figure',news_click:'News',navigation_click:'Navigation',viewer_mode:'Viewer'};
+    const labels={paper_download_click:'PDF link',paper_link_click:'Article link',resource_click:'Resource',figure_open:'Figure',news_click:'News',navigation_click:'Navigation',viewer_mode:'Viewer',viewer_open:'Open pathway explorer'};
     const item=props.paper||props.resource||props.mode||props.page||props.host||'';
     window.goatcounter.count({path:name+'-'+item,title:(labels[name]||name)+' · '+item.replace(/-/g,' '),event:true,no_session:true});
   }else if(typeof window.plausible==='function')window.plausible(name,{props});
@@ -52,7 +52,8 @@ function trackLink(event){
   if(event.type==='auxclick'&&event.button!==1)return;
   const a=event.target.closest('a');if(!a)return;
   const destination=new URL(a.href),paper=a.dataset.paperSlug||a.closest('[data-paper-slug]')?.dataset.paperSlug;
-  if(a.dataset.event==='paper_download_click')trackLabEvent('paper_download_click',{paper,host:destination.hostname});
+  if(destination.pathname.replace(/\/$/,'').endsWith('/tractography'))trackLabEvent('viewer_open',{page:'pathway-explorer'});
+  else if(a.dataset.event==='paper_download_click')trackLabEvent('paper_download_click',{paper,host:destination.hostname});
   else if(a.closest('[data-resource]'))trackLabEvent('resource_click',{resource:a.closest('[data-resource]').dataset.resource,host:destination.hostname});
   else if(a.closest('.paper-body figure'))trackLabEvent('figure_open',{paper});
   else if(a.closest('.paper-actions')&&paper)trackLabEvent('paper_link_click',{paper,host:destination.hostname});
