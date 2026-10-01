@@ -97,16 +97,32 @@
   const surfaceFragment=`#version 300 es
   precision highp float;
   in vec3 vNormal;in vec3 vColor;flat in float vRegion;
-  uniform float uAlpha;uniform float uOpacity;uniform vec3 uColor;uniform float uParcels;uniform float uSelected;uniform float uSurfaceStyle;
+  uniform float uAlpha;uniform float uOpacity;uniform vec3 uColor;uniform float uParcels;uniform float uSelected;uniform float uSurfaceStyle;uniform float uInline;
   out vec4 color;
   void main(){
-    vec3 n=normalize(vNormal);float rim=pow(1.-abs(n.z),2.7);
-    float light=.55+.45*abs(dot(n,normalize(vec3(-.5,.8,1))));
-    vec3 base=mix(uColor,vColor,uParcels);float alpha=uAlpha;
-    if(uSurfaceStyle<.5)alpha+=.18*rim;
-    if(uSurfaceStyle>2.5){float d=length(gl_PointCoord-vec2(.5))*2.;alpha*=1.-smoothstep(.45,1.,d);}
+    vec3 n=normalize(vNormal);if(!gl_FrontFacing)n=-n;
+    float rim=pow(1.-abs(n.z),2.7),opacity=clamp(uOpacity,0.,1.);
+    float key=max(0.,dot(n,normalize(vec3(-.45,.65,1.))));
+    float fill=max(0.,dot(n,normalize(vec3(.9,-.4,.28))));
+    float backlight=max(0.,dot(n,normalize(vec3(.16,-.72,.67))));
+    vec3 base=mix(uColor,vColor,uParcels);
+    vec3 lit=base*(.25+.67*key+.2*fill)+vec3(.012,.022,.035)+vec3(.035,.065,.09)*backlight;
+    float alpha=opacity;
+    // The homepage keeps its faint outline; explorer opacity is a true 0..1 alpha.
+    if(uInline>.5)alpha=(uAlpha+.18*rim)*(opacity/.1);
+    if(uSurfaceStyle<.5)lit+=vec3(.12,.2,.28)*rim*(1.-opacity);
+    if(uSurfaceStyle>1.5&&uSurfaceStyle<2.5)lit*=.76;
+    if(uSurfaceStyle>2.5){
+      float d=length(gl_PointCoord-vec2(.5))*2.;
+      float core=1.-smoothstep(.05,.58,d),halo=.23*(1.-smoothstep(.15,1.,d));
+      alpha*=max(core,halo);
+      lit=mix(lit,mix(base,vec3(.6,.82,1.),uParcels>.5?.12:.6),.65)+vec3(.08,.13,.18)*core;
+    }
     float emphasis=uSelected<0.||abs(vRegion-uSelected)<.5?1.:.08;
-    color=vec4(base*light,alpha*uOpacity*emphasis);
+    // At full opacity, selection dims context color rather than revealing through it.
+    float opaqueContext=uSurfaceStyle<1.5?smoothstep(.75,1.,opacity):0.;
+    alpha*=mix(emphasis,1.,opaqueContext);lit*=mix(1.,mix(.28,1.,emphasis),opaqueContext);
+    color=vec4(lit,clamp(alpha,0.,1.));
   }`;
   for(const panel of document.querySelectorAll('[data-tract-viewer]')){
     const $=s=>panel.querySelector(s),$$=s=>[...panel.querySelectorAll(s)];
@@ -114,7 +130,7 @@
     const expanded=panel.hasAttribute('data-expanded'),choices=$$('[data-bundle]'),glass=$('[data-glass]'),modeInput=$('[data-render-mode]');
     const gl=canvas.getContext('webgl2',{antialias:true,alpha:false,powerPreference:expanded?'default':'low-power',preserveDrawingBuffer:expanded});
     let yaw=0,pitch=0,selected='all',dirty=false,dragging=null,data,spinning=false,lastFrame=0,currentView='oblique';
-    let mode='fibers',fiberStyle=expanded?'wispy':'solid',direction=false,zoom=1,radius=.00165,opacity=1,brightness=1.1,wispOpacity=.12,lightBackground=false;
+    let mode='fibers',fiberStyle=expanded?'fine':'solid',direction=false,zoom=expanded?1.22:1,radius=expanded?.0012:.00165,opacity=expanded?.16:.1,brightness=1.1,wispOpacity=.22,lightBackground=false;
     let surfaceStyle='glass',anatomySource='outline',hemisphere='all',parcels=false,selectedRegion='all';
     let camera,right,up,tube,wisp,surface,tubeShape,wispShape,tubeIndices,tubeIndexCount;
     let models=new Map(),centroids=[],surfaces=[],atlas=null,atlasURL=null,surfacePromise=null,loading=new Map(),failed=new Set();
@@ -132,7 +148,7 @@
     function program(vs,fs){
       const p=gl.createProgram(),v=shader(gl.VERTEX_SHADER,vs),f=shader(gl.FRAGMENT_SHADER,fs);gl.attachShader(p,v);gl.attachShader(p,f);gl.linkProgram(p);gl.deleteShader(v);gl.deleteShader(f);
       if(!gl.getProgramParameter(p,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(p));
-      return Object.fromEntries([['program',p],...['Rotation','Fit','Viewport','Color','Radius','Alpha','Opacity','Direction','Brightness','Parcels','Selected','SurfaceStyle','PointSize','Fine','Paper'].map(n=>[n.toLowerCase(),gl.getUniformLocation(p,'u'+n)])]);
+      return Object.fromEntries([['program',p],...['Rotation','Fit','Viewport','Color','Radius','Alpha','Opacity','Direction','Brightness','Parcels','Selected','SurfaceStyle','PointSize','Fine','Paper','Inline'].map(n=>[n.toLowerCase(),gl.getUniformLocation(p,'u'+n)])]);
     }
     function buffer(array,target=gl.ARRAY_BUFFER){const b=gl.createBuffer();gl.bindBuffer(target,b);gl.bufferData(target,array,gl.STATIC_DRAW);return b}
     function attribute(index,b,size,{stride=0,offset=0,divisor=0,type=gl.FLOAT,normalized=false}={}){gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.enableVertexAttribArray(index);gl.vertexAttribPointer(index,size,type,normalized,stride,offset);gl.vertexAttribDivisor(index,divisor)}
@@ -160,21 +176,20 @@
       const shell=(model,back=false)=>{
         const wire=surfaceStyle==='wire',points=surfaceStyle==='points',solid=surfaceStyle==='solid';
         const showParcels=parcels&&anatomySource==='cortex'&&model.hasRegions,regionSelected=showParcels&&selectedRegion!=='all';
-        // Selected parcels dim their context, so that view remains translucent.
-        // Fully opaque surfaces write depth in both passes to resolve folded cortex.
-        const opaque=solid&&opacity>=3.32&&!regionSelected;
+        // Both shaded styles become depth-correct opaque surfaces at 100%.
+        const opaque=expanded&&(solid||surfaceStyle==='glass')&&opacity>=.999;
         set(surface);gl.bindVertexArray(model.vao);if(opaque)gl.disable(gl.BLEND);else{gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA)}gl.depthMask(opaque);
         gl.uniform1f(surface.alpha,wire?(model.vertexCount>50000?.055:.16):points?.2:solid?.3:back?.017:.035);
-        gl.uniform1f(surface.opacity,opacity);gl.uniform1f(surface.parcels,showParcels?1:0);
+        gl.uniform1f(surface.opacity,opacity);gl.uniform1f(surface.inline,expanded?0:1);gl.uniform1f(surface.parcels,showParcels?1:0);
         // A nonmatching label dims the other hemisphere; outline ignores parcel state.
         gl.uniform1f(surface.selected,regionSelected?(selectedRegion.startsWith(model.id+':')?Number(selectedRegion.slice(model.id.length+1)):1e8):-1);
-        gl.uniform1f(surface.surfacestyle,points?3:wire?2:solid?1:0);gl.uniform1f(surface.pointsize,1.45*dpr);
+        gl.uniform1f(surface.surfacestyle,points?3:wire?2:solid?1:0);gl.uniform1f(surface.pointsize,1.8*dpr);
         gl.uniform3fv(surface.color,lightBackground?[.24,.39,.45]:[.47,.7,.84]);
         if(wire){gl.disable(gl.CULL_FACE);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,model.edges);gl.drawElements(gl.LINES,model.edgeCount,model.indexType,0)}
         else if(points){gl.disable(gl.CULL_FACE);gl.drawArrays(gl.POINTS,0,model.vertexCount)}
         else{gl.enable(gl.CULL_FACE);gl.cullFace(back?gl.FRONT:gl.BACK);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,model.indices);gl.drawElements(gl.TRIANGLES,model.indexCount,model.indexType,0)}
       };
-      if(surfaceStyle==='glass'||surfaceStyle==='solid')for(const s of shells)shell(s,true);
+      if(opacity>0&&(surfaceStyle==='glass'||surfaceStyle==='solid'))for(const s of shells)shell(s,true);
       gl.disable(gl.CULL_FACE);let count=0;
       if(mode!=='centroids'){
         const wispy=fiberStyle!=='solid',fine=fiberStyle==='fine',p=wispy?wisp:tube;set(p);gl.uniform1f(p.brightness,brightness);gl.uniform1f(p.direction,direction?1:0);
@@ -193,10 +208,10 @@
         for(const c of centroids)if(show(c.group)){gl.bindVertexArray(c.vao);gl.uniform3fv(tube.color,mode==='both'?(lightBackground?[.13,.15,.16]:[1,.97,.85]):rgb(colors[c.group]));gl.drawElementsInstanced(gl.TRIANGLES,tubeIndexCount,gl.UNSIGNED_SHORT,0,c.segments)}
       }
       gl.enable(gl.DEPTH_TEST);gl.depthMask(true);
-      if(surfaceStyle!=='off')for(const s of shells)shell(s);
+      if(opacity>0&&surfaceStyle!=='off')for(const s of shells)shell(s);
       gl.depthMask(true);gl.disable(gl.CULL_FACE);gl.disable(gl.BLEND);gl.bindVertexArray(null);
       status.textContent=expanded&&visible.size===0?'Choose a pathway to display':expanded?'Drag to rotate · scroll to zoom':'Drag to rotate';
-      panel.dataset.viewerState='ready';panel.dataset.renderMode=mode;panel.dataset.fiberStyle=fiberStyle;panel.dataset.surfaceStyle=surfaceStyle;panel.dataset.camera=currentView;panel.dataset.yaw=yaw.toFixed(2);canvas.dataset.streamlines=String(count);
+      panel.dataset.viewerState='ready';panel.dataset.renderMode=mode;panel.dataset.fiberStyle=fiberStyle;panel.dataset.surfaceStyle=surfaceStyle;panel.dataset.camera=currentView;panel.dataset.yaw=yaw.toFixed(2);panel.dataset.anatomySource=anatomySource;panel.dataset.surfaceOpacity=String(opacity);canvas.dataset.streamlines=String(count);
       choices.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.bundle===selected)));
       if(glass)glass.setAttribute('aria-pressed',String(surfaceStyle!=='off'));
       if(spinning&&!document.hidden)requestDraw();
@@ -264,48 +279,104 @@
       });loading.set(id,promise);reportLoading();
       try{await promise}catch(error){console.warn('Pathway:',error.message);failed.add(id)}finally{loading.delete(id);reportLoading();evictHidden();requestDraw()}
     }
+    function startCortex(){
+      anatomySource='cortex';surfaceStyle='points';opacity=.16;
+      $('[data-anatomy-source]').value='cortex';$('[data-surface-style]').value='points';$('[data-opacity]').value=16;$('[data-cortex-controls]').hidden=false;ensureCortex();syncControls();
+    }
     async function ensureCortex(){
       if(surfacePromise){if(surfaces.some(s=>s.kind==='cortex'))$('[data-anatomy-note]').textContent=atlas.surfaceDescription||'Matched cortical surfaces in the same coordinate frame as the pathways.';return surfacePromise}if(!atlas?.surfaces?.length)return;
       const note=$('[data-anatomy-note]');note.textContent='Loading cortical surfaces…';
-      surfacePromise=(async()=>{const values=[];for(const m of atlas.surfaces)values.push(await surfaceData(m,atlasURL));surfaces.push(...values.map((value,i)=>surfaceModel(value,atlas.surfaces[i].id,'cortex')));if(anatomySource==='cortex')note.textContent=atlas.surfaceDescription||'Matched cortical surfaces in the same coordinate frame as the pathways.';requestDraw()})().catch(error=>{surfacePromise=null;anatomySource='outline';$('[data-anatomy-source]').value='outline';$('[data-cortex-controls]').hidden=true;note.textContent='The cortical surface could not load. The matching brain outline is still available.';console.warn('Cortex:',error.message);requestDraw()});
+      surfacePromise=(async()=>{const values=[];for(const m of atlas.surfaces)values.push(await surfaceData(m,atlasURL));surfaces.push(...values.map((value,i)=>surfaceModel(value,atlas.surfaces[i].id,'cortex')));if(anatomySource==='cortex')note.textContent=atlas.surfaceDescription||'Matched cortical surfaces in the same coordinate frame as the pathways.';requestDraw()})().catch(error=>{surfacePromise=null;anatomySource='outline';$('[data-anatomy-source]').value='outline';$('[data-cortex-controls]').hidden=true;note.textContent='The cortical surface could not load. The matching brain outline is still available.';console.warn('Cortex:',error.message);syncControls();requestDraw()});
       return surfacePromise;
     }
-    function createBundleRow(meta){
-      const row=document.createElement('div');row.className='bundle-setting';row.dataset.pathwayName=[meta.name,meta.sourceName,meta.id].filter(Boolean).join(' ').toLowerCase();
-      const label=document.createElement('label'),check=document.createElement('input'),text=document.createElement('span'),color=document.createElement('input');
-      check.type='checkbox';check.dataset.visible=meta.id;check.checked=visible.has(meta.id);text.textContent=meta.name;label.append(check,text);color.type='color';color.dataset.color=meta.id;color.value=colors[meta.id];color.setAttribute('aria-label',meta.name+' color');row.append(label,color);return row;
+    const classification=JSON.parse(document.querySelector('#pathway-group-data')?.textContent||'{}');
+    const systemDefs=[...['Association','Projection','Commissural'].map(name=>({id:name,name,displayName:name})),...(classification.groups||[])];
+    let activeSystem='Association',selectedOnly=false,pathwayPage=0,pathwayPageSize=4,query='';
+    function systemFor(meta){return classification.mappings?.[meta.generator]?.[meta.sourceName]||(meta.group==='Brainstem'?'cerebellar-peduncular':meta.group)||'Association'}
+    function familyFor(meta){return meta.name.replace(/ · (left|right)/g,'').replace(/ · BrainstemSeg/g,'').replace(/ \(sparse\)/g,'')}
+    function syncControls(){
+      $$('[data-select-target]').forEach(b=>b.setAttribute('aria-pressed',String($(b.dataset.selectTarget)?.value===b.dataset.value)));
+      $$('[data-readout]').forEach(o=>{const input=$('['+o.dataset.readout+']');if(input)o.textContent=input.value+(o.dataset.readout==='data-opacity'?'%':'')});
+    }
+    function renderSystems(){
+      const nav=$('[data-system-nav]');if(!nav)return;const focusedSystem=document.activeElement?.dataset.system;nav.replaceChildren();
+      for(const brainstem of [false,true]){
+        if(brainstem){const label=document.createElement('span');label.className='system-family-label';label.textContent='Brainstem & subcortical';nav.append(label)}
+        const row=document.createElement('div');row.className='system-family'+(brainstem?' brainstem-systems':'');
+        for(const def of systemDefs.filter(d=>!!d.table===brainstem)){
+          const members=[...bundleMeta.values()].filter(m=>systemFor(m)===def.id),count=members.filter(m=>visible.has(m.id)).length;
+          const b=document.createElement('button');b.dataset.system=def.id;b.title=def.name;b.setAttribute('aria-pressed',String(!query&&!selectedOnly&&activeSystem===def.id));
+          const name=document.createElement('span'),badge=document.createElement('span');name.textContent=def.displayName;badge.textContent=count?String(count):'';badge.setAttribute('aria-hidden','true');b.append(name,badge);b.disabled=!members.length;row.append(b);
+        }nav.append(row);
+      }
+      $('[data-selection-count]').textContent=String(visible.size);$('[data-pathway-selected]').setAttribute('aria-pressed',String(selectedOnly));
+      if(focusedSystem)$$('[data-system]').find(b=>b.dataset.system===focusedSystem)?.focus({preventScroll:true});
+      panel.dataset.pathwayCount=String(bundleMeta.size);panel.dataset.selectedPathways=String(visible.size);
     }
     function renderBundleList(){
-      const list=$('[data-pathway-list]');if(!list)return;list.replaceChildren();const groups=new Map();
-      for(const meta of bundleMeta.values()){const key=meta.group||({af:'Association',cst:'Projection',cc:'Commissural'}[meta.id])||'Other pathways';if(!groups.has(key))groups.set(key,[]);groups.get(key).push(meta)}
-      const grouped=groups.size>1;
-      for(const [name,bundles] of groups){let target=list;if(grouped){const details=document.createElement('details');details.className='pathway-group';details.dataset.groupName=name;details.open=false;const summary=document.createElement('summary');summary.textContent=name+' · '+bundles.filter(b=>visible.has(b.id)).length+' selected';details.append(summary);list.append(details);target=details}for(const meta of bundles)target.append(createBundleRow(meta))}
-      $('[data-pathway-search]').hidden=bundleMeta.size<=6;$('[data-pathway-presets]').hidden=bundleMeta.size<=6;
+      const list=$('[data-pathway-list]');if(!list)return;
+      const oldFocus=document.activeElement?.dataset.visible;
+      const families=new Map();
+      for(const meta of bundleMeta.values()){
+        if(query?![meta.name,meta.sourceName,meta.id].filter(Boolean).join(' ').toLowerCase().includes(query):selectedOnly?!visible.has(meta.id):systemFor(meta)!==activeSystem)continue;
+        const key=systemFor(meta)+'|'+(meta.generator||'original')+'|'+familyFor(meta);if(!families.has(key))families.set(key,[]);families.get(key).push(meta);
+      }
+      const all=[...families.values()],pages=Math.max(1,Math.ceil(all.length/pathwayPageSize));pathwayPage=Math.min(pathwayPage,pages-1);list.replaceChildren();
+      const start=pathwayPage*pathwayPageSize;
+      for(const members of all.slice(start,start+pathwayPageSize)){
+        const row=document.createElement('div');row.className='pathway-family';
+        const name=document.createElement('div');name.className='pathway-family-name';
+        const title=document.createElement('span');title.textContent=familyFor(members[0]);title.title=title.textContent;name.append(title);
+        const acronym=document.createElement('small');acronym.textContent=(members[0].generator?members[0].generator+' · ':'')+(members[0].sourceName||members[0].id.replace(/^ts-/,'')).replace(/[_-](left|right|L|R)$/i,'').replace(/_/g,' ');name.append(acronym);row.append(name);
+        const choices=document.createElement('div');choices.className='pathway-family-options';
+        for(const meta of members){
+          const side=document.createElement('div');side.className='pathway-side';side.style.setProperty('--pathway-color',colors[meta.id]);
+          const label=document.createElement('label'),check=document.createElement('input'),caption=document.createElement('span');
+          check.type='checkbox';check.dataset.visible=meta.id;check.checked=visible.has(meta.id);check.setAttribute('aria-label',meta.name);
+          const hemi=meta.hemisphere||(/ · (left|right)/.exec(meta.name)||[])[1];caption.textContent=hemi==='left'?'L':hemi==='right'?'R':'On';
+          if(meta.name.includes('(sparse)')){caption.textContent+='*';label.classList.add('sparse-pathway')}label.title=meta.name+(meta.name.includes('(sparse)')?' · '+meta.streamlineCount+' streamlines':'');label.append(check,caption);side.append(label);
+          const color=document.createElement('input');color.type='color';color.dataset.color=meta.id;color.value=colors[meta.id];color.title='Change '+meta.name+' color';color.setAttribute('aria-label',meta.name+' color');side.append(color);choices.append(side);
+        }row.append(choices);list.append(row);
+      }
+      if(all.slice(start,start+pathwayPageSize).some(members=>members.some(m=>m.name.includes('(sparse)')))){const note=document.createElement('p');note.className='sparse-note';note.textContent='* Sparse reconstruction (fewer than 100 streamlines).';list.append(note)}
+      if(!all.length){const empty=document.createElement('p');empty.className='pathway-empty';empty.textContent=query?'No pathways match this search.':selectedOnly?'Choose a system to add pathways.':'Pathways are loading…';list.append(empty)}
+      $('[data-system-title]').textContent=query?'Search results':selectedOnly?'Selected pathways':systemDefs.find(d=>d.id===activeSystem)?.displayName||activeSystem;
+      $('[data-pathway-page]').textContent=all.length?`${start+1}–${Math.min(start+pathwayPageSize,all.length)} of ${all.length} pathways`:'';
+      $('[data-pathway-prev]').disabled=pathwayPage===0;$('[data-pathway-next]').disabled=pathwayPage===pages-1;
+      renderSystems();
+      if(oldFocus){const control=$$('[data-visible]').find(el=>el.dataset.visible===oldFocus);control?.focus({preventScroll:true})}
     }
-    function updateGroupCounts(collapse=false){
-      $$('.pathway-group').forEach(group=>{const count=group.querySelectorAll('[data-visible]:checked').length;group.querySelector('summary').textContent=group.dataset.groupName+' · '+count+' selected';if(collapse)group.open=false});
+    function updateGroupCounts(){renderSystems();if(selectedOnly)renderBundleList()}
+    function clearPathwaySearch(){query='';pathwayPage=0;if($('[data-pathway-filter]'))$('[data-pathway-filter]').value=''}
+    $('[data-system-nav]')?.addEventListener('click',ev=>{const b=ev.target.closest('[data-system]');if(!b)return;activeSystem=b.dataset.system;selectedOnly=false;clearPathwaySearch();renderBundleList()});
+    $('[data-pathway-selected]')?.addEventListener('click',()=>{selectedOnly=!selectedOnly;clearPathwaySearch();renderBundleList()});
+    $('[data-pathway-prev]')?.addEventListener('click',()=>{pathwayPage--;renderBundleList()});
+    $('[data-pathway-next]')?.addEventListener('click',()=>{pathwayPage++;renderBundleList()});
+    if(expanded)new ResizeObserver(entries=>{const size=Math.max(1,Math.min(10,Math.floor((entries[0].contentRect.height-24)/64)));if(size!==pathwayPageSize){pathwayPageSize=size;pathwayPage=0;renderBundleList()}}).observe($('[data-pathway-list]'));
+    function showControlTab(index,focus=false){
+      $$('[data-control-tab]').forEach(b=>{const on=b.dataset.controlTab===String(index);b.setAttribute('aria-selected',String(on));b.tabIndex=on?0:-1;if(on&&focus)b.focus()});
+      $$('[data-control-pane]').forEach(p=>p.hidden=p.dataset.controlPane!==String(index));
     }
-    function clearPathwaySearch(){
-      if($('[data-pathway-filter]'))$('[data-pathway-filter]').value='';$$('[data-pathway-name],.pathway-group').forEach(el=>el.hidden=false);
-    }
+    $$('[data-control-tab]').forEach(b=>{b.addEventListener('click',()=>showControlTab(b.dataset.controlTab));b.addEventListener('keydown',ev=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(ev.key))return;ev.preventDefault();showControlTab(ev.key==='Home'?0:ev.key==='End'?2:(Number(b.dataset.controlTab)+(ev.key==='ArrowRight'?1:2))%3,true)})});
+    $$('[data-select-target]').forEach(b=>b.addEventListener('click',()=>{const input=$(b.dataset.selectTarget);input.value=b.dataset.value;input.dispatchEvent(new Event('change',{bubbles:true}));syncControls()}));
     function updateStyle(){
       $$('[data-fiber-style]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.fiberStyle===fiberStyle)));
       if($('[data-wisp-field]'))$('[data-wisp-field]').hidden=fiberStyle==='solid'||mode==='centroids';
-      if($('[data-width-label]'))$('[data-width-label]').textContent=fiberStyle==='solid'?'Tube width':'Fiber width';requestDraw();
+      syncControls();requestDraw();
     }
     choices.forEach(b=>b.addEventListener('click',()=>{selected=b.dataset.bundle;requestDraw()}));
     glass?.addEventListener('click',()=>{surfaceStyle=surfaceStyle==='off'?'glass':'off';requestDraw()});
     $('[data-pathway-list]')?.addEventListener('change',ev=>{const el=ev.target;if(!el.matches('[data-visible]'))return;el.checked?visible.add(el.dataset.visible):visible.delete(el.dataset.visible);if(el.checked)ensureBundle(el.dataset.visible);updateGroupCounts();evictHidden();requestDraw()});
-    $('[data-pathway-list]')?.addEventListener('input',ev=>{const el=ev.target;if(!el.matches('[data-color]'))return;colors[el.dataset.color]=el.value;direction=false;$('[data-color-mode]').value='bundle';$('[data-direction-key]').hidden=true;requestDraw()});
-    $('[data-pathway-filter]')?.addEventListener('input',ev=>{const term=ev.target.value.trim().toLowerCase();$$('[data-pathway-name]').forEach(row=>row.hidden=!row.dataset.pathwayName.includes(term));$$('.pathway-group').forEach(group=>{group.hidden=![...group.querySelectorAll('[data-pathway-name]')].some(row=>!row.hidden);if(term&&!group.hidden)group.open=true})});
-    function selectStart(clear=false){visible=new Set(clear?[]:initialVisible);$$('[data-visible]').forEach(el=>el.checked=visible.has(el.dataset.visible));if(!clear)clearPathwaySearch();updateGroupCounts(!clear);evictHidden();requestDraw()}
+    $('[data-pathway-list]')?.addEventListener('input',ev=>{const el=ev.target;if(!el.matches('[data-color]'))return;colors[el.dataset.color]=el.value;el.closest('.pathway-side').style.setProperty('--pathway-color',el.value);direction=false;$('[data-color-mode]').value='bundle';$('[data-direction-key]').hidden=true;requestDraw()});
+    $('[data-pathway-filter]')?.addEventListener('input',ev=>{query=ev.target.value.trim().toLowerCase();pathwayPage=0;renderBundleList()});
+    function selectStart(clear=false){visible=new Set(clear?[]:initialVisible);if(!clear){selectedOnly=true;clearPathwaySearch()}renderBundleList();evictHidden();requestDraw()}
     $('[data-pathway-start]')?.addEventListener('click',()=>selectStart());$('[data-pathway-clear]')?.addEventListener('click',()=>selectStart(true));
     $$('[data-fiber-style]').forEach(b=>b.addEventListener('click',()=>{fiberStyle=b.dataset.fiberStyle;updateStyle()}));
     modeInput?.addEventListener('change',()=>{mode=modeInput.value;for(const id of visible)ensureBundle(id);updateStyle()});
     $('[data-color-mode]')?.addEventListener('change',ev=>{direction=ev.target.value==='direction';$('[data-direction-key]').hidden=!direction;requestDraw()});
-    function range(selector,assign){$(selector)?.addEventListener('input',ev=>{assign(Number(ev.target.value));requestDraw()})}
-    range('[data-opacity]',v=>opacity=v/30);range('[data-radius]',v=>radius=v/10000);range('[data-light]',v=>brightness=v/100);range('[data-zoom]',v=>zoom=v/100);range('[data-wisp-opacity]',v=>wispOpacity=v/100);
-    $('[data-surface-style]')?.addEventListener('change',ev=>{surfaceStyle=ev.target.value;requestDraw()});
+    function range(selector,assign){$(selector)?.addEventListener('input',ev=>{assign(Number(ev.target.value));syncControls();requestDraw()})}
+    range('[data-opacity]',v=>opacity=Math.max(0,Math.min(1,v/100)));range('[data-radius]',v=>radius=v/10000);range('[data-light]',v=>brightness=v/100);range('[data-zoom]',v=>zoom=v/100);range('[data-wisp-opacity]',v=>wispOpacity=v/100);
+    $('[data-surface-style]')?.addEventListener('change',ev=>{surfaceStyle=ev.target.value;if(surfaceStyle==='solid'){opacity=1;$('[data-opacity]').value=100}else if(surfaceStyle==='glass'&&opacity===1){opacity=.12;$('[data-opacity]').value=12}syncControls();requestDraw()});
     $('[data-anatomy-source]')?.addEventListener('change',ev=>{anatomySource=ev.target.value;$('[data-cortex-controls]').hidden=anatomySource!=='cortex';if(anatomySource==='cortex')ensureCortex();else $('[data-anatomy-note]').textContent='The outline follows the matching brain mask.';requestDraw()});
     $('[data-hemisphere]')?.addEventListener('change',ev=>{hemisphere=ev.target.value;requestDraw()});
     $('[data-parcels]')?.addEventListener('change',ev=>{parcels=ev.target.checked;$('[data-region-field]').hidden=!parcels;$('[data-region-key]').hidden=!parcels;requestDraw()});
@@ -314,19 +385,19 @@
     $$('[data-view]').forEach(b=>b.addEventListener('click',()=>{setCamera(b.dataset.view);requestDraw()}));
     $('[data-spin]')?.addEventListener('click',ev=>{spinning=!spinning;lastFrame=0;ev.currentTarget.setAttribute('aria-pressed',String(spinning));ev.currentTarget.textContent=spinning?'Pause':'Rotate';requestDraw()});
     $('[data-reset]').addEventListener('click',()=>{
-      selected='all';visible=new Set(initialVisible);for(const [id,meta] of bundleMeta)colors[id]=meta.color||defaults[id]||'#83b5cd';mode='fibers';fiberStyle=expanded?'wispy':'solid';direction=false;surfaceStyle='glass';anatomySource='outline';hemisphere='all';parcels=false;selectedRegion='all';zoom=1;radius=.00165;opacity=1;brightness=1.1;wispOpacity=.12;lightBackground=false;spinning=false;lastFrame=0;setCamera('oblique');panel.classList.remove('light-view');
+      selected='all';visible=new Set(initialVisible);for(const [id,meta] of bundleMeta)colors[id]=meta.color||defaults[id]||'#83b5cd';mode='fibers';fiberStyle=expanded?'fine':'solid';direction=false;surfaceStyle='glass';anatomySource='outline';hemisphere='all';parcels=false;selectedRegion='all';zoom=expanded?1.22:1;radius=expanded?.0012:.00165;opacity=expanded?.16:.1;brightness=1.1;wispOpacity=.22;lightBackground=false;spinning=false;lastFrame=0;setCamera('oblique');panel.classList.remove('light-view');
       $$('[data-visible]').forEach(el=>el.checked=visible.has(el.dataset.visible));$$('[data-color]').forEach(el=>el.value=colors[el.dataset.color]);
-      for(const [selector,value] of [['[data-render-mode]','fibers'],['[data-color-mode]','bundle'],['[data-opacity]',30],['[data-radius]',16.5],['[data-light]',110],['[data-zoom]',100],['[data-background]','dark'],['[data-surface-style]','glass'],['[data-anatomy-source]','outline'],['[data-hemisphere]','all'],['[data-region]','all'],['[data-wisp-opacity]',12]])if($(selector))$(selector).value=value;
+      for(const [selector,value] of [['[data-render-mode]','fibers'],['[data-color-mode]','bundle'],['[data-opacity]',16],['[data-radius]',expanded?12:16.5],['[data-light]',110],['[data-zoom]',expanded?122:100],['[data-background]','dark'],['[data-surface-style]','glass'],['[data-anatomy-source]','outline'],['[data-hemisphere]','all'],['[data-region]','all'],['[data-wisp-opacity]',22]])if($(selector))$(selector).value=value;
       for(const selector of ['[data-direction-key]','[data-cortex-controls]','[data-region-field]','[data-region-key]'])if($(selector))$(selector).hidden=true;
       if($('[data-parcels]'))$('[data-parcels]').checked=false;if($('[data-anatomy-note]'))$('[data-anatomy-note]').textContent='The outline follows the matching brain mask.';
-      clearPathwaySearch();updateGroupCounts(true);
+      clearPathwaySearch();selectedOnly=false;activeSystem='Association';renderBundleList();if(expanded&&atlas?.surfaces?.length)startCortex();syncControls();
       if($('[data-spin]')){$('[data-spin]').setAttribute('aria-pressed','false');$('[data-spin]').textContent='Rotate'}evictHidden();updateStyle();
     });
     canvas.addEventListener('pointerdown',ev=>{dragging={x:ev.clientX,y:ev.clientY,yaw,pitch};canvas.setPointerCapture(ev.pointerId);canvas.classList.add('dragging')});
     canvas.addEventListener('pointermove',ev=>{if(!dragging)return;yaw=((dragging.yaw+(ev.clientX-dragging.x)*.4+540)%360)-180;pitch=Math.max(-89,Math.min(89,dragging.pitch+(ev.clientY-dragging.y)*.4));requestDraw()});
     const stop=()=>{dragging=null;canvas.classList.remove('dragging')};canvas.addEventListener('pointerup',stop);canvas.addEventListener('pointercancel',stop);canvas.addEventListener('lostpointercapture',stop);
     canvas.addEventListener('keydown',ev=>{const steps={ArrowLeft:[-5,0],ArrowRight:[5,0],ArrowUp:[0,-5],ArrowDown:[0,5]};if(!steps[ev.key])return;ev.preventDefault();yaw=((yaw+steps[ev.key][0]+540)%360)-180;pitch=Math.max(-89,Math.min(89,pitch+steps[ev.key][1]));requestDraw()});
-    if(expanded)canvas.addEventListener('wheel',ev=>{ev.preventDefault();zoom=Math.max(.65,Math.min(2.2,zoom*Math.exp(-ev.deltaY*.001)));$('[data-zoom]').value=Math.round(zoom*100);requestDraw()},{passive:false});
+    if(expanded)canvas.addEventListener('wheel',ev=>{ev.preventDefault();zoom=Math.max(.65,Math.min(2.2,zoom*Math.exp(-ev.deltaY*.001)));$('[data-zoom]').value=Math.round(zoom*100);syncControls();requestDraw()},{passive:false});
     $('[data-snapshot]')?.addEventListener('click',()=>{requestDraw();requestAnimationFrame(()=>canvas.toBlob(blob=>{if(!blob)return;const a=document.createElement('a'),u=URL.createObjectURL(blob);a.href=u;a.download='white-matter-pathways.png';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)},'image/png'))});
     const full=$('[data-fullscreen]');if(full){if(!document.fullscreenEnabled)full.hidden=true;else full.addEventListener('click',()=>{(document.fullscreenElement?document.exitFullscreen():panel.requestFullscreen()).catch(()=>{});requestDraw()})}
     document.addEventListener('visibilitychange',()=>{lastFrame=0;if(!document.hidden)requestDraw()});
@@ -346,7 +417,7 @@
           if(atlas.surfaces?.length){
             $('[data-anatomy-source-field]').hidden=false;const regionSelect=$('[data-region]');let hasRegions=false;
             for(const s of atlas.surfaces)for(const r of s.regions||[]){hasRegions=true;const option=document.createElement('option');option.value=s.id+':'+r.id;option.textContent=(s.hemisphere?s.hemisphere==='left'?'Left · ':'Right · ':'')+r.name;regionSelect.append(option)}
-            $('[data-parcels]').disabled=!hasRegions;$('[data-region-key]').textContent=atlas.atlasName||'Regions follow the cortical parcellation.';
+             $('[data-parcels]').disabled=!hasRegions;$('[data-region-key]').textContent=atlas.atlasName||'Regions follow the cortical parcellation.';startCortex();
           }
         }catch(error){console.warn('Additional anatomy:',error.message);const note=$('[data-load-status]');note.hidden=false;note.textContent='Additional anatomy is unavailable. The original pathways remain available.'}
       }
