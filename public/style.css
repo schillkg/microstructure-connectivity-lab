@@ -338,7 +338,7 @@
 .pathway-group .bundle-setting label{font-size:12px;line-height:1.45;min-width:0;gap:8px}
 .pathway-group .bundle-setting input[type=checkbox]{flex-shrink:0;width:14px;height:14px}
 .pathway-group .bundle-setting input[type=color]{width:27px;height:24px;flex-shrink:0}
-.viewer-tabs{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid #4b6870;margin:18px 0 16px}
+.viewer-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid #4b6870;margin:18px 0 16px}
 .viewer-tabs button{background:#102027;color:#bdcfd0;padding:9px 6px;border:0;border-radius:0;font:12px/1.5 var(--sans)}
 .viewer-tabs button+button{border-left:1px solid #4b6870}
 .viewer-tabs button[aria-pressed=true]{background:#284a49;color:#e9fff7}
