@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { isDeepStrictEqual } from 'node:util';
 import { checkViewerAssets } from './check-viewer-assets.mjs';
 const info=JSON.parse(fs.readFileSync('dist/build-info.json','utf8'));
 const errors=[];
@@ -39,6 +40,41 @@ for(const p of publications){
   if(p.localSourceFile)errors.push(`${p.slug}: local path in metadata export`);
 }
 errors.push(...checkViewerAssets('dist/assets'));
+let pathwayCount=0;
+try{
+  const requireClassification=(condition,message)=>{if(!condition)throw new Error(message);};
+  const classification=JSON.parse(fs.readFileSync('content/pathway-groups.json','utf8'));
+  const explorer=fs.readFileSync('dist/tractography/index.html','utf8');
+  const embedded=[...explorer.matchAll(/<script\b(?=[^>]*\bid="pathway-group-data")(?=[^>]*\btype="application\/json")[^>]*>([\s\S]*?)<\/script>/g)];
+  requireClassification(embedded.length===1,'explorer must contain exactly one pathway classification');
+  requireClassification(isDeepStrictEqual(JSON.parse(embedded[0][1]),classification),'embedded pathway classification differs from content source');
+  requireClassification(classification.schemaVersion===1&&Array.isArray(classification.groups),'unsupported pathway classification schema');
+  const basicSystems=['Association','Projection','Commissural'];
+  const groupIds=classification.groups.map(g=>g.id),tables=classification.groups.map(g=>g.table);
+  requireClassification(groupIds.every(id=>typeof id==='string'&&/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id))&&new Set(groupIds).size===groupIds.length,'invalid or duplicate pathway system IDs');
+  requireClassification(tables.length===4&&new Set(tables).size===4&&tables.every(n=>Number.isInteger(n)&&n>=1&&n<=4),'paper systems must cover tables 1–4 exactly once');
+  requireClassification(classification.groups.every(g=>typeof g.name==='string'&&g.name.trim()&&typeof g.displayName==='string'&&g.displayName.trim()),'pathway systems need full and concise display names');
+  const atlas=JSON.parse(fs.readFileSync('dist/assets/pathway-atlas.json','utf8'));
+  const glass=JSON.parse(fs.readFileSync('dist/assets/glass-viewer.json','utf8'));
+  const brainstem=atlas.bundles.filter(b=>b.generator==='BrainstemSeg');
+  const sourceNames=brainstem.map(b=>b.sourceName),mapping=classification.mappings?.BrainstemSeg;
+  requireClassification(mapping&&typeof mapping==='object'&&!Array.isArray(mapping),'missing BrainstemSeg system mapping');
+  requireClassification(sourceNames.every(n=>typeof n==='string'&&n)&&new Set(sourceNames).size===sourceNames.length,'duplicate or invalid BrainstemSeg source names');
+  requireClassification(isDeepStrictEqual(Object.keys(mapping).sort(),[...sourceNames].sort()),'BrainstemSeg mapping must cover every current source name exactly once, without obsolete keys');
+  requireClassification(Object.values(mapping).every(id=>groupIds.includes(id)),'BrainstemSeg mapping refers to an undefined paper system');
+  const inventory=[...glass.bundles.flatMap(b=>b.parts?.length?b.parts:[b]),...atlas.bundles];
+  requireClassification(new Set(inventory.map(b=>b.id)).size===inventory.length,'original and optional pathway IDs must be globally unique');
+  const reachableSystems=new Set([...basicSystems,...groupIds]);
+  const tractsegPeduncles=new Set(['ICP_left','ICP_right','MCP','SCP_left','SCP_right']);
+  for(const bundle of inventory){
+    // These five TractSeg peduncles join the paper's cerebellar system. Other
+    // unclassified pathways must fail, rather than silently inheriting that group.
+    const system=classification.mappings?.[bundle.generator]?.[bundle.sourceName]||
+      (bundle.generator==='TractSeg'&&bundle.group==='Brainstem'&&tractsegPeduncles.has(bundle.sourceName)?'cerebellar-peduncular':bundle.group);
+    requireClassification(reachableSystems.has(system),`${bundle.id}: pathway has no reachable system`);
+  }
+  pathwayCount=inventory.length;
+}catch(error){errors.push(`Pathway classification: ${error.message}`);}
 if(fs.readFileSync('dist/publications/index.html','utf8').includes('Selected work led by Kurt Schilling'))errors.push('Removed publication note has returned');
 for(const route of ['index.html','tractography/index.html']){
   const page=fs.readFileSync('dist/'+route,'utf8');
@@ -46,4 +82,4 @@ for(const route of ['index.html','tractography/index.html']){
 }
 for(const file of files)if(fs.statSync(file).size>25*1024*1024)errors.push(`${file}: unexpectedly large website asset (>25 MiB)`);
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
-console.log(`Verified ${html.length} HTML pages, all local links/assets, and asset sizes. ${info.papers} publication records; base ${info.base||'/'}.`);
+console.log(`Verified ${html.length} HTML pages, all local links/assets, and asset sizes. ${info.papers} publication records; ${pathwayCount} reachable pathways; base ${info.base||'/'}.`);
