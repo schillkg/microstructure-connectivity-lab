@@ -116,10 +116,26 @@ export function checkViewerAssets(assetDirectory, { atlas = 'pathway-atlas.json'
       floatTriples(glass.tracts.positions, glass.pointCount);
       const offsetCount = glass.bundles.reduce((n, b) => n + b.offsetCount, 0);
       const values = typed(glass.tracts.offsets, 'uint32', offsetCount);
+      const partIds = new Set(glass.bundles.map(bundle => bundle.id));
+      insist(partIds.size === glass.bundles.length, 'Glass viewer', 'duplicate original bundle ID');
       let pointTotal = 0, offsetTotal = 0, streamlineTotal = 0;
       for (const bundle of glass.bundles) {
         insist(bundle.pointOffset === pointTotal && bundle.offsetOffset === offsetTotal && bundle.offsetCount === bundle.streamlineCount + 1, bundle.id, 'bundle geometry overlaps or has a gap');
         offsets(values, bundle.id, bundle.offsetOffset, bundle.offsetCount, bundle.pointOffset, bundle.pointCount);
+        if (bundle.parts !== undefined) {
+          insist(Array.isArray(bundle.parts) && bundle.parts.length > 0, bundle.id, 'bundle parts must be a nonempty list');
+          let nextPoint = bundle.pointOffset, nextOffset = bundle.offsetOffset;
+          for (const part of bundle.parts) {
+            insist(typeof part.id === 'string' && /^[a-z0-9-]+$/.test(part.id) && !partIds.has(part.id), bundle.id, 'invalid or duplicate bundle part ID'); partIds.add(part.id);
+            insist(integer(part.streamlineCount) && part.streamlineCount > 0 && integer(part.pointCount), part.id, 'invalid bundle part counts');
+            insist(part.pointOffset === nextPoint && part.offsetOffset === nextOffset, part.id, 'bundle parts overlap or have a gap');
+            offsets(values, part.id, part.offsetOffset, part.streamlineCount + 1, part.pointOffset, part.pointCount);
+            nextPoint += part.pointCount;
+            // Neighboring parts share their boundary offset in the original buffer.
+            nextOffset += part.streamlineCount;
+          }
+          insist(nextPoint === bundle.pointOffset + bundle.pointCount && nextOffset === bundle.offsetOffset + bundle.streamlineCount, bundle.id, 'bundle parts do not cover the original bundle');
+        }
         pointTotal += bundle.pointCount; offsetTotal += bundle.offsetCount; streamlineTotal += bundle.streamlineCount;
       }
       insist(pointTotal === glass.pointCount && streamlineTotal === glass.streamlineCount, 'Glass viewer', 'bundle counts do not match totals');
