@@ -59,5 +59,55 @@
     "source": "Local tractography rendering; see hero-provenance.json and render_hero.py",
     "anatomy": "Corpus callosum",
     "displayNote": "Directions recolored for presentation; geometry unchanged."
+  },
+  {
+    "local": "public/assets/headshot-michael-kim.jpeg",
+    "person": "Michael Kim",
+    "sourcePage": "https://my.vanderbilt.edu/masi/people/alumni/",
+    "originalURL": "https://cdn.vanderbilt.edu/t2-my/my-prd/wp-content/uploads/sites/2304/2026/05/headshot.jpeg",
+    "retrieved": "2026-09-30",
+    "note": "Original image from the named institutional profile. Display crop is applied in CSS; original photo is unchanged."
+  },
+  {
+    "local": "public/assets/headshot-chloe-cho.jpg",
+    "person": "Chloe Cho",
+    "sourcePage": "https://my.vanderbilt.edu/masi/people/alumni/",
+    "originalURL": "https://cdn.vanderbilt.edu/t2-my/my-prd/wp-content/uploads/sites/2304/2023/08/ChloeCho-768x768.jpg",
+    "retrieved": "2026-09-30",
+    "note": "Original image from the named institutional profile. Display crop is applied in CSS; original photo is unchanged."
+  },
+  {
+    "local": "public/assets/headshot-elyssa-mcmaster.jpeg",
+    "person": "Elyssa McMaster",
+    "sourcePage": "https://my.vanderbilt.edu/masi/people/",
+    "originalURL": "https://cdn.vanderbilt.edu/t2-my/my-prd/wp-content/uploads/sites/2304/2023/08/IMG_0275-768x1024.jpeg",
+    "retrieved": "2026-09-30",
+    "note": "Original image from the named institutional profile. Display crop is applied in CSS; original photo is unchanged."
+  },
+  {
+    "local": "public/assets/headshot-atlee-witt.jpeg",
+    "person": "Atlee Witt",
+    "sourcePage": "https://medschool.vanderbilt.edu/mstp/person/atlee-witt/",
+    "originalURL": "https://medschool.vanderbilt.edu/wp-content/uploads/sites/108/2026/10/e19673a184a661fe59414bcb43f8c78d-900x1200-c-default.jpeg",
+    "retrieved": "2026-09-30",
+    "note": "Original image from the named institutional profile. Display crop is applied in CSS; original photo is unchanged."
+  },
+  {
+    "local": "public/assets/headshot-matt-amandola.jpg",
+    "person": "Matt Amandola",
+    "sourcePage": "https://www.vumc.org/vuiis/person/matt-amandola-phd",
+    "imageSourcePage": "https://www.vumc.org/vuiis/person/people",
+    "originalURL": "https://www.vumc.org/vuiis/sites/default/files/styles/barista_person_photo_grid_thumbnail/public/people/image_view_0.jpg?itok=eCwAxU50",
+    "retrieved": "2026-09-30",
+    "note": "Institution-provided directory thumbnail from the named VUIIS entry. Display crop is applied in CSS; original thumbnail is unchanged."
+  },
+  {
+    "local": "public/assets/headshot-nancy-newlin.jpg",
+    "person": "Nancy Newlin",
+    "sourcePage": "https://www.vanderbilt.edu/valiant/person/nancy-newlin/",
+    "identitySourcePage": "https://www.vanderbilt.edu/vise/people/nancy-newlin/",
+    "originalURL": "https://cdn.vanderbilt.edu/vu-URL/wp-content/uploads/sites/450/2024/05/12143008/headshot-2.jpg",
+    "retrieved": "2026-09-30",
+    "note": "Original image from the named institutional profile. Display crop is applied in CSS; original photo is unchanged."
   }
 ]

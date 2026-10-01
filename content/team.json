@@ -11,36 +11,42 @@
     "name": "Matt Amandola, PhD",
     "role": "Postdoctoral Research Fellow Trainee",
     "group": "Lab",
-    "interests": "Neuroanatomy, white matter, comparative anatomy"
+    "interests": "Neuroanatomy, white matter, comparative anatomy",
+    "image": "/assets/headshot-matt-amandola.jpg"
   },
   {
     "name": "Michael Kim",
     "role": "Graduate Student · MASI Lab",
     "group": "Collaborators",
-    "interests": "Informatics, brain charts"
+    "interests": "Informatics, brain charts",
+    "image": "/assets/headshot-michael-kim.jpeg"
   },
   {
     "name": "Chloe Cho",
     "role": "Graduate Student · MASI Lab",
     "group": "Collaborators",
-    "interests": "Superficial white matter"
+    "interests": "Superficial white matter",
+    "image": "/assets/headshot-chloe-cho.jpg"
   },
   {
     "name": "Atlee Witt",
     "role": "Graduate Student · NOB Lab",
     "group": "Collaborators",
-    "interests": "Spinal cord, fMRI, multiple sclerosis"
+    "interests": "Spinal cord, fMRI, multiple sclerosis",
+    "image": "/assets/headshot-atlee-witt.jpeg"
   },
   {
     "name": "Elyssa McMaster",
     "role": "Graduate Student · MASI Lab",
     "group": "Collaborators",
-    "interests": "Bundle segmentation, image resolution"
+    "interests": "Bundle segmentation, image resolution",
+    "image": "/assets/headshot-elyssa-mcmaster.jpeg"
   },
   {
     "name": "Nancy Newlin",
     "role": "Graduate Student · MASI Lab",
     "group": "Collaborators",
-    "interests": "Connectomics, graph theory, harmonization"
+    "interests": "Connectomics, graph theory, harmonization",
+    "image": "/assets/headshot-nancy-newlin.jpg"
   }
 ]
