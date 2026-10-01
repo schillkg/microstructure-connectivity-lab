@@ -245,13 +245,16 @@
       let bytes=hidden.reduce((n,m)=>n+m.bytes,0);for(const m of hidden){if(bytes<=32*1024*1024)break;gl.deleteVertexArray(m.vao);gl.deleteVertexArray(m.wispVAO);gl.deleteBuffer(m.buffer);models.delete(m.id);bytes-=m.bytes}
     }
     async function ensureBundle(id){
+      const meta=bundleMeta.get(id);
+      // Manifest centroids can be shown without downloading the full pathway.
+      if(meta?.centroid&&!centroids.some(c=>c.group===id))centroidModel(meta.centroid,id);
+      if(mode==='centroids')return;
       if(models.has(id)){models.get(id).used=++clock;return}if(loading.has(id))return loading.get(id);
-      const meta=bundleMeta.get(id);if(!meta?.positions)return;
+      if(!meta?.positions)return;
       failed.delete(id);const promise=queuedLoad(async()=>{
-        if(!visible.has(id))return;
+        if(!visible.has(id)||mode==='centroids')return;
         const [points,offsets]=await Promise.all([binary(meta.positions,atlasURL,meta.positionsType||'float32'),binary(meta.offsets,atlasURL,meta.offsetsType||'uint32')]);
         const model={...tubeModel(segmentsFor(points,offsets,meta)),id,streamlines:meta.streamlineCount};models.set(id,model);
-        if(meta.centroid&&!centroids.some(c=>c.group===id))centroidModel(meta.centroid,id);
       });loading.set(id,promise);reportLoading();
       try{await promise}catch(error){console.warn('Pathway:',error.message);failed.add(id)}finally{loading.delete(id);reportLoading();evictHidden();requestDraw()}
     }
@@ -286,7 +289,7 @@
     function selectStart(clear=false){visible=new Set(clear?[]:initialVisible);$$('[data-visible]').forEach(el=>el.checked=visible.has(el.dataset.visible));evictHidden();requestDraw()}
     $('[data-pathway-start]')?.addEventListener('click',()=>selectStart());$('[data-pathway-clear]')?.addEventListener('click',()=>selectStart(true));
     $$('[data-fiber-style]').forEach(b=>b.addEventListener('click',()=>{fiberStyle=b.dataset.fiberStyle;updateStyle()}));
-    modeInput?.addEventListener('change',()=>{mode=modeInput.value;updateStyle()});
+    modeInput?.addEventListener('change',()=>{mode=modeInput.value;for(const id of visible)ensureBundle(id);updateStyle()});
     $('[data-color-mode]')?.addEventListener('change',ev=>{direction=ev.target.value==='direction';$('[data-direction-key]').hidden=!direction;requestDraw()});
     function range(selector,assign){$(selector)?.addEventListener('input',ev=>{assign(Number(ev.target.value));requestDraw()})}
     range('[data-opacity]',v=>opacity=v/30);range('[data-radius]',v=>radius=v/10000);range('[data-light]',v=>brightness=v/100);range('[data-zoom]',v=>zoom=v/100);range('[data-wisp-opacity]',v=>wispOpacity=v/100);
