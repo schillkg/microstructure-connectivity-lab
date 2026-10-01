@@ -2,6 +2,8 @@ dist/
 .DS_Store
 .sites-runtime/
 node_modules/
+__pycache__/
+*.pyc
 
 # Local rendering provenance and editorial audit (not for publication).
 docs/hero-provenance.json
