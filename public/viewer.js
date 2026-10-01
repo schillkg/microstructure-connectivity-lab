@@ -158,13 +158,16 @@
       const set=p=>{gl.useProgram(p.program);gl.uniformMatrix3fv(p.rotation,false,rot);gl.uniform2f(p.fit,Math.min(w,h)/w*fit,Math.min(w,h)/h*fit)};
       const shells=surfaces.filter(s=>s.kind===anatomySource&&(hemisphere==='all'||!s.hemisphere||s.hemisphere===hemisphere));
       const shell=(model,back=false)=>{
-        set(surface);gl.bindVertexArray(model.vao);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);
         const wire=surfaceStyle==='wire',points=surfaceStyle==='points',solid=surfaceStyle==='solid';
+        const showParcels=parcels&&anatomySource==='cortex'&&model.hasRegions,regionSelected=showParcels&&selectedRegion!=='all';
+        // Selected parcels dim their context, so that view remains translucent.
+        // Fully opaque surfaces write depth in both passes to resolve folded cortex.
+        const opaque=solid&&opacity>=3.32&&!regionSelected;
+        set(surface);gl.bindVertexArray(model.vao);if(opaque)gl.disable(gl.BLEND);else{gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA)}gl.depthMask(opaque);
         gl.uniform1f(surface.alpha,wire?(model.vertexCount>50000?.055:.16):points?.2:solid?.3:back?.017:.035);
-        gl.uniform1f(surface.opacity,opacity);gl.uniform1f(surface.parcels,parcels&&anatomySource==='cortex'&&model.hasRegions?1:0);
-        gl.uniform1f(surface.selected,parcels&&selectedRegion!=='all'?(selectedRegion.startsWith(model.id+':')?Number(selectedRegion.slice(model.id.length+1)):-2):-1);
-        // -2 dims the other hemisphere when one named parcel is selected.
-        if(parcels&&selectedRegion!=='all'&&!selectedRegion.startsWith(model.id+':'))gl.uniform1f(surface.selected,1e8);
+        gl.uniform1f(surface.opacity,opacity);gl.uniform1f(surface.parcels,showParcels?1:0);
+        // A nonmatching label dims the other hemisphere; outline ignores parcel state.
+        gl.uniform1f(surface.selected,regionSelected?(selectedRegion.startsWith(model.id+':')?Number(selectedRegion.slice(model.id.length+1)):1e8):-1);
         gl.uniform1f(surface.surfacestyle,points?3:wire?2:solid?1:0);gl.uniform1f(surface.pointsize,1.45*dpr);
         gl.uniform3fv(surface.color,lightBackground?[.24,.39,.45]:[.47,.7,.84]);
         if(wire){gl.disable(gl.CULL_FACE);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,model.edges);gl.drawElements(gl.LINES,model.edgeCount,model.indexType,0)}
@@ -268,7 +271,7 @@
       return surfacePromise;
     }
     function createBundleRow(meta){
-      const row=document.createElement('div');row.className='bundle-setting';row.dataset.pathwayName=meta.name.toLowerCase();
+      const row=document.createElement('div');row.className='bundle-setting';row.dataset.pathwayName=[meta.name,meta.sourceName,meta.id].filter(Boolean).join(' ').toLowerCase();
       const label=document.createElement('label'),check=document.createElement('input'),text=document.createElement('span'),color=document.createElement('input');
       check.type='checkbox';check.dataset.visible=meta.id;check.checked=visible.has(meta.id);text.textContent=meta.name;label.append(check,text);color.type='color';color.dataset.color=meta.id;color.value=colors[meta.id];color.setAttribute('aria-label',meta.name+' color');row.append(label,color);return row;
     }
