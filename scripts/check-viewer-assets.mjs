@@ -150,7 +150,7 @@ export function checkViewerAssets(assetDirectory, { atlas = 'pathway-atlas.json'
       insist(bundle.allStreamlines === true && bundle.allOriginalVertices === true && bundle.sourceStreamlineCount === bundle.streamlineCount && bundle.sourcePointCount === bundle.pointCount, bundle.id, 'all original streamlines and points must be retained');
       insist((bundle.positionsType ?? manifest.positionsType) === 'float32' && (bundle.offsetsType ?? manifest.offsetsType) === 'uint32', bundle.id, 'unsupported tract encoding');
       insist(['TractSeg', 'BrainstemSeg'].includes(bundle.generator) && typeof bundle.sourceName === 'string' && bundle.sourceName.length > 0, bundle.id, 'missing tract selection metadata');
-      if (bundle.generator === 'TractSeg') insist(!/^(?:CC(?:\.|$)|T_|ST_)/i.test(bundle.sourceName), bundle.id, 'excluded whole-callosal, thalamic, or striatal TractSeg family');
+      if (bundle.generator === 'TractSeg') insist(!/^(?:CC(?:\.|$)|T_|ST_|ATR|STR)/i.test(bundle.sourceName), bundle.id, 'excluded whole-callosal, thalamic, or striatal TractSeg family');
       floatTriples(bundle.positions, bundle.pointCount, bundle.sha256?.positions);
       const values = typed(bundle.offsets, 'uint32', bundle.streamlineCount + 1, bundle.sha256?.offsets);
       offsets(values, bundle.id, 0, bundle.streamlineCount + 1, 0, bundle.pointCount);
