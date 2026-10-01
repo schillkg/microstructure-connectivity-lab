@@ -22,6 +22,48 @@ import numpy as np
 from nibabel.affines import apply_affine
 
 
+# Display labels for FreeSurfer's standard Desikan–Killiany aparc annotations.
+# Table indices and original annotation colors are preserved below.
+APARC_NAMES = {
+    'unknown': 'Unassigned',
+    'bankssts': 'Banks of superior temporal sulcus',
+    'caudalanteriorcingulate': 'Caudal anterior cingulate',
+    'caudalmiddlefrontal': 'Caudal middle frontal',
+    'corpuscallosum': 'Corpus callosum',
+    'cuneus': 'Cuneus',
+    'entorhinal': 'Entorhinal',
+    'fusiform': 'Fusiform',
+    'inferiorparietal': 'Inferior parietal',
+    'inferiortemporal': 'Inferior temporal',
+    'isthmuscingulate': 'Isthmus of cingulate',
+    'lateraloccipital': 'Lateral occipital',
+    'lateralorbitofrontal': 'Lateral orbitofrontal',
+    'lingual': 'Lingual',
+    'medialorbitofrontal': 'Medial orbitofrontal',
+    'middletemporal': 'Middle temporal',
+    'parahippocampal': 'Parahippocampal',
+    'paracentral': 'Paracentral',
+    'parsopercularis': 'Pars opercularis',
+    'parsorbitalis': 'Pars orbitalis',
+    'parstriangularis': 'Pars triangularis',
+    'pericalcarine': 'Pericalcarine',
+    'postcentral': 'Postcentral',
+    'posteriorcingulate': 'Posterior cingulate',
+    'precentral': 'Precentral',
+    'precuneus': 'Precuneus',
+    'rostralanteriorcingulate': 'Rostral anterior cingulate',
+    'rostralmiddlefrontal': 'Rostral middle frontal',
+    'superiorfrontal': 'Superior frontal',
+    'superiorparietal': 'Superior parietal',
+    'superiortemporal': 'Superior temporal',
+    'supramarginal': 'Supramarginal',
+    'frontalpole': 'Frontal pole',
+    'temporalpole': 'Temporal pole',
+    'transversetemporal': 'Transverse temporal',
+    'insula': 'Insula',
+}
+
+
 def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
@@ -159,9 +201,11 @@ def main():
         # and shift every stored annotation-table index by one consistently.
         labels = (labels + 1).astype('<u2')
         regions = [{'id': 0, 'name': 'Unassigned', 'color': '#98a1a4'}]
-        regions.extend({'id': i + 1, 'name': name.decode('utf-8').replace('-', ' '),
+        regions.extend({'id': i + 1, 'name': APARC_NAMES.get(name.decode('utf-8'), name.decode('utf-8').replace('-', ' ')),
                         'color': '#' + ''.join('{:02x}'.format(int(v)) for v in ctab[i, :3])}
                        for i, name in enumerate(names))
+        present_labels = set(np.unique(labels).tolist())
+        regions = [region for region in regions if region['id'] in present_labels]
         meta = {k: entry[k] for k in ('id', 'name', 'hemisphere')}
         meta.update(kind='cortex', vertexCount=len(points), triangleCount=len(faces),
                     sourceVertexCount=len(points), sourceTriangleCount=len(faces),
