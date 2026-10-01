@@ -24,7 +24,32 @@
       "pointOffset": 0,
       "pointCount": 139027,
       "offsetOffset": 0,
-      "offsetCount": 4001
+      "offsetCount": 4001,
+      "group": "Association",
+      "parts": [
+        {
+          "id": "af-left",
+          "name": "Arcuate fasciculus \u00b7 left",
+          "color": "#f3b64f",
+          "group": "Association",
+          "offsetOffset": 0,
+          "streamlineCount": 2000,
+          "pointCount": 67681,
+          "pointOffset": 0,
+          "hemisphere": "left"
+        },
+        {
+          "id": "af-right",
+          "name": "Arcuate fasciculus \u00b7 right",
+          "color": "#f3b64f",
+          "group": "Association",
+          "offsetOffset": 2000,
+          "streamlineCount": 2000,
+          "pointCount": 71346,
+          "pointOffset": 67681,
+          "hemisphere": "right"
+        }
+      ]
     },
     {
       "id": "cst",
@@ -34,7 +59,32 @@
       "pointOffset": 139027,
       "pointCount": 139361,
       "offsetOffset": 4001,
-      "offsetCount": 4001
+      "offsetCount": 4001,
+      "group": "Projection",
+      "parts": [
+        {
+          "id": "cst-left",
+          "name": "Corticospinal tract \u00b7 left",
+          "color": "#49aaff",
+          "group": "Projection",
+          "offsetOffset": 4001,
+          "streamlineCount": 2000,
+          "pointCount": 69541,
+          "pointOffset": 139027,
+          "hemisphere": "left"
+        },
+        {
+          "id": "cst-right",
+          "name": "Corticospinal tract \u00b7 right",
+          "color": "#49aaff",
+          "group": "Projection",
+          "offsetOffset": 6001,
+          "streamlineCount": 2000,
+          "pointCount": 69820,
+          "pointOffset": 208568,
+          "hemisphere": "right"
+        }
+      ]
     },
     {
       "id": "cc",
@@ -44,7 +94,8 @@
       "pointOffset": 278388,
       "pointCount": 63489,
       "offsetOffset": 8002,
-      "offsetCount": 2001
+      "offsetCount": 2001,
+      "group": "Commissural"
     }
   ],
   "brain": {

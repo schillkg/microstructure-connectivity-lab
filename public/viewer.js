@@ -78,12 +78,15 @@
   const wispFragment=`#version 300 es
   precision highp float;
   in float vEdge;in vec3 vDirection;
-  uniform vec3 uColor;uniform float uDirection;uniform float uBrightness;uniform float uOpacity;
+  uniform vec3 uColor;uniform float uDirection;uniform float uBrightness;uniform float uOpacity;uniform float uFine;uniform float uPaper;
   out vec4 color;
   void main(){
     float soft=pow(max(0.,1.-abs(vEdge)),1.5);
+    // A narrow core and faint halo make Style 3 finer without omitting fibers.
+    float fine=.84*exp(-28.*vEdge*vEdge)+.16*exp(-4.5*vEdge*vEdge);
     vec3 base=mix(uColor,normalize(vDirection),uDirection);
-    color=vec4(base*uBrightness,soft*uOpacity);
+    base=mix(base,mix(mix(base,vec3(1.),.22),base*.6,uPaper),uFine);
+    color=vec4(base*uBrightness,mix(soft,fine,uFine)*uOpacity);
   }`;
   const surfaceVertex=`#version 300 es
   precision highp float;
@@ -129,7 +132,7 @@
     function program(vs,fs){
       const p=gl.createProgram(),v=shader(gl.VERTEX_SHADER,vs),f=shader(gl.FRAGMENT_SHADER,fs);gl.attachShader(p,v);gl.attachShader(p,f);gl.linkProgram(p);gl.deleteShader(v);gl.deleteShader(f);
       if(!gl.getProgramParameter(p,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(p));
-      return Object.fromEntries([['program',p],...['Rotation','Fit','Viewport','Color','Radius','Alpha','Opacity','Direction','Brightness','Parcels','Selected','SurfaceStyle','PointSize'].map(n=>[n.toLowerCase(),gl.getUniformLocation(p,'u'+n)])]);
+      return Object.fromEntries([['program',p],...['Rotation','Fit','Viewport','Color','Radius','Alpha','Opacity','Direction','Brightness','Parcels','Selected','SurfaceStyle','PointSize','Fine','Paper'].map(n=>[n.toLowerCase(),gl.getUniformLocation(p,'u'+n)])]);
     }
     function buffer(array,target=gl.ARRAY_BUFFER){const b=gl.createBuffer();gl.bindBuffer(target,b);gl.bufferData(target,array,gl.STATIC_DRAW);return b}
     function attribute(index,b,size,{stride=0,offset=0,divisor=0,type=gl.FLOAT,normalized=false}={}){gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.enableVertexAttribArray(index);gl.vertexAttribPointer(index,size,type,normalized,stride,offset);gl.vertexAttribDivisor(index,divisor)}
@@ -171,8 +174,8 @@
       if(surfaceStyle==='glass'||surfaceStyle==='solid')for(const s of shells)shell(s,true);
       gl.disable(gl.CULL_FACE);let count=0;
       if(mode!=='centroids'){
-        const wispy=fiberStyle==='wispy',p=wispy?wisp:tube;set(p);gl.uniform1f(p.brightness,brightness);gl.uniform1f(p.direction,direction?1:0);
-        if(wispy){gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);gl.uniform2f(p.viewport,w,h);gl.uniform1f(p.opacity,wispOpacity);gl.uniform1f(p.radius,Math.max(.3,radius*450)*dpr)}
+        const wispy=fiberStyle!=='solid',fine=fiberStyle==='fine',p=wispy?wisp:tube;set(p);gl.uniform1f(p.brightness,brightness);gl.uniform1f(p.direction,direction?1:0);
+        if(wispy){gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);gl.uniform2f(p.viewport,w,h);gl.uniform1f(p.opacity,wispOpacity*(fine?(lightBackground?.45:.35):1));gl.uniform1f(p.fine,fine?1:0);gl.uniform1f(p.paper,lightBackground?1:0);gl.uniform1f(p.radius,Math.max(.3,radius*(fine?350:450))*dpr)}
         else{gl.disable(gl.BLEND);gl.depthMask(true);gl.uniform1f(p.radius,radius)}
         for(const model of models.values())if(show(model.id)){
           gl.bindVertexArray(wispy?model.wispVAO:model.vao);gl.uniform3fv(p.color,rgb(colors[model.id]));
@@ -271,22 +274,28 @@
     }
     function renderBundleList(){
       const list=$('[data-pathway-list]');if(!list)return;list.replaceChildren();const groups=new Map();
-      for(const meta of bundleMeta.values()){const key=meta.group||'Featured pathways';if(!groups.has(key))groups.set(key,[]);groups.get(key).push(meta)}
-      const grouped=bundleMeta.size>6;
-      for(const [name,bundles] of groups){let target=list;if(grouped){const details=document.createElement('details');details.className='pathway-group';details.open=bundles.some(b=>visible.has(b.id));const summary=document.createElement('summary');summary.textContent=name;details.append(summary);list.append(details);target=details}for(const meta of bundles)target.append(createBundleRow(meta))}
-      $('[data-pathway-search]').hidden=!grouped;$('[data-pathway-presets]').hidden=!grouped;
+      for(const meta of bundleMeta.values()){const key=meta.group||({af:'Association',cst:'Projection',cc:'Commissural'}[meta.id])||'Other pathways';if(!groups.has(key))groups.set(key,[]);groups.get(key).push(meta)}
+      const grouped=groups.size>1;
+      for(const [name,bundles] of groups){let target=list;if(grouped){const details=document.createElement('details');details.className='pathway-group';details.dataset.groupName=name;details.open=false;const summary=document.createElement('summary');summary.textContent=name+' · '+bundles.filter(b=>visible.has(b.id)).length+' selected';details.append(summary);list.append(details);target=details}for(const meta of bundles)target.append(createBundleRow(meta))}
+      $('[data-pathway-search]').hidden=bundleMeta.size<=6;$('[data-pathway-presets]').hidden=bundleMeta.size<=6;
+    }
+    function updateGroupCounts(collapse=false){
+      $$('.pathway-group').forEach(group=>{const count=group.querySelectorAll('[data-visible]:checked').length;group.querySelector('summary').textContent=group.dataset.groupName+' · '+count+' selected';if(collapse)group.open=false});
+    }
+    function clearPathwaySearch(){
+      if($('[data-pathway-filter]'))$('[data-pathway-filter]').value='';$$('[data-pathway-name],.pathway-group').forEach(el=>el.hidden=false);
     }
     function updateStyle(){
       $$('[data-fiber-style]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.fiberStyle===fiberStyle)));
-      if($('[data-wisp-field]'))$('[data-wisp-field]').hidden=fiberStyle!=='wispy'||mode==='centroids';
-      if($('[data-width-label]'))$('[data-width-label]').textContent=fiberStyle==='wispy'?'Fiber width':'Tube width';requestDraw();
+      if($('[data-wisp-field]'))$('[data-wisp-field]').hidden=fiberStyle==='solid'||mode==='centroids';
+      if($('[data-width-label]'))$('[data-width-label]').textContent=fiberStyle==='solid'?'Tube width':'Fiber width';requestDraw();
     }
     choices.forEach(b=>b.addEventListener('click',()=>{selected=b.dataset.bundle;requestDraw()}));
     glass?.addEventListener('click',()=>{surfaceStyle=surfaceStyle==='off'?'glass':'off';requestDraw()});
-    $('[data-pathway-list]')?.addEventListener('change',ev=>{const el=ev.target;if(!el.matches('[data-visible]'))return;el.checked?visible.add(el.dataset.visible):visible.delete(el.dataset.visible);if(el.checked)ensureBundle(el.dataset.visible);evictHidden();requestDraw()});
+    $('[data-pathway-list]')?.addEventListener('change',ev=>{const el=ev.target;if(!el.matches('[data-visible]'))return;el.checked?visible.add(el.dataset.visible):visible.delete(el.dataset.visible);if(el.checked)ensureBundle(el.dataset.visible);updateGroupCounts();evictHidden();requestDraw()});
     $('[data-pathway-list]')?.addEventListener('input',ev=>{const el=ev.target;if(!el.matches('[data-color]'))return;colors[el.dataset.color]=el.value;direction=false;$('[data-color-mode]').value='bundle';$('[data-direction-key]').hidden=true;requestDraw()});
     $('[data-pathway-filter]')?.addEventListener('input',ev=>{const term=ev.target.value.trim().toLowerCase();$$('[data-pathway-name]').forEach(row=>row.hidden=!row.dataset.pathwayName.includes(term));$$('.pathway-group').forEach(group=>{group.hidden=![...group.querySelectorAll('[data-pathway-name]')].some(row=>!row.hidden);if(term&&!group.hidden)group.open=true})});
-    function selectStart(clear=false){visible=new Set(clear?[]:initialVisible);$$('[data-visible]').forEach(el=>el.checked=visible.has(el.dataset.visible));evictHidden();requestDraw()}
+    function selectStart(clear=false){visible=new Set(clear?[]:initialVisible);$$('[data-visible]').forEach(el=>el.checked=visible.has(el.dataset.visible));if(!clear)clearPathwaySearch();updateGroupCounts(!clear);evictHidden();requestDraw()}
     $('[data-pathway-start]')?.addEventListener('click',()=>selectStart());$('[data-pathway-clear]')?.addEventListener('click',()=>selectStart(true));
     $$('[data-fiber-style]').forEach(b=>b.addEventListener('click',()=>{fiberStyle=b.dataset.fiberStyle;updateStyle()}));
     modeInput?.addEventListener('change',()=>{mode=modeInput.value;for(const id of visible)ensureBundle(id);updateStyle()});
@@ -307,7 +316,7 @@
       for(const [selector,value] of [['[data-render-mode]','fibers'],['[data-color-mode]','bundle'],['[data-opacity]',30],['[data-radius]',16.5],['[data-light]',110],['[data-zoom]',100],['[data-background]','dark'],['[data-surface-style]','glass'],['[data-anatomy-source]','outline'],['[data-hemisphere]','all'],['[data-region]','all'],['[data-wisp-opacity]',12]])if($(selector))$(selector).value=value;
       for(const selector of ['[data-direction-key]','[data-cortex-controls]','[data-region-field]','[data-region-key]'])if($(selector))$(selector).hidden=true;
       if($('[data-parcels]'))$('[data-parcels]').checked=false;if($('[data-anatomy-note]'))$('[data-anatomy-note]').textContent='The outline follows the matching brain mask.';
-      if($('[data-pathway-filter]')){$('[data-pathway-filter]').value='';$$('[data-pathway-name],.pathway-group').forEach(el=>el.hidden=false)}
+      clearPathwaySearch();updateGroupCounts(true);
       if($('[data-spin]')){$('[data-spin]').setAttribute('aria-pressed','false');$('[data-spin]').textContent='Rotate'}evictHidden();updateStyle();
     });
     canvas.addEventListener('pointerdown',ev=>{dragging={x:ev.clientX,y:ev.clientY,yaw,pitch};canvas.setPointerCapture(ev.pointerId);canvas.classList.add('dragging')});
@@ -321,10 +330,11 @@
     canvas.addEventListener('webglcontextlost',ev=>{ev.preventDefault();fail('The 3D view was interrupted. Reload to restore rotation.')});new ResizeObserver(requestDraw).observe(canvas);
     loadGeometry(canvas.dataset.source).then(async value=>{
       data=value;setCamera('oblique');tube=program(tubeVertex,tubeFragment);wisp=program(wispVertex,wispFragment);surface=program(surfaceVertex,surfaceFragment);shapeGeometry();
-      for(const meta of data.meta.bundles){bundleMeta.set(meta.id,meta);colors[meta.id]=meta.color||defaults[meta.id]||'#83b5cd';models.set(meta.id,{...tubeModel(segmentsFor(data.points,data.offsets,meta)),id:meta.id,streamlines:meta.streamlineCount})}
-      visible=new Set(data.meta.bundles.map(b=>b.id));initialVisible=new Set(visible);surfaces.push(surfaceModel(data.brain));renderBundleList();requestDraw();
+      const initialBundles=data.meta.bundles.flatMap(b=>expanded&&b.parts?.length?b.parts:[b]);
+      for(const meta of initialBundles){bundleMeta.set(meta.id,meta);colors[meta.id]=meta.color||defaults[meta.id]||'#83b5cd';models.set(meta.id,{...tubeModel(segmentsFor(data.points,data.offsets,meta)),id:meta.id,streamlines:meta.streamlineCount})}
+      visible=new Set(initialBundles.map(b=>b.id));initialVisible=new Set(visible);surfaces.push(surfaceModel(data.brain));renderBundleList();requestDraw();
       if(!expanded)return;
-      try{const c=await getJSON(canvas.dataset.centroids);for(const b of c.bundles)centroidModel(b.points,b.group);requestDraw()}catch(error){console.warn('Centroids:',error.message)}
+      try{const c=await getJSON(canvas.dataset.centroids);for(const b of c.bundles)centroidModel(b.points,bundleMeta.has(b.id)?b.id:b.group);requestDraw()}catch(error){console.warn('Centroids:',error.message)}
       if(canvas.dataset.atlas){
         try{
           atlasURL=canvas.dataset.atlas;const candidate=await getJSON(atlasURL);if(candidate.registrationVerified!==true)throw new Error('Anatomy registration has not been verified');atlas=candidate;
