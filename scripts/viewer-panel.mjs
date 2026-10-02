@@ -42,6 +42,6 @@ export function viewerPanel(id,expanded,{image,link,url,source='/assets/glass-vi
  <div class="pathway-roster" data-pathway-list role="group" aria-label="Visible pathways and colors"></div>
  <div class="pathway-pagination"><button data-pathway-prev aria-label="Previous pathways">←</button><span data-pathway-page role="status"></span><button data-pathway-next aria-label="Next pathways">→</button></div>
  <p class="viewer-meter" data-load-status role="status" hidden></p>
- <p class="pathway-source">Brainstem groups follow ${link('https://pmc.ncbi.nlm.nih.gov/articles/PMC13277897/','the BundleParc paper ↗')}.</p>
+ <p class="pathway-source">Anatomical groups follow ${link('https://pmc.ncbi.nlm.nih.gov/articles/PMC13277897/','the BundleParc paper ↗')}. Tang variants have their own group.</p>
  </aside></div></div>`;
 }
