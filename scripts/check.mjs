@@ -50,7 +50,7 @@ try{
   requireClassification(isDeepStrictEqual(JSON.parse(embedded[0][1]),classification),'embedded pathway classification differs from content source');
   requireClassification(classification.schemaVersion===1&&Array.isArray(classification.groups),'unsupported pathway classification schema');
   const basicSystems=['Association','Projection','Commissural'];
-  const groupIds=classification.groups.map(g=>g.id),tables=classification.groups.map(g=>g.table);
+  const groupIds=classification.groups.map(g=>g.id),tables=classification.groups.filter(g=>g.table!==undefined).map(g=>g.table);
   requireClassification(groupIds.every(id=>typeof id==='string'&&/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id))&&new Set(groupIds).size===groupIds.length,'invalid or duplicate pathway system IDs');
   requireClassification(tables.length===4&&new Set(tables).size===4&&tables.every(n=>Number.isInteger(n)&&n>=1&&n<=4),'paper systems must cover tables 1–4 exactly once');
   requireClassification(classification.groups.every(g=>typeof g.name==='string'&&g.name.trim()&&typeof g.displayName==='string'&&g.displayName.trim()),'pathway systems need full and concise display names');
@@ -62,6 +62,8 @@ try{
   requireClassification(sourceNames.every(n=>typeof n==='string'&&n)&&new Set(sourceNames).size===sourceNames.length,'duplicate or invalid BrainstemSeg source names');
   requireClassification(isDeepStrictEqual(Object.keys(mapping).sort(),[...sourceNames].sort()),'BrainstemSeg mapping must cover every current source name exactly once, without obsolete keys');
   requireClassification(Object.values(mapping).every(id=>groupIds.includes(id)),'BrainstemSeg mapping refers to an undefined paper system');
+  requireClassification(groupIds.includes('tang')&&classification.groups.find(g=>g.id==='tang').section==='brainstem','Tang needs its own visible brainstem group');
+  requireClassification(Object.entries(mapping).every(([name,id])=>name.includes('_Tang')?(id==='tang'):(id!=='tang')),'Tang variants must appear only in the Tang group');
   const inventory=[...glass.bundles.flatMap(b=>b.parts?.length?b.parts:[b]),...atlas.bundles];
   requireClassification(new Set(inventory.map(b=>b.id)).size===inventory.length,'original and optional pathway IDs must be globally unique');
   const reachableSystems=new Set([...basicSystems,...groupIds]);
