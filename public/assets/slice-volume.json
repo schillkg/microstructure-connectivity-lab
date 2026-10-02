@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "title": "Matched T1 anatomy",
+  "data": "slice-t1.bin.gz",
+  "dataType": "uint8",
+  "compression": "gzip",
+  "storageOrder": "x-fastest",
+  "dimensions": [
+    147,
+    201,
+    158
+  ],
+  "spacingMm": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "displayOrigin": [
+    -0.7962470207606313,
+    -1.0556334451024738,
+    -0.8827237204375917
+  ],
+  "displaySpacing": [
+    0.010797830930476385,
+    0.010797830930476385,
+    0.010797830930476385
+  ],
+  "initialVoxel": [
+    76,
+    98,
+    82
+  ],
+  "coordinateSystem": "Shared normalized native RAS+: x right, y anterior, z superior.",
+  "registrationVerified": true,
+  "sameSubject": true,
+  "brainExtracted": true,
+  "sourceResolutionMm": [
+    1,
+    1,
+    1
+  ],
+  "interpolation": "Trilinear",
+  "intensityWindow": {
+    "sourceMinimum": 0.0,
+    "sourceMaximum": 125.0,
+    "outputMinimum": 0,
+    "outputMaximum": 255
+  },
+  "description": "Brain-extracted T1 anatomy from the same subject, rigidly aligned to the pathways and cortical surfaces and sampled on a 1-mm RAS grid. Grayscale display intensities are windowed to 8 bits. The diffusion scan has 2.5-mm voxels; this T1 grid does not increase pathway resolution.",
+  "uncompressedBytes": 4668426,
+  "compressedBytes": 1556778,
+  "sha256": "0e3a12dc1e977d13f3dd0f3d0948bca9d6447dcb1ddc588e74bdd7614dc54a73"
+}

@@ -152,6 +152,7 @@
     }
     function buffer(array,target=gl.ARRAY_BUFFER){const b=gl.createBuffer();gl.bindBuffer(target,b);gl.bufferData(target,array,gl.STATIC_DRAW);return b}
     function attribute(index,b,size,{stride=0,offset=0,divisor=0,type=gl.FLOAT,normalized=false}={}){gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.enableVertexAttribArray(index);gl.vertexAttribPointer(index,size,type,normalized,stride,offset);gl.vertexAttribDivisor(index,divisor)}
+    const slices=expanded&&window.PathwaySlices?.create({panel,canvas,gl,requestDraw,getJSON,binary,rgb});
     function requestDraw(){if(!dirty){dirty=true;requestAnimationFrame(draw)}}
     function setCamera(name){
       currentView=name;const views={oblique:[[-1.6,2.3,.9],[0,0,1]],front:[[0,1,0],[0,0,1]],side:[[-1,0,0],[0,0,1]],top:[[0,0,1],[0,1,0]]};
@@ -166,12 +167,15 @@
     const show=id=>expanded?visible.has(id):selected==='all'||selected===id;
     function draw(time=performance.now()){
       dirty=false;if(!data||gl.isContextLost())return;
-      if(spinning&&!document.hidden){if(lastFrame)yaw=((yaw+Math.min(time-lastFrame,50)*.009+540)%360)-180;lastFrame=time}else lastFrame=0;
+      if(spinning&&!document.hidden&&!slices?.isFull){if(lastFrame)yaw=((yaw+Math.min(time-lastFrame,50)*.009+540)%360)-180;lastFrame=time}else lastFrame=0;
       const rect=canvas.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,1.5);if(!rect.width||!rect.height)return;
       const w=Math.round(rect.width*dpr),h=Math.round(rect.height*dpr);if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h}
-      gl.viewport(0,0,w,h);gl.clearColor(...(lightBackground?[.95,.952,.935]:[.021,.034,.046]),1);gl.depthMask(true);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.enable(gl.DEPTH_TEST);gl.depthFunc(gl.LEQUAL);
+      const viewport=slices?slices.layout(rect,w,h):[0,0,w,h],viewW=viewport[2],viewH=viewport[3];
+      gl.viewport(...viewport);gl.clearColor(...(lightBackground?[.95,.952,.935]:[.021,.034,.046]),1);gl.depthMask(true);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.enable(gl.DEPTH_TEST);gl.depthFunc(gl.LEQUAL);
+      const count=mode==='centroids'?0:[...models.values()].filter(model=>show(model.id)).reduce((sum,model)=>sum+model.streamlines,0);
+      if(!slices?.isFull){
       const fit=.94/data.meta.displayBounds.radius*zoom,rot=rotation();
-      const set=p=>{gl.useProgram(p.program);gl.uniformMatrix3fv(p.rotation,false,rot);gl.uniform2f(p.fit,Math.min(w,h)/w*fit,Math.min(w,h)/h*fit)};
+      const set=p=>{gl.useProgram(p.program);gl.uniformMatrix3fv(p.rotation,false,rot);gl.uniform2f(p.fit,Math.min(viewW,viewH)/viewW*fit,Math.min(viewW,viewH)/viewH*fit)};
       const shells=surfaces.filter(s=>s.kind===anatomySource&&(hemisphere==='all'||!s.hemisphere||s.hemisphere===hemisphere));
       const shell=(model,back=false)=>{
         const wire=surfaceStyle==='wire',points=surfaceStyle==='points',solid=surfaceStyle==='solid';
@@ -190,15 +194,14 @@
         else{gl.enable(gl.CULL_FACE);gl.cullFace(back?gl.FRONT:gl.BACK);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,model.indices);gl.drawElements(gl.TRIANGLES,model.indexCount,model.indexType,0)}
       };
       if(opacity>0&&(surfaceStyle==='glass'||surfaceStyle==='solid'))for(const s of shells)shell(s,true);
-      gl.disable(gl.CULL_FACE);let count=0;
+      gl.disable(gl.CULL_FACE);
       if(mode!=='centroids'){
         const wispy=fiberStyle!=='solid',fine=fiberStyle==='fine',p=wispy?wisp:tube;set(p);gl.uniform1f(p.brightness,brightness);gl.uniform1f(p.direction,direction?1:0);
-        if(wispy){gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);gl.uniform2f(p.viewport,w,h);gl.uniform1f(p.opacity,wispOpacity*(fine?(lightBackground?.45:.35):1));gl.uniform1f(p.fine,fine?1:0);gl.uniform1f(p.paper,lightBackground?1:0);gl.uniform1f(p.radius,Math.max(.3,radius*(fine?350:450))*dpr)}
+        if(wispy){gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);gl.uniform2f(p.viewport,viewW,viewH);gl.uniform1f(p.opacity,wispOpacity*(fine?(lightBackground?.45:.35):1));gl.uniform1f(p.fine,fine?1:0);gl.uniform1f(p.paper,lightBackground?1:0);gl.uniform1f(p.radius,Math.max(.3,radius*(fine?350:450))*dpr)}
         else{gl.disable(gl.BLEND);gl.depthMask(true);gl.uniform1f(p.radius,radius)}
         for(const model of models.values())if(show(model.id)){
           gl.bindVertexArray(wispy?model.wispVAO:model.vao);gl.uniform3fv(p.color,rgb(colors[model.id]));
           if(wispy)gl.drawArraysInstanced(gl.TRIANGLES,0,6,model.segments);else gl.drawElementsInstanced(gl.TRIANGLES,tubeIndexCount,gl.UNSIGNED_SHORT,0,model.segments);
-          count+=model.streamlines;
         }
       }
       gl.disable(gl.BLEND);gl.depthMask(true);
@@ -210,11 +213,13 @@
       gl.enable(gl.DEPTH_TEST);gl.depthMask(true);
       if(opacity>0&&surfaceStyle!=='off')for(const s of shells)shell(s);
       gl.depthMask(true);gl.disable(gl.CULL_FACE);gl.disable(gl.BLEND);gl.bindVertexArray(null);
+      }
+      slices?.render({models,centroids,visible,colors,mode,direction});
       status.textContent=expanded&&visible.size===0?'Choose a pathway to display':expanded?'Drag to rotate · scroll to zoom':'Drag to rotate';
       panel.dataset.viewerState='ready';panel.dataset.renderMode=mode;panel.dataset.fiberStyle=fiberStyle;panel.dataset.surfaceStyle=surfaceStyle;panel.dataset.camera=currentView;panel.dataset.yaw=yaw.toFixed(2);panel.dataset.anatomySource=anatomySource;panel.dataset.surfaceOpacity=String(opacity);canvas.dataset.streamlines=String(count);
       choices.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.bundle===selected)));
       if(glass)glass.setAttribute('aria-pressed',String(surfaceStyle!=='off'));
-      if(spinning&&!document.hidden)requestDraw();
+      if(spinning&&!document.hidden&&!slices?.isFull)requestDraw();
     }
     function shapeGeometry(){
       const cylinder=[],indices=[],sides=8;for(let z=0;z<2;z++)for(let i=0;i<sides;i++)cylinder.push(Math.cos(i*2*Math.PI/sides),Math.sin(i*2*Math.PI/sides),z);
@@ -291,43 +296,45 @@
     }
     const classification=JSON.parse(document.querySelector('#pathway-group-data')?.textContent||'{}');
     const systemDefs=[...['Association','Projection','Commissural'].map(name=>({id:name,name,displayName:name})),...(classification.groups||[])];
-    let activeSystem='Association',selectedOnly=false,pathwayPage=0,pathwayPageSize=4,query='';
+    let activeSystem='Association',selectedOnly=false,query='';
     function systemFor(meta){return classification.mappings?.[meta.generator]?.[meta.sourceName]||(meta.group==='Brainstem'?'cerebellar-peduncular':meta.group)||'Association'}
     function familyFor(meta){return meta.name.replace(/ · (left|right)/g,'').replace(/ · BrainstemSeg/g,'').replace(/ \(sparse\)/g,'')}
+    function listedPathways(){return [...bundleMeta.values()].filter(meta=>query?[meta.name,meta.sourceName,meta.id].filter(Boolean).join(' ').toLowerCase().includes(query):selectedOnly?visible.has(meta.id):activeSystem==='all'||systemFor(meta)===activeSystem)}
+    function pathwayListTitle(){return query?'Search results':selectedOnly?'Selected pathways':activeSystem==='all'?'All pathways':systemDefs.find(d=>d.id===activeSystem)?.displayName||activeSystem}
     function syncControls(){
       $$('[data-select-target]').forEach(b=>b.setAttribute('aria-pressed',String($(b.dataset.selectTarget)?.value===b.dataset.value)));
       $$('[data-readout]').forEach(o=>{const input=$('['+o.dataset.readout+']');if(input)o.textContent=input.value+(o.dataset.readout==='data-opacity'?'%':'')});
     }
     function renderSystems(){
-      const nav=$('[data-system-nav]');if(!nav)return;const focusedSystem=document.activeElement?.dataset.system;nav.replaceChildren();
+      const select=$('[data-system-select]');if(!select)return;select.replaceChildren();
+      const all=document.createElement('option');all.value='all';all.textContent='All pathways';select.append(all);
       for(const brainstem of [false,true]){
-        if(brainstem){const label=document.createElement('span');label.className='system-family-label';label.textContent='Brainstem & subcortical';nav.append(label)}
-        const row=document.createElement('div');row.className='system-family'+(brainstem?' brainstem-systems':'');
+        const group=document.createElement('optgroup');group.label=brainstem?'Brainstem & subcortical':'Cerebral';
         for(const def of systemDefs.filter(d=>(!!d.table||d.section==='brainstem')===brainstem)){
           const members=[...bundleMeta.values()].filter(m=>systemFor(m)===def.id),count=members.filter(m=>visible.has(m.id)).length;
-          const b=document.createElement('button');b.dataset.system=def.id;b.title=def.name;b.setAttribute('aria-pressed',String(!query&&!selectedOnly&&activeSystem===def.id));
-          const name=document.createElement('span'),badge=document.createElement('span');name.textContent=def.displayName;badge.textContent=count?String(count):'';badge.setAttribute('aria-hidden','true');b.append(name,badge);b.disabled=!members.length;row.append(b);
-        }nav.append(row);
+          const option=document.createElement('option');option.value=def.id;option.title=def.name;option.textContent=def.displayName+(count?' · '+count+' selected':'');option.disabled=!members.length;group.append(option);
+        }select.append(group);
       }
+      select.value=query||selectedOnly?'all':activeSystem;
       $('[data-selection-count]').textContent=String(visible.size);$('[data-pathway-selected]').setAttribute('aria-pressed',String(selectedOnly));
-      if(focusedSystem)$$('[data-system]').find(b=>b.dataset.system===focusedSystem)?.focus({preventScroll:true});
       panel.dataset.pathwayCount=String(bundleMeta.size);panel.dataset.selectedPathways=String(visible.size);
+      const selectAll=$('[data-pathway-select-all]');if(selectAll){selectAll.disabled=!listedPathways().some(meta=>!visible.has(meta.id));selectAll.title=query?`Select all pathways matching “${query}”`:`Select all pathways in ${pathwayListTitle()}`;selectAll.setAttribute('aria-label',selectAll.title)}
     }
     function renderBundleList(){
       const list=$('[data-pathway-list]');if(!list)return;
       const oldFocus=document.activeElement?.dataset.visible;
       const families=new Map();
-      for(const meta of bundleMeta.values()){
-        if(query?![meta.name,meta.sourceName,meta.id].filter(Boolean).join(' ').toLowerCase().includes(query):selectedOnly?!visible.has(meta.id):systemFor(meta)!==activeSystem)continue;
+      for(const meta of listedPathways()){
         const key=systemFor(meta)+'|'+(meta.generator||'original')+'|'+familyFor(meta);if(!families.has(key))families.set(key,[]);families.get(key).push(meta);
       }
-      const all=[...families.values()],pages=Math.max(1,Math.ceil(all.length/pathwayPageSize));pathwayPage=Math.min(pathwayPage,pages-1);list.replaceChildren();
-      const start=pathwayPage*pathwayPageSize;
-      for(const members of all.slice(start,start+pathwayPageSize)){
+      const all=[...families.values()];list.replaceChildren();
+      for(const members of all){
         const row=document.createElement('div');row.className='pathway-family';
         const name=document.createElement('div');name.className='pathway-family-name';
-        const title=document.createElement('span');title.textContent=familyFor(members[0]);title.title=title.textContent;name.append(title);
-        const acronym=document.createElement('small');acronym.textContent=(members[0].generator?members[0].generator+' · ':'')+(members[0].sourceName||members[0].id.replace(/^ts-/,'')).replace(/[_-](left|right|L|R)$/i,'').replace(/_/g,' ');name.append(acronym);row.append(name);
+        const meta=members[0],fullName=familyFor(meta);
+        const shortName=(meta.sourceName||({cc:'CC_4'}[meta.id])||meta.id).replace(/^ts-/,'').replace(/[_-](left|right|L|R)$/i,'').replace(/_/g,' ').replace(/^(af|cst)$/i,m=>m.toUpperCase());
+        const acronym=document.createElement('strong');acronym.textContent=shortName;name.append(acronym);if(meta.generator){const method=document.createElement('small');method.className='pathway-method';method.textContent=meta.generator;name.append(method);}
+        const title=document.createElement('span');title.textContent=fullName;name.title=fullName+(meta.generator?' · '+meta.generator:'');name.append(title);row.append(name);
         const choices=document.createElement('div');choices.className='pathway-family-options';
         for(const meta of members){
           const side=document.createElement('div');side.className='pathway-side';side.style.setProperty('--pathway-color',colors[meta.id]);
@@ -338,21 +345,17 @@
           const color=document.createElement('input');color.type='color';color.dataset.color=meta.id;color.value=colors[meta.id];color.title='Change '+meta.name+' color';color.setAttribute('aria-label',meta.name+' color');side.append(color);choices.append(side);
         }row.append(choices);list.append(row);
       }
-      if(all.slice(start,start+pathwayPageSize).some(members=>members.some(m=>m.name.includes('(sparse)')))){const note=document.createElement('p');note.className='sparse-note';note.textContent='* Sparse reconstruction (fewer than 100 streamlines).';list.append(note)}
+      if(all.some(members=>members.some(m=>m.name.includes('(sparse)')))){const note=document.createElement('p');note.className='sparse-note';note.textContent='* Sparse reconstruction (fewer than 100 streamlines).';list.append(note)}
       if(!all.length){const empty=document.createElement('p');empty.className='pathway-empty';empty.textContent=query?'No pathways match this search.':selectedOnly?'Choose a system to add pathways.':'Pathways are loading…';list.append(empty)}
-      $('[data-system-title]').textContent=query?'Search results':selectedOnly?'Selected pathways':systemDefs.find(d=>d.id===activeSystem)?.displayName||activeSystem;
-      $('[data-pathway-page]').textContent=all.length?`${start+1}–${Math.min(start+pathwayPageSize,all.length)} of ${all.length} pathways`:'';
-      $('[data-pathway-prev]').disabled=pathwayPage===0;$('[data-pathway-next]').disabled=pathwayPage===pages-1;
+      $('[data-system-title]').textContent=pathwayListTitle();
+      $('[data-pathway-family-count]').textContent=all.length?`${all.length} pathway ${all.length===1?'family':'families'}`:'';
       renderSystems();
       if(oldFocus){const control=$$('[data-visible]').find(el=>el.dataset.visible===oldFocus);control?.focus({preventScroll:true})}
     }
     function updateGroupCounts(){renderSystems();if(selectedOnly)renderBundleList()}
-    function clearPathwaySearch(){query='';pathwayPage=0;if($('[data-pathway-filter]'))$('[data-pathway-filter]').value=''}
-    $('[data-system-nav]')?.addEventListener('click',ev=>{const b=ev.target.closest('[data-system]');if(!b)return;activeSystem=b.dataset.system;selectedOnly=false;clearPathwaySearch();renderBundleList()});
-    $('[data-pathway-selected]')?.addEventListener('click',()=>{selectedOnly=!selectedOnly;clearPathwaySearch();renderBundleList()});
-    $('[data-pathway-prev]')?.addEventListener('click',()=>{pathwayPage--;renderBundleList()});
-    $('[data-pathway-next]')?.addEventListener('click',()=>{pathwayPage++;renderBundleList()});
-    if(expanded)new ResizeObserver(entries=>{const size=Math.max(1,Math.min(10,Math.floor((entries[0].contentRect.height-24)/64)));if(size!==pathwayPageSize){pathwayPageSize=size;pathwayPage=0;renderBundleList()}}).observe($('[data-pathway-list]'));
+    function clearPathwaySearch(){query='';if($('[data-pathway-filter]'))$('[data-pathway-filter]').value=''}
+    $('[data-system-select]')?.addEventListener('change',ev=>{activeSystem=ev.target.value;selectedOnly=false;clearPathwaySearch();renderBundleList();$('[data-pathway-list]').scrollTop=0});
+    $('[data-pathway-selected]')?.addEventListener('click',()=>{selectedOnly=!selectedOnly;clearPathwaySearch();renderBundleList();$('[data-pathway-list]').scrollTop=0});
     function showControlTab(index,focus=false){
       $$('[data-control-tab]').forEach(b=>{const on=b.dataset.controlTab===String(index);b.setAttribute('aria-selected',String(on));b.tabIndex=on?0:-1;if(on&&focus)b.focus()});
       $$('[data-control-pane]').forEach(p=>p.hidden=p.dataset.controlPane!==String(index));
@@ -368,8 +371,9 @@
     glass?.addEventListener('click',()=>{surfaceStyle=surfaceStyle==='off'?'glass':'off';requestDraw()});
     $('[data-pathway-list]')?.addEventListener('change',ev=>{const el=ev.target;if(!el.matches('[data-visible]'))return;el.checked?visible.add(el.dataset.visible):visible.delete(el.dataset.visible);if(el.checked)ensureBundle(el.dataset.visible);updateGroupCounts();evictHidden();requestDraw()});
     $('[data-pathway-list]')?.addEventListener('input',ev=>{const el=ev.target;if(!el.matches('[data-color]'))return;colors[el.dataset.color]=el.value;el.closest('.pathway-side').style.setProperty('--pathway-color',el.value);direction=false;$('[data-color-mode]').value='bundle';$('[data-direction-key]').hidden=true;requestDraw()});
-    $('[data-pathway-filter]')?.addEventListener('input',ev=>{query=ev.target.value.trim().toLowerCase();pathwayPage=0;renderBundleList()});
+    $('[data-pathway-filter]')?.addEventListener('input',ev=>{query=ev.target.value.trim().toLowerCase();renderBundleList();$('[data-pathway-list]').scrollTop=0});
     function selectStart(clear=false){visible=new Set(clear?[]:initialVisible);if(!clear){selectedOnly=true;clearPathwaySearch()}renderBundleList();evictHidden();requestDraw()}
+    $('[data-pathway-select-all]')?.addEventListener('click',()=>{for(const meta of listedPathways()){if(visible.has(meta.id))continue;visible.add(meta.id);ensureBundle(meta.id)}renderBundleList();requestDraw()});
     $('[data-pathway-start]')?.addEventListener('click',()=>selectStart());$('[data-pathway-clear]')?.addEventListener('click',()=>selectStart(true));
     $$('[data-fiber-style]').forEach(b=>b.addEventListener('click',()=>{fiberStyle=b.dataset.fiberStyle;updateStyle()}));
     modeInput?.addEventListener('change',()=>{mode=modeInput.value;for(const id of visible)ensureBundle(id);updateStyle()});
@@ -391,14 +395,14 @@
       for(const selector of ['[data-direction-key]','[data-cortex-controls]','[data-region-field]','[data-region-key]'])if($(selector))$(selector).hidden=true;
       if($('[data-parcels]'))$('[data-parcels]').checked=false;if($('[data-anatomy-note]'))$('[data-anatomy-note]').textContent='The outline follows the matching brain mask.';
       clearPathwaySearch();selectedOnly=false;activeSystem='Association';renderBundleList();if(expanded&&atlas?.surfaces?.length)startCortex();syncControls();
-      if($('[data-spin]')){$('[data-spin]').setAttribute('aria-pressed','false');$('[data-spin]').textContent='Rotate'}evictHidden();updateStyle();
+      slices?.center();if($('[data-spin]')){$('[data-spin]').setAttribute('aria-pressed','false');$('[data-spin]').textContent='Rotate'}evictHidden();updateStyle();
     });
-    canvas.addEventListener('pointerdown',ev=>{dragging={x:ev.clientX,y:ev.clientY,yaw,pitch};canvas.setPointerCapture(ev.pointerId);canvas.classList.add('dragging')});
-    canvas.addEventListener('pointermove',ev=>{if(!dragging)return;yaw=((dragging.yaw+(ev.clientX-dragging.x)*.4+540)%360)-180;pitch=Math.max(-89,Math.min(89,dragging.pitch+(ev.clientY-dragging.y)*.4));requestDraw()});
+    canvas.addEventListener('pointerdown',ev=>{if(slices?.isFull)return;dragging={x:ev.clientX,y:ev.clientY,yaw,pitch};canvas.setPointerCapture(ev.pointerId);canvas.classList.add('dragging')});
+    canvas.addEventListener('pointermove',ev=>{if(!dragging||slices?.isFull)return;yaw=((dragging.yaw+(ev.clientX-dragging.x)*.4+540)%360)-180;pitch=Math.max(-89,Math.min(89,dragging.pitch+(ev.clientY-dragging.y)*.4));requestDraw()});
     const stop=()=>{dragging=null;canvas.classList.remove('dragging')};canvas.addEventListener('pointerup',stop);canvas.addEventListener('pointercancel',stop);canvas.addEventListener('lostpointercapture',stop);
-    canvas.addEventListener('keydown',ev=>{const steps={ArrowLeft:[-5,0],ArrowRight:[5,0],ArrowUp:[0,-5],ArrowDown:[0,5]};if(!steps[ev.key])return;ev.preventDefault();yaw=((yaw+steps[ev.key][0]+540)%360)-180;pitch=Math.max(-89,Math.min(89,pitch+steps[ev.key][1]));requestDraw()});
-    if(expanded)canvas.addEventListener('wheel',ev=>{ev.preventDefault();zoom=Math.max(.65,Math.min(2.2,zoom*Math.exp(-ev.deltaY*.001)));$('[data-zoom]').value=Math.round(zoom*100);syncControls();requestDraw()},{passive:false});
-    $('[data-snapshot]')?.addEventListener('click',()=>{requestDraw();requestAnimationFrame(()=>canvas.toBlob(blob=>{if(!blob)return;const a=document.createElement('a'),u=URL.createObjectURL(blob);a.href=u;a.download='white-matter-pathways.png';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)},'image/png'))});
+    canvas.addEventListener('keydown',ev=>{if(slices?.isFull)return;const steps={ArrowLeft:[-5,0],ArrowRight:[5,0],ArrowUp:[0,-5],ArrowDown:[0,5]};if(!steps[ev.key])return;ev.preventDefault();yaw=((yaw+steps[ev.key][0]+540)%360)-180;pitch=Math.max(-89,Math.min(89,pitch+steps[ev.key][1]));requestDraw()});
+    if(expanded)canvas.addEventListener('wheel',ev=>{if(slices?.isFull)return;ev.preventDefault();zoom=Math.max(.65,Math.min(2.2,zoom*Math.exp(-ev.deltaY*.001)));$('[data-zoom]').value=Math.round(zoom*100);syncControls();requestDraw()},{passive:false});
+    $('[data-snapshot]')?.addEventListener('click',()=>{requestDraw();requestAnimationFrame(()=>(slices?.snapshot()||canvas).toBlob(blob=>{if(!blob)return;const a=document.createElement('a'),u=URL.createObjectURL(blob);a.href=u;a.download='white-matter-pathways.png';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)},'image/png'))});
     const full=$('[data-fullscreen]');if(full){if(!document.fullscreenEnabled)full.hidden=true;else full.addEventListener('click',()=>{(document.fullscreenElement?document.exitFullscreen():panel.requestFullscreen()).catch(()=>{});requestDraw()})}
     document.addEventListener('visibilitychange',()=>{lastFrame=0;if(!document.hidden)requestDraw()});
     canvas.addEventListener('webglcontextlost',ev=>{ev.preventDefault();fail('The 3D view was interrupted. Reload to restore rotation.')});new ResizeObserver(requestDraw).observe(canvas);

@@ -1,5 +1,7 @@
 export function viewerPanel(id,expanded,{image,link,url,source='/assets/glass-viewer.json',centroids='/assets/tract-centroids.json',atlasSource}) {
  const choices=[['af','Arcuate','#f3b64f'],['cst','Corticospinal','#49aaff'],['cc','Callosal','#ff4f99']];
+ const viewIcon=type=>`<svg viewBox="0 0 20 16" width="20" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.3">${type==='3d'?'<path d="m10 1 7 4v7l-7 3-7-3V5zM3 5l7 4 7-4M10 9v6"/>':type==='sidebar'?'<rect x="1" y="1" width="18" height="14" rx="1.5"/><path d="M7 1v14M1 6h6M1 10h6"/>':'<rect x="1" y="1" width="18" height="14" rx="1.5"/><path d="M7 1v14M13 1v14"/>'}</svg>`;
+ const layouts=expanded?`<div class="viewer-layout-switch" data-viewer-layouts data-slices-source="${url('/assets/slice-volume.json')}" role="group" aria-label="Viewer layout">${[['3d','3D Viewer','Show the 3D pathways'],['sidebar','2D Sidebar','Show linked T1 slices beside the 3D pathways'],['2d','2D Viewer','Use the full display for linked T1 slices']].map(([value,label,title])=>`<button data-layout-choice="${value}" aria-pressed="${value==='3d'}" title="${title}">${viewIcon(value)}<span>${label}</span></button>`).join('')}</div>`:'';
  const stage=`<div class="viewer-stage"><canvas id="${id}-canvas" data-source="${url(source)}" ${expanded?`data-centroids="${url(centroids)}"${atlasSource?` data-atlas="${url(atlasSource)}"`:''}`:''} tabindex="0" aria-label="White matter pathways inside the matching brain. Drag or use arrow keys to rotate." role="img"></canvas>${image('/assets/tractography-detail.webp','Reconstructed white matter pathways inside the matching transparent brain','viewer-fallback').replace('<img ','<img data-viewer-fallback hidden ')}<p data-viewer-status role="status">Loading pathways…</p><noscript>${image('/assets/tractography-detail.webp','White matter pathways inside a transparent brain')}</noscript></div>`;
  if(!expanded)return `<div class="tract-viewer inline-viewer" data-tract-viewer>${stage}<div class="viewer-toolbar"><div class="tract-choices" role="group" aria-label="Choose pathways">${[['all','All'],...choices].map(([value,name])=>`<button data-bundle="${value}" aria-pressed="${value==='all'}">${name}</button>`).join('')}</div><div class="viewer-options"><button data-glass aria-pressed="true">Glass brain</button><button data-reset>Reset</button></div></div><div class="viewer-caption viewer-explore"><div><strong>Explore the pathways</strong><span>Rotate the brain, change the rendering, and compare pathways.</span></div>${link('/tractography/','Open full explorer <span aria-hidden="true">↗</span>','button explorer-link')}</div></div>`;
  const segments=(label,target,options,selected)=>`<div class="control-cluster"><span class="control-label">${label}</span><div class="segmented-control" role="group" aria-label="${label}">${options.map(([value,name])=>`<button data-select-target="${target}" data-value="${value}" aria-pressed="${value===selected}">${name}</button>`).join('')}</div></div>`;
@@ -8,7 +10,7 @@ export function viewerPanel(id,expanded,{image,link,url,source='/assets/glass-vi
  return `<div class="tract-viewer expanded-viewer" data-tract-viewer data-expanded>
  <div class="viewer-workspace">
  <div class="viewer-main">
- <div class="explorer-controlbar"><div class="explorer-tabs" role="tablist" aria-label="Viewer controls">${['Streamlines','Anatomy','Appearance'].map((name,i)=>`<button role="tab" id="${id}-tab-${i}" aria-controls="${id}-controls-${i}" aria-selected="${i===0}" tabindex="${i===0?'0':'-1'}" data-control-tab="${i}">${name}</button>`).join('')}</div><div class="explorer-utilities"><button data-reset>Reset</button><button data-fullscreen>Full screen</button></div></div>
+ <div class="explorer-controlbar"><div class="explorer-tabs" role="tablist" aria-label="Viewer controls">${['Streamlines','Anatomy','Appearance'].map((name,i)=>`<button role="tab" id="${id}-tab-${i}" aria-controls="${id}-controls-${i}" aria-selected="${i===0}" tabindex="${i===0?'0':'-1'}" data-control-tab="${i}">${name}</button>`).join('')}</div><strong class="viewer-2d-heading">2D T1 viewer</strong><div class="explorer-utilities"><button data-reset>Reset</button><button data-fullscreen>Full screen</button></div></div>
  <div class="control-deck">
  <section class="control-pane" id="${id}-controls-0" role="tabpanel" aria-labelledby="${id}-tab-0" data-control-pane="0">
  <div class="control-cluster"><span class="control-label">Style</span><div class="segmented-control" role="group" aria-label="Streamline rendering"><button data-fiber-style="solid" aria-pressed="false">Solid tubes</button><button data-fiber-style="wispy" aria-pressed="false">Style 2</button><button data-fiber-style="fine" aria-pressed="true">Style 3</button></div></div>
@@ -32,16 +34,16 @@ export function viewerPanel(id,expanded,{image,link,url,source='/assets/glass-vi
  ${range('Fiber width','data-radius',5,30,12,.5)}<div data-wisp-field>${range('Fiber opacity','data-wisp-opacity',2,65,22)}</div>${range('Lighting','data-light',55,150,110)}${range('Zoom','data-zoom',65,220,122)}
  ${select('Background','data-background',[['dark','Ink'],['light','Ivory']],'dark')}
  </section></div>
- ${stage}
+ ${stage.replace('<canvas',layouts+'<canvas')}
  <div class="camera-toolbar"><div role="group" aria-label="Camera view">${[['oblique','Oblique'],['front','Coronal'],['side','Sagittal'],['top','Axial']].map(([value,name])=>`<button data-view="${value}" aria-pressed="${value==='oblique'}">${name}</button>`).join('')}</div><div><button data-spin aria-pressed="false">Rotate</button><button data-snapshot>Save image</button></div></div>
  </div>
  <aside class="pathway-browser" aria-label="Pathway library"><div class="settings-heading"><h2>Pathways</h2><button data-pathway-selected aria-pressed="false">Selected <span data-selection-count>5</span></button></div>
- <label class="pathway-search" data-pathway-search><span class="sr-only">Find a pathway</span><input type="search" placeholder="Find a pathway or acronym…" data-pathway-filter autocomplete="off"></label>
- <nav class="pathway-system-nav" data-system-nav aria-label="Pathway systems"></nav>
- <div class="pathway-list-heading"><h3 data-system-title>Association</h3><div class="viewer-presets" data-pathway-presets><button data-pathway-start>Start view</button><button data-pathway-clear>Clear</button></div></div>
- <div class="pathway-roster" data-pathway-list role="group" aria-label="Visible pathways and colors"></div>
- <div class="pathway-pagination"><button data-pathway-prev aria-label="Previous pathways">←</button><span data-pathway-page role="status"></span><button data-pathway-next aria-label="Next pathways">→</button></div>
+ <label class="pathway-search" data-pathway-search><span class="sr-only">Find a pathway</span><input type="search" placeholder="Find pathway or acronym…" data-pathway-filter autocomplete="off"></label>
+ <nav class="pathway-system-nav" data-system-nav aria-label="Pathway systems"><label class="pathway-system-picker"><span>Group</span><select data-system-select aria-label="Pathway group"><option value="all">All pathways</option><option value="Association" selected>Association</option></select></label></nav>
+ <div class="pathway-list-heading"><h3 data-system-title>Association</h3><div class="viewer-presets" data-pathway-presets><button data-pathway-select-all disabled>Select all</button><button data-pathway-start>Start view</button><button data-pathway-clear>Clear</button></div></div>
+ <div class="pathway-roster" data-pathway-list role="group" tabindex="0" aria-label="Pathway families and colors"></div>
+ <p class="pathway-list-count" data-pathway-family-count role="status"></p>
  <p class="viewer-meter" data-load-status role="status" hidden></p>
- <p class="pathway-source">Anatomical groups follow ${link('https://pmc.ncbi.nlm.nih.gov/articles/PMC13277897/','the BundleParc paper ↗')}. Tang variants have their own group.</p>
+ <p class="pathway-source">Groups follow ${link('https://pmc.ncbi.nlm.nih.gov/articles/PMC13277897/','BundleParc ↗')}; Tang variants are listed separately.</p>
  </aside></div></div>`;
 }
