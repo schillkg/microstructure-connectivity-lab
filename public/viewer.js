@@ -303,7 +303,7 @@
       for(const brainstem of [false,true]){
         if(brainstem){const label=document.createElement('span');label.className='system-family-label';label.textContent='Brainstem & subcortical';nav.append(label)}
         const row=document.createElement('div');row.className='system-family'+(brainstem?' brainstem-systems':'');
-        for(const def of systemDefs.filter(d=>!!d.table===brainstem)){
+        for(const def of systemDefs.filter(d=>(!!d.table||d.section==='brainstem')===brainstem)){
           const members=[...bundleMeta.values()].filter(m=>systemFor(m)===def.id),count=members.filter(m=>visible.has(m.id)).length;
           const b=document.createElement('button');b.dataset.system=def.id;b.title=def.name;b.setAttribute('aria-pressed',String(!query&&!selectedOnly&&activeSystem===def.id));
           const name=document.createElement('span'),badge=document.createElement('span');name.textContent=def.displayName;badge.textContent=count?String(count):'';badge.setAttribute('aria-hidden','true');b.append(name,badge);b.disabled=!members.length;row.append(b);
