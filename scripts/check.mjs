@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
 import { checkViewerAssets } from './check-viewer-assets.mjs';
+import { checkSliceAssets } from './check-slice-assets.mjs';
 const info=JSON.parse(fs.readFileSync('dist/build-info.json','utf8'));
 const errors=[];
 const decode=s=>s.replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&lt;/g,'<').replace(/&gt;/g,'>');
@@ -16,7 +17,7 @@ for(const file of html){
   for(const m of text.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)){
     try{JSON.parse(m[1]);}catch{errors.push(`${file}: invalid structured metadata`);}
   }
-  for(const m of text.matchAll(/(?:href|src|data-source|data-centroids|data-atlas)="([^"]+)"/g)){
+  for(const m of text.matchAll(/(?:href|src|data-source|data-centroids|data-atlas|data-slices-source)="([^"]+)"/g)){
     const ref=decode(m[1]);
     if(/^(?:https?:|mailto:|tel:|data:|#)/.test(ref))continue;
     const pathname=decodeURIComponent(ref.split(/[?#]/)[0]);
@@ -40,6 +41,7 @@ for(const p of publications){
   if(p.localSourceFile)errors.push(`${p.slug}: local path in metadata export`);
 }
 errors.push(...checkViewerAssets('dist/assets'));
+errors.push(...checkSliceAssets('dist/assets'));
 let pathwayCount=0;
 try{
   const requireClassification=(condition,message)=>{if(!condition)throw new Error(message);};
