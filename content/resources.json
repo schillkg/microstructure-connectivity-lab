@@ -172,5 +172,13 @@
     "source": "https://www.microstructure-connectivity-lab.com/resources",
     "title": "Functional tractography of white matter by HARFI",
     "linkLabel": "Watch lecture"
+  },
+  {
+    "id": "diffusion-mri-tractometry-collection",
+    "title": "Methods and Applications of Diffusion MRI Tractometry",
+    "type": "Collection",
+    "description": "A Frontiers research collection on tractometry methods and applications, edited by Kurt G. Schilling, Julio Ernesto Villalón-Reina and Bramsh Qamar Chandio.",
+    "url": "https://www.frontiersin.org/research-topics/56719/methods-and-applications-of-diffusion-mri-tractometry/magazine",
+    "linkLabel": "Browse the collection"
   }
 ]
