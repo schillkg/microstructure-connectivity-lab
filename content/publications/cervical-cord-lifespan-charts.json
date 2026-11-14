@@ -47,37 +47,45 @@
     "Bennett A. Landman"
   ],
   "kurtPosition": "first",
-  "journal": "bioRxiv",
-  "type": "Preprint",
-  "doi": "https://doi.org/10.64898/2026.06.03.729823",
-  "publisher": "https://doi.org/10.64898/2026.06.03.729823",
-  "summary": "This preprint develops cervical spinal cord reference charts using 78,269 scans from 41,042 individuals across 30 datasets. Measurements from C1 to C7 capture size and shape from birth to age 100. The charts reveal regional and sex differences and support age-adjusted comparison of individual cord measurements.",
-  "description": "Normative reference data are needed to interpret spinal cord size and shape across the lifespan. This preprint combines brain MRI datasets with cervical coverage and applies contrast-agnostic segmentation to 78,269 scans from 41,042 individuals aged 0–100. Measurements include cross-sectional area, diameters, and shape indices across C1–C7. The resulting models show rapid growth in childhood and adolescence, maturation in early-to-mid adulthood, and later decline, with regional and sex-related differences. Cord trajectories also show temporal relationships with brain white matter and brainstem volumes. The released framework is designed for age- and sex-specific centile scoring, with further validation needed beyond this preprint report.",
+  "journal": "Human Brain Mapping",
+  "type": "Article",
+  "doi": "https://doi.org/10.1002/hbm.70658",
+  "publisher": "https://onlinelibrary.wiley.com/doi/10.1002/hbm.70658",
+  "summary": "Reference charts describe cervical spinal cord size and shape from birth to age 100. The published models use 24,251 healthy or cognitively normal controls from 33 datasets. Cross-sectional area peaks around the mid-30s before declining.",
+  "description": "The study screened 78,269 T1-weighted brain MRI sessions for cervical coverage and modeled six size and shape measures from C1 to C7. The charts provide age- and sex-specific centiles. The curves come from cross-sectional data and do not measure individual rates of change.",
   "findings": [
-    "Uses 30 datasets and 41,042 individuals spanning ages 0–100.",
-    "Models size and shape at cervical levels C1–C7.",
-    "Cross-sectional area typically peaks in the mid-30s before decreasing."
+    "The final reference cohort included 24,251 controls from 33 datasets.",
+    "Cross-sectional area peaks around the mid-30s.",
+    "The timing and magnitude of size and shape changes vary by cervical level."
   ],
   "topics": [
     "Spinal Cord",
     "Lifespan"
   ],
-  "source": "https://doi.org/10.64898/2026.06.03.729823",
-  "publicationStatus": "Preprint — not peer reviewed",
+  "source": "https://onlinelibrary.wiley.com/doi/10.1002/hbm.70658",
+  "publicationStatus": "Published",
   "pdf": "",
-  "metadataSource": "https://api.crossref.org/works/10.64898/2026.06.03.729823",
-  "datePublished": "2026-06-08",
+  "metadataSource": "https://pubmed.ncbi.nlm.nih.gov/42908281/",
+  "datePublished": "2026-10-21",
   "image": "/assets/papers/cervical-cord-lifespan-charts.webp",
-  "imageAlt": "Lifespan trajectories, rates of change, and population variability in cervical spinal cord morphometry.",
-  "caption": "Kurt G. Schilling et al. (2026), Figure 3. Lifespan trajectories, rates of change, and population variability in cervical spinal cord morphometry.",
-  "figureSource": "https://doi.org/10.64898/2026.06.03.729823",
+  "imageAlt": "Reference trajectories, annual change and population variability for cross-sectional area and anterior–posterior diameter from C1 to C7.",
+  "caption": "Schilling et al. (2026), Figure 3. Reference trajectories, annual change and population variability for cross-sectional area and anterior–posterior diameter from C1 to C7. CC BY 4.0.",
+  "figureSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13687786/",
   "imageKind": "article-figure",
-  "figureLicense": "http://creativecommons.org/licenses/by/4.0/",
-  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13277863/",
+  "figureLicense": "https://creativecommons.org/licenses/by/4.0/",
+  "fullText": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13687786/",
   "links": [
     {
       "label": "Open full text",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13277863/"
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13687786/"
+    },
+    {
+      "label": "Earlier preprint",
+      "url": "https://doi.org/10.64898/2026.06.03.729823"
+    },
+    {
+      "label": "Charts, model fits and alignment code",
+      "url": "https://doi.org/10.5281/zenodo.18306654"
     }
   ]
 }
