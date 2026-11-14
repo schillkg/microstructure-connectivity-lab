@@ -1,6 +1,6 @@
 # Microstructure & Connectivity Lab
 
-A static lab website built for GitHub Pages. The review version includes 65 selected first- or last-author works (63 published works and 2 preprints), individual paper summaries and illustrations, scholarly metadata, grouped software and data links, five news stories, and an interactive streamline viewer. The site is published at https://www.microstructure-connectivity-lab.com/ through GitHub Pages; the original Google Site is preserved.
+A static lab website built for GitHub Pages. The review version includes 64 selected first- or last-author works (62 published works and 2 preprints), individual paper summaries and illustrations, scholarly metadata, grouped software and data links, five news stories, and an interactive streamline viewer. The site is published at https://www.microstructure-connectivity-lab.com/ through GitHub Pages; the original Google Site is preserved.
 
 ## Local preview
 
@@ -94,7 +94,7 @@ The expanded viewer adds 36 TractSeg bundles through `pathway-atlas.json`: 72,00
 
 The Nature figure is attributed under CC BY 4.0. Other scientific assets retain their original rights; this repository does not impose a new license on them.
 
-Every record links to its publisher or preprint. Sixty-four entries have an illustration; the 2020 diffusion MRI conference chapter links to the publisher without a figure. Fifty-seven records link to public PMC full text. Twenty-one PDF links come from authoritative publisher/repository pages; automated download checks can encounter bot challenges, so the full-text page is retained as an alternative. Attribution and license information are recorded in `docs/publication-figures.json`.
+Every record links to its publisher or preprint. Every entry has an illustration. Fifty-seven records link to public PMC full text. Twenty-one PDF links come from authoritative publisher/repository pages; automated download checks can encounter bot challenges, so the full-text page is retained as an alternative. Attribution and license information are recorded in `docs/publication-figures.json`.
 
 ## Checks and editorial review
 
